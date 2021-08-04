@@ -199,7 +199,7 @@ public class MgTime extends JPanel {
 		checkbt.setBackground(new Color(33, 150, 83));
 		checkbt.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
 		this.add(checkbt);
-		// 이전버튼 클릭시 상영영화 페이지
+		// 확인버튼 클릭시 좌석선택 페이지
 		checkbt.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
