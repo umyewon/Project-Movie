@@ -12,43 +12,41 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class ReserveInfo extends JFrame {
 
-	public ReserveInfo() {
+public class ReserveInfo extends JPanel {
 
-		// 프레임 위치와 크기 한 번에 설정 (x, y, width, height)
-		this.setBounds(600, 250, 800, 500);
+	private MainFrame mf;
+	private JPanel ReserveInfo;
 
-		// 프레임 상단에 이름 설정
-		this.setTitle("영화 예매 내역 조회");
+	public ReserveInfo(MainFrame mf) {
+		this.mf = mf;
+		this.ReserveInfo = this;
 		
-		// 아이콘 이미지 변경
-		try {
-			this.setIconImage(ImageIO.read(new File("Icon2.png")));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		// 패널 생성
-		JPanel panel = new JPanel();
+		
+		this.setBackground(Color.white);
+		this.setLayout(null);
+		
 		
 		Font font = new Font("맑은 고딕", Font.BOLD, 15);
 		
 		// 라벨 패널에 부착
 		JLabel lb = new JLabel("예매 번호 입력 : ");
+		lb.setBounds(15, 18, 200, 50);
 		lb.setFont(font);
-		panel.add(lb);
+		this.add(lb);
 		// 텍스트 필드 생성 후 패널에 부착
 		JTextField text = new JTextField(15);
-		panel.add(text);
+		text.setBounds(130, 28, 150, 30);
+		this.add(text);
 
 		// 버튼 생성
 		JButton btn = new JButton("확인");
 		btn.setFont(font);
+		btn.setBounds(280, 28, 80, 30);
 		btn.setForeground(Color.white);
 		btn.setBackground(new Color(33, 150, 83));
 		
-		panel.add(btn);
+		this.add(btn);
 
 		btn.addActionListener(new ActionListener() {
 
@@ -56,20 +54,35 @@ public class ReserveInfo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// 텍스트 상자로 다시 포커스 가져가기
 				text.requestFocus();
-				
+
 				// ***예매조회 정보 불러오는 코드 작성
-				
-				
 
 			}
 		});
 
-		this.add(panel);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);
+
+		// 메인화면으로 돌아가기 버튼 생성
+		JButton btn1 = new JButton("메인 화면");
+		btn1.setFont(font);
+		btn1.setBounds(680, 32, 100, 30);
+		btn1.setForeground(Color.white);
+		btn1.setBackground(new Color(33, 150, 83));
+
+		this.add(btn1);
+		btn1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new MainFrame();   
+				setVisible(false); 
+
+			}
+
+		});
+
+		// 메인프레임에 패널 추가
+		mf.add(this);
 
 	}
-
-
 
 }
