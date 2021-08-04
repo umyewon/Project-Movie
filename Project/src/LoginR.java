@@ -1,7 +1,5 @@
 
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,27 +9,28 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class Login extends JFrame {		// 예매 로그인
+public class LoginR extends JPanel {		// 예매 로그인
+	private MainFrame mf;
+	private JPanel LoginR;
 	private JButton login, join;
 	private JTextField idT, pwT;
 
-	public Login() {
+	public LoginR(MainFrame mf) {
+		this.mf = mf;
+		this.LoginR = this;
 
-		this.setBounds(600, 250, 800, 500);
+		LoginR = new JPanel();
+		setLayout(null);
+		setBackground(Color.white);	
 
 		Font font = new Font("맑은 고딕", Font.BOLD, 25);
 		Font font2 = new Font("맑은 고딕", Font.PLAIN, 20);
-
-		JPanel panel = new JPanel();
-
-		panel.setLayout(null);
 
 		// 라벨
 		JLabel idL = new JLabel();
@@ -69,29 +68,24 @@ public class Login extends JFrame {		// 예매 로그인
 		join.setForeground(Color.white);
 		join.setBackground(new Color(33, 150, 83));
 
-		panel.add(idL);
-		panel.add(idT);
-		panel.add(pwL);
-		panel.add(pwT);
-		panel.add(login);
-		panel.add(join);
+		add(idL);
+		add(idT);
+		add(pwL);
+		add(pwT);
+		add(login);
+		add(join);
 
 		login.addActionListener(new userFile());		// 로그인 버튼 누르면 로그인 오류 or 성공
 		join.addActionListener(new ActionListener() {   // 회원가입 누르면 가입 창으로
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Join();
+				new JoinR(mf);
 				setVisible(false);
 			}
 		});
 		
-
-		this.add(panel);
-
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);
-
+		mf.add(this);
 	}
 	
 	private class userFile implements ActionListener {
@@ -105,13 +99,14 @@ public class Login extends JFrame {		// 예매 로그인
 				if(id.equals(idT.getText()) && pw.equals(pwT.getText())) {
 					// 예매 창으로 이동
 					setVisible(false);
+					
 				} else if(!id.equals(idT.getText())) {
 					JOptionPane.showMessageDialog(null, "존재하지 않는 회원입니다."," ", JOptionPane.ERROR_MESSAGE);
 				} else if(!pw.equals(pwT.getText())) {
 					JOptionPane.showMessageDialog(null, "비밀번호가 일치하지 않습니다.", " ", JOptionPane.ERROR_MESSAGE);
-				}
+				}				
 				
-				setVisible(false);
+				
 			} catch (FileNotFoundException e1) {			
 				JOptionPane.showMessageDialog(null, "존재하지 않는 회원입니다."," ", JOptionPane.ERROR_MESSAGE);
 			} catch (IOException e1) {
@@ -122,8 +117,5 @@ public class Login extends JFrame {		// 예매 로그인
 		
 	}
 
-	public static void main(String[] args) {
-		new Login();
-	}
 
 }

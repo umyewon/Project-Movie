@@ -22,6 +22,9 @@ public class MainFrame extends JFrame{
 		// 메인 페이지
 		new Main(this);
 		
+		// 예매 회원or비회원
+		//new WaitingR(this);
+		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 	}

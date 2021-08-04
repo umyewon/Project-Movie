@@ -5,45 +5,47 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.DataOutputStream;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 
-import javax.imageio.ImageIO;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class Join extends JFrame{
+public class JoinR extends JPanel{
+	private MainFrame mf;
+	private JPanel JoinR;
 	private JTextField idT;
 	private JTextField pwT;
 	private JTextField nameT;
 	private JTextField telT;
 	
-	public Join() {
-		this.setTitle("회원가입");
-		this.setBounds(600, 250, 800, 500);
+	public JoinR(MainFrame mf) {
+		this.mf = mf;
+		this.JoinR = this;
 		
-		// 아이콘 이미지 변경
-		try {
-			this.setIconImage(ImageIO.read(new File("Icon2.png")));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		JPanel bigPanel = new JPanel();
+		// 패널
+		JoinR = new JPanel();
+		//setLayout(null);
+		setBackground(Color.white);	
+	
 		
 		// 패널 생성
 		JPanel panel = new JPanel();
+		panel.setBackground(Color.white);
 		
 		// 폰트
 		Font font1 = new Font("맑은 고딕", Font.BOLD, 23);
 		Font font2 = new Font("맑은 고딕", Font.PLAIN, 20);
+		
+		// 공백
+		JLabel tab1 = new JLabel();
+		tab1.setText("* * * * * * * * * * *");
+		tab1.setFont(font1);
+		tab1.setForeground(new Color(33, 150, 83));
 		
 		// id
 		JLabel idL = new JLabel();
@@ -82,10 +84,11 @@ public class Join extends JFrame{
 		telT = new JTextField(10);
 		telT.setFont(font2);	
 		
-		JLabel tab = new JLabel();
-		tab.setText("* * * * * * * * * * *");
-		tab.setFont(font1);
-		tab.setForeground(new Color(33, 150, 83));
+		// 공백
+		JLabel tab2 = new JLabel();
+		tab2.setText("* * * * * * * * * * *");
+		tab2.setFont(font1);
+		tab2.setForeground(new Color(33, 150, 83));
 		
 		// 버튼		
 		JButton join = new JButton();
@@ -104,7 +107,7 @@ public class Join extends JFrame{
 					return;
 				} else {
 					fileSave();
-					new Login();
+					new LoginR(mf);
 				}
 				setVisible(false);
 			}
@@ -112,6 +115,7 @@ public class Join extends JFrame{
 		
 				
 		// 패널에 올리기
+		panel.add(tab1);
 		panel.add(idL);
 		panel.add(idT);
 		panel.add(pwL);
@@ -120,17 +124,13 @@ public class Join extends JFrame{
 		panel.add(nameT);
 		panel.add(telL);
 		panel.add(telT);
-		panel.add(tab);
+		panel.add(tab2);
 		panel.add(join);
 				
-		panel.setPreferredSize(new Dimension(200, 400));
-		bigPanel.add(panel);
-
-	
-		// 프레임에 올리기
-		this.add(bigPanel);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);
+		panel.setPreferredSize(new Dimension(200, 500));
+		add(panel);
+		
+		mf.add(this);
 		
 	}
 	
@@ -149,8 +149,5 @@ public class Join extends JFrame{
 		}
 	}
 	
-	public static void main(String[] args) {
-		new Join();
-	}
 	
 }

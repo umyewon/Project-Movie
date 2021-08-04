@@ -2,28 +2,23 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Waiting2 extends JFrame{	//조회
-	public Waiting2() {
+public class WaitingC extends JPanel{	//조회
+	private MainFrame mf;
+	private JPanel WaitingC;
+	
+	public WaitingC(MainFrame mf) {
+		this.mf = mf;
+		this.WaitingC = this;
 		
-		this.setTitle("대기 화면");
-		this.setBounds(600, 250, 800, 500);
-		this.setResizable(false);
-		
-		// 아이콘 이미지 변경
-		try {
-			this.setIconImage(ImageIO.read(new File("Icon2.png")));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
+		// 패널
+		WaitingC = new JPanel();
+		setLayout(null);
+		setBackground(Color.white);	
+
 		// 배경패널
 		JPanel back = new JPanel();	
 		
@@ -45,18 +40,18 @@ public class Waiting2 extends JFrame{	//조회
 		Nmem.setBackground(new Color(33, 150, 83));
 		
 		// 버튼 클릭 액션
-		// 회원 - 로그인 페이지로 이동
+		// 회원 - 조회 로그인 페이지로 이동
 		member.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Login();		// 버튼 클릭 시 클래스 전환
+				new LoginC(mf);		// 버튼 클릭 시 클래스 전환
 				setVisible(false);	// 기존 창 보이지 않게
 			}
 		});
 				
 		
-		// 비회원 - 예매 페이지로 이동
+		// 비회원 - 조회 페이지로 이동
 		Nmem.addActionListener(new ActionListener() {
 
 			@Override
@@ -67,11 +62,10 @@ public class Waiting2 extends JFrame{	//조회
 		});
 		
 			
-		this.add(member);
-		this.add(Nmem);
-		this.add(back);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);
+		add(member);
+		add(Nmem);
+		add(back);
+		
+		mf.add(this);
 	}
-
 }

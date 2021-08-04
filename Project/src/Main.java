@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+
 public class Main extends JPanel{	
 	private MainFrame mf;
 	private JPanel Main, imgPanel;
@@ -55,21 +56,23 @@ public class Main extends JPanel{
 		
 		// 버튼 클릭 액션 - 회원, 비회원 선택 페이지로 이동
 		// 예매 
+		//reservation.addMouseListener(new change());
 		reservation.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Waiting1();		// 버튼 클릭 시 클래스 전환
-				setVisible(false);	// 기존 창 보이지 않게
+				new WaitingR(mf);
+				setVisible(false);				
 			}
 		});
+		
 		
 		// 조회
 		check.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Waiting2();		// 버튼 클릭 시 클래스 전환
+				new WaitingC(mf);		// 버튼 클릭 시 클래스 전환
 				setVisible(false);	// 기존 창 보이지 않게
 			}
 		});
@@ -82,6 +85,13 @@ public class Main extends JPanel{
 		
 		mf.add(this);
 	}
+	
+	/*class change extends MouseAdapter{
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			ChangePanel.ChangePanel(mf, Main, new WaitingR(mf));
+		}
+	}*/
 
 }
 
