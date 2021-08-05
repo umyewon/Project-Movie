@@ -443,6 +443,7 @@ public class Date extends JPanel implements ActionListener {
 		public void fileSave() {
 			try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt"))){
 				dout.writeUTF(dd);
+				dout.writeUTF(calendar.getCalText());
 				
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
