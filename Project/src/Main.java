@@ -56,7 +56,6 @@ public class Main extends JPanel{
 		
 		// 버튼 클릭 액션 - 회원, 비회원 선택 페이지로 이동
 		// 예매 
-		//reservation.addMouseListener(new change());
 		reservation.addActionListener(new ActionListener() {
 
 			@Override
@@ -86,13 +85,6 @@ public class Main extends JPanel{
 		mf.add(this);
 	}
 	
-	/*class change extends MouseAdapter{
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			ChangePanel.ChangePanel(mf, Main, new WaitingR(mf));
-		}
-	}*/
-
 }
 
 
