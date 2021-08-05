@@ -43,6 +43,12 @@ public class ReserveInfo extends JPanel {  // 비회원 예매내역 조회, 예매번호 입�
 		btn.setBackground(new Color(33, 150, 83));
 		
 		this.add(btn);
+		
+		JLabel re = new JLabel(" "); // 추후 예매번호 틀릴 시 내용 변경 됨.
+		re.setBounds(380, 15, 300, 50);
+		re.setFont(font);
+		re.setForeground(Color.GREEN);
+		this.add(re);
 
 		btn.addActionListener(new ActionListener() {
 
@@ -50,8 +56,18 @@ public class ReserveInfo extends JPanel {  // 비회원 예매내역 조회, 예매번호 입�
 			public void actionPerformed(ActionEvent e) {
 				// 텍스트 상자로 다시 포커스 가져가기
 				text.requestFocus();
-
+							
 				// ***예매조회 정보 불러오는 코드 작성
+				// text와 예매번호(타클래스에서 이미 생성 된 5자리 숫자)매칭 여부 확인
+				// if문을 사용하여 true일 시 예매정보 내역 불러오기
+				// false일 시 번호를 다시 확인해달라는 라벨 띄움
+				if(text.equals(text/*추후 예매번호 들어올 곳*/)) {
+					re.setText(" "); //제대로 입력 시 다시 화면에서 사라짐.
+					
+					
+				}else {
+					re.setText("번호를 다시 확인하여 주십시오.");				
+				}
 
 			}
 		});
