@@ -7,6 +7,8 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Calendar;
 
 import javax.swing.Icon;
@@ -40,6 +42,7 @@ public class BeforeSelectDate extends JFrame implements ActionListener {
 		super("영화티켓 예매");
 		this.setSize(800, 600);
 		pnbtn = new JPanel();
+		
 		pnbtn.setBackground(Color.white);
 		
 		pnmonth = new JPanel();  // 월
@@ -97,13 +100,239 @@ public class BeforeSelectDate extends JFrame implements ActionListener {
 		
 			pndate.add(date_value[i]);
 			
+			
 		}
+		
+		
+		date_value[7].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[7].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		
+		date_value[8].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[8].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[9].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[9].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[10].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[10].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[11].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[11].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[12].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[12].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[13].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[13].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[14].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[14].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[15].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[15].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		
+		date_value[16].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[16].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[17].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[17].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[18].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[18].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});date_value[19].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[19].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[20].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[20].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[21].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[21].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[22].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[22].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[23].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[23].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[24].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[24].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[25].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[25].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[26].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[26].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[27].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[27].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});date_value[28].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[28].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[29].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[29].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[30].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[30].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[31].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[31].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[32].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[32].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[33].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[33].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[34].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[34].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[35].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[35].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		date_value[36].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[36].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		
+		date_value[37].addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+					date_value[36].setIcon(new ImageIcon("icon/circle.png"));
+			}
+		});
+		
+		
+		
 		
 		calendar.setButton(date_value);
 		calendar.calSet();
 		
 		
 		
+		
+		// 이전 다음 버튼
 		previous = new JButton(btn2);
 		previous.setPreferredSize(new Dimension(350, 80));
 		previous.addActionListener(this);
@@ -114,7 +343,6 @@ public class BeforeSelectDate extends JFrame implements ActionListener {
 	
 		
 		next = new JButton(btn1);
-		//next.setBounds(480,15,170,50);
 		next.setPreferredSize(new Dimension(350, 80));
 		next.setBorderPainted(false);
 		next.setFocusPainted(false);
@@ -122,13 +350,43 @@ public class BeforeSelectDate extends JFrame implements ActionListener {
 		next.addActionListener(this);
 		pnbtn.add(next);
 		
-	
+		// *** 버튼 클릭 이벤트 처리 ***
+		previous.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// 로그인화면
+			}
+
+		});
+
+		next.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// 영화 조회 화면
+			}
+
+		});
+		
 		this.add(pnmonth,"North");
 		this.add(pndate, "Center");
 		this.add(pnbtn, "South");
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == left) {  // 이전달
+			calendar.allInit(-1);
+			month_value.setText(calendar.getCalText());
+		} else if(e.getSource() == right) {  // 다음달
+			calendar.allInit(1);
+			month_value.setText(calendar.getCalText());
+		}
 		
 	}
 	
@@ -187,18 +445,6 @@ public class BeforeSelectDate extends JFrame implements ActionListener {
 			calSet();
 		}
 		
-		
-	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == left) {  // 이전달
-			calendar.allInit(-1);
-			month_value.setText(calendar.getCalText());
-		} else if(e.getSource() == right) {  // 다음달
-			calendar.allInit(1);
-			month_value.setText(calendar.getCalText());
-		}
 		
 	}
 	
