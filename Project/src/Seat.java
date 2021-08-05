@@ -7,12 +7,17 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,17 +26,26 @@ public class Seat extends JFrame {
 	JPanel pnSeat;
 	JButton previous;    // 이전으로 버튼 (영화선택)
  	JButton next;		 // 다음으로 버튼 (매점)
- 	JComboBox clist;
+ 	JComboBox clist;	 // 예매인원 
+ 	int count;			 // 예매 인원 읽어올 변수
+ 	int slt;		 // 클릭 읽어올 변수
+ 	JLabel seat1;
+ 	JLabel seat2;
+ 	JLabel seat3;
+ 	JLabel seat4;
+ 	JDialog wrong = new JDialog(this, "에러");
+ 	RoundedButtonw[] s = new RoundedButtonw[40];
  	Font font = new Font("HY견고딕", Font.PLAIN, 24);
  	Font fontbtn = new Font("맑은고딕", Font.BOLD, 17);
  	Font fontcnt = new Font("HY견고딕", Font.PLAIN, 18);
  	Font fontclist = new Font("맑은고딕", Font.PLAIN, 15);
- 	Font fonts = new Font("HY견고딕", Font.PLAIN, 16);
+ 	Font fonts = new Font("HY견고딕", Font.PLAIN, 14);
  	
  	
  	
 	public Seat() {
 		this.setSize(800, 500);
+		wrong.setBounds(150, 200, 200, 250);
 		
 		pnSeat = new JPanel();
 		pnSeat.setLayout(null);
@@ -45,7 +59,7 @@ public class Seat extends JFrame {
 		
 		
 		
-		// 예매인원 - 스피너
+		// 예매인원 - 콤보박스
 		JLabel cnt = new JLabel("예매 인원");
 		cnt.setFont(fontcnt);
 		cnt.setBounds(520, 50, 100, 30);
@@ -59,7 +73,7 @@ public class Seat extends JFrame {
 		
 		String[] person = {"0", "1", "2", "3", "4"};
 		clist = new JComboBox(person);
-		clist.setSelectedIndex(0);
+		clist.setSelectedIndex(0);     // 처음 선택 되어 있을 인원 수 
 		clist.setBounds(610, 51, 50, 25);
 		clist.setForeground(new Color(33, 150, 83));
 		clist.setFont(fontclist);
@@ -68,183 +82,95 @@ public class Seat extends JFrame {
 		
 		
 		
+		// *** 버튼 클릭 이벤트 처리 ***
+		
+		clist.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				clist.setEnabled(false);
+				JComboBox person = (JComboBox) e.getSource();
+				count = Integer.parseInt((String) person.getSelectedItem());
+				
+			}
+			
+		});
+		
+		
 		
 		// 좌석 버튼
 		JLabel screen = new JLabel(new ImageIcon("icon/screen.PNG"));
 		screen.setBounds(160, 100, 440, 25);
 		pnSeat.add(screen);
 		
-		RoundedButtonw s1 = new RoundedButtonw(" 1 ");
-		s1.setFont(fonts);
-		s1.setBounds(100, 150, 45, 45);
-		RoundedButtonw s2 = new RoundedButtonw(" 2 ");
-		s2.setFont(fonts);
-		s2.setBounds(155, 150, 45, 45);
-		RoundedButtonw s3 = new RoundedButtonw(" 3 ");
-		s3.setFont(fonts);
-		s3.setBounds(210, 150, 45, 45);
-		RoundedButtonw s4 = new RoundedButtonw(" 4 ");
-		s4.setFont(fonts);
-		s4.setBounds(265, 150, 45, 45);
-		RoundedButtonw s5 = new RoundedButtonw(" 5 ");
-		s5.setFont(fonts);
-		s5.setBounds(320, 150, 45, 45);
-		RoundedButtonw s6 = new RoundedButtonw(" 6 ");
-		s6.setFont(fonts);
-		s6.setBounds(375, 150, 45, 45);
-		RoundedButtonw s7 = new RoundedButtonw(" 7 ");
-		s7.setFont(fonts);
-		s7.setBounds(430, 150, 45, 45);
-		RoundedButtonw s8 = new RoundedButtonw(" 8 ");
-		s8.setFont(fonts);
-		s8.setBounds(485, 150, 45, 45);
-		RoundedButtonw s9 = new RoundedButtonw(" 9 ");
-		s9.setFont(fonts);
-		s9.setBounds(540, 150, 45, 45);
-		RoundedButtonw s10 = new RoundedButtonw(" 10 ");
-		s10.setFont(fonts);
-		s10.setBounds(595, 150, 45, 45);
-		RoundedButtonw s11 = new RoundedButtonw(" 11 ");
-		s11.setFont(fonts);
-		s11.setBounds(100, 205, 45, 45);
-		RoundedButtonw s12 = new RoundedButtonw(" 12 ");
-		s12.setFont(fonts);
-		s12.setBounds(155, 205, 45, 45);
-		RoundedButtonw s13 = new RoundedButtonw(" 13 ");
-		s13.setFont(fonts);
-		s13.setBounds(210, 205, 45, 45);
-		RoundedButtonw s14 = new RoundedButtonw(" 14 ");
-		s14.setFont(fonts);
-		s14.setBounds(265, 205, 45, 45);
-		RoundedButtonw s15 = new RoundedButtonw(" 15 ");
-		s15.setFont(fonts);
-		s15.setBounds(320, 205, 45, 45);
-		RoundedButtonw s16 = new RoundedButtonw(" 16 ");
-		s16.setFont(fonts);
-		s16.setBounds(375, 205, 45, 45);
-		RoundedButtonw s17 = new RoundedButtonw(" 17 ");
-		s17.setFont(fonts);
-		s17.setBounds(430, 205, 45, 45);
-		RoundedButtonw s18 = new RoundedButtonw(" 18 ");
-		s18.setFont(fonts);
-		s18.setBounds(485, 205, 45, 45);
-		RoundedButtonw s19 = new RoundedButtonw(" 19 ");
-		s19.setFont(fonts);
-		s19.setBounds(540, 205, 45, 45);
-		RoundedButtonw s20 = new RoundedButtonw(" 20 ");
-		s20.setFont(fonts);
-		s20.setBounds(595, 205, 45, 45);
-		RoundedButtonw s21 = new RoundedButtonw(" 21 ");
-		s21.setFont(fonts);
-		s21.setBounds(100, 260, 45, 45);
-		RoundedButtonw s22 = new RoundedButtonw(" 22 ");
-		s22.setFont(fonts);
-		s22.setBounds(155, 260, 45, 45);
-		RoundedButtonw s23 = new RoundedButtonw(" 23 ");
-		s23.setFont(fonts);
-		s23.setBounds(210, 260, 45, 45);
-		RoundedButtonw s24 = new RoundedButtonw(" 24 ");
-		s24.setFont(fonts);
-		s24.setBounds(265, 260, 45, 45);
-		RoundedButtonw s25 = new RoundedButtonw(" 25 ");
-		s25.setFont(fonts);
-		s25.setBounds(320, 260, 45, 45);
-		RoundedButtonw s26 = new RoundedButtonw(" 26 ");
-		s26.setFont(fonts);
-		s26.setBounds(375, 260, 45, 45);
-		RoundedButtonw s27 = new RoundedButtonw(" 27 ");
-		s27.setFont(fonts);
-		s27.setBounds(430, 260, 45, 45);
-		RoundedButtonw s28 = new RoundedButtonw(" 28 ");
-		s28.setFont(fonts);
-		s28.setBounds(485, 260, 45, 45);
-		RoundedButtonw s29 = new RoundedButtonw(" 29 ");
-		s29.setFont(fonts);
-		s29.setBounds(540, 260, 45, 45);
-		RoundedButtonw s30 = new RoundedButtonw(" 30 ");
-		s30.setFont(fonts);
-		s30.setBounds(595, 260, 45, 45);
-		RoundedButtonw s31 = new RoundedButtonw(" 31 ");
-		s31.setFont(fonts);
-		s31.setBounds(100, 315, 45, 45);
-		RoundedButtonw s32 = new RoundedButtonw(" 32 ");
-		s32.setFont(fonts);
-		s32.setBounds(155, 315, 45, 45);
-		RoundedButtonw s33 = new RoundedButtonw(" 33 ");
-		s33.setFont(fonts);
-		s33.setBounds(210, 315, 45, 45);
-		RoundedButtonw s34 = new RoundedButtonw(" 34 ");
-		s34.setFont(fonts);
-		s34.setBounds(265, 315, 45, 45);
-		RoundedButtonw s35 = new RoundedButtonw(" 35 ");
-		s35.setFont(fonts);
-		s35.setBounds(320, 315, 45, 45);
-		RoundedButtonw s36 = new RoundedButtonw(" 36 ");
-		s36.setFont(fonts);
-		s36.setBounds(375, 315, 45, 45);
-		RoundedButtonw s37 = new RoundedButtonw(" 37 ");
-		s37.setFont(fonts);
-		s37.setBounds(430, 315, 45, 45);
-		RoundedButtonw s38 = new RoundedButtonw(" 38 ");
-		s38.setFont(fonts);
-		s38.setBounds(485, 315, 45, 45);
-		RoundedButtonw s39 = new RoundedButtonw(" 39 ");
-		s39.setFont(fonts);
-		s39.setBounds(540, 315, 45, 45);
-		RoundedButtonw s40 = new RoundedButtonw(" 40 ");
-		s40.setFont(fonts);
-		s40.setBounds(595, 315, 45, 45);
+		seat1 = new JLabel("");
+		seat1.setFont(fonts);
+		seat1.setBounds(300, 380, 80, 40);
 		
 		
-		
-		pnSeat.add(s1);
-		pnSeat.add(s2);
-		pnSeat.add(s3);
-		pnSeat.add(s4);
-		pnSeat.add(s5);
-		pnSeat.add(s6);
-		pnSeat.add(s7);
-		pnSeat.add(s8);
-		pnSeat.add(s9);
-		pnSeat.add(s10);
-		pnSeat.add(s11);
-		pnSeat.add(s12);
-		pnSeat.add(s13);
-		pnSeat.add(s14);
-		pnSeat.add(s15);
-		pnSeat.add(s16);
-		pnSeat.add(s17);
-		pnSeat.add(s18);
-		pnSeat.add(s19);
-		pnSeat.add(s20);
-		pnSeat.add(s21);
-		pnSeat.add(s22);
-		pnSeat.add(s23);
-		pnSeat.add(s24);
-		pnSeat.add(s25);
-		pnSeat.add(s26);
-		pnSeat.add(s27);
-		pnSeat.add(s28);
-		pnSeat.add(s29);
-		pnSeat.add(s30);
-		pnSeat.add(s31);
-		pnSeat.add(s32);
-		pnSeat.add(s33);
-		pnSeat.add(s34);
-		pnSeat.add(s35);
-		pnSeat.add(s36);
-		pnSeat.add(s37);
-		pnSeat.add(s38);
-		pnSeat.add(s39);
-		pnSeat.add(s40);
-		
-		
-		
-		
-		
-		
-		
-		
+		int xy1 = 55;
+		int sum1 =0;
+		int sum2 =0;
+		int xy2 = 55;
+		int sum3 =0;
+		int xy3 = 55;
+		int sum4 =0;
+		int xy4 = 55;
+	
+		for(int i = 0; i < s.length; i++) {
+			String str = Integer.valueOf(i+1).toString();
+				s[i] = new RoundedButtonw(str);
+				s[i].setBorderPainted(false);
+				s[i].setFocusPainted(false);
+				s[i].setContentAreaFilled(false);
+				s[i].setText(str);
+				s[i].setFont(fonts);
+				
+				if(i == 0 ) {					
+					s[i].setBounds(100, 150,45, 45);
+				}else if (i > 0 && i < 10) {
+					sum1 += xy1;	
+					s[i].setBounds(100+sum1, 150, 45, 45);
+				}
+				
+				if( i == 10) {						
+					s[i].setBounds(100, 205, 45, 45);
+				}else if (i > 10 && i < 20 ) {
+					sum2 += xy2;
+					s[i].setBounds(100+sum2, 205, 45, 45);			
+				}
+				if( i == 20) {						
+					s[i].setBounds(100, 260, 45, 45);
+				}else if (i > 20 && i < 30) {
+					sum3 += xy3;
+					s[i].setBounds(100+sum3, 260, 45, 45);			
+				}
+				if( i == 30) {						
+					s[i].setBounds(100, 315, 45, 45);
+				}else if (i > 30 && i < 40) {
+					sum4 += xy4;
+					s[i].setBounds(100+sum4, 315, 45, 45);		}
+					
+					
+					// *** 버튼 이벤트 처리 ***
+					s[i].addMouseListener(new MouseAdapter() {
+						String sum ="";
+						@Override
+						public void mouseClicked(MouseEvent e){
+							System.out.println(str + " 번 좌석");
+							
+						}
+				
+						public void mousePressed(MouseEvent e) {
+							int ck = Integer.parseInt(str);
+							s[ck-1].setIcon(new ImageIcon("icon/greenbox.PNG"));
+							}
+					});
+					pnSeat.add(s[i]);
+				}
+					
+					
+	
 		
 		
 		
@@ -266,9 +192,57 @@ public class Seat extends JFrame {
 		pnSeat.add(previous);
 		pnSeat.add(next);
 		
+	
+		
+		// *** 버튼 클릭 이벤트 처리 ***
+		previous.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// 영화 조회 화면
+			}
+			
+		});
+		
+		next.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// 매점 화면
+			}
+			
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		this.add(pnSeat);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	}
 
 	
@@ -283,11 +257,15 @@ public class Seat extends JFrame {
 	
 	
 	
-	
-	
-	
-	
-	// 버튼 둥글게 처리 - 초록 버튼
+
+
+
+
+
+
+
+
+		// 버튼 둥글게 처리 - 초록 버튼
 		public class RoundedButton extends JButton {
 		      public RoundedButton() { super(); decorate(); } 
 		      public RoundedButton(String text) { super(text); decorate(); } 
