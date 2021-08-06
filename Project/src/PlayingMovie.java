@@ -46,7 +46,8 @@ public class PlayingMovie extends JPanel /*implements Serializable*/ {
 		backBt.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Location(mf); 
+				new Location(mf);
+				//new Date(mf); 
 				setVisible(false);
 			}
 		});
