@@ -81,7 +81,7 @@ public class Date extends JPanel implements ActionListener {
 		previous.setFocusPainted(false);
 		previous.setForeground(new Color(246, 246, 246));
 		previous.setBackground(new Color( 33, 150, 83));
-		pnmonth.add(previous);
+		this.add(previous);
 	
 		
 		next = new JButton("다  음");
@@ -91,7 +91,7 @@ public class Date extends JPanel implements ActionListener {
 		next.setFocusPainted(false);
 		next.setBackground(new Color(246, 246, 246));
 		next.setForeground(new Color( 33, 150, 83));
-		pnmonth.add(next);
+		this.add(next);
 		
 		
 		
@@ -476,8 +476,8 @@ public class Date extends JPanel implements ActionListener {
 	// 날짜 선택 정보 유저 파일에 저장   
 		public void fileSave() {
 			try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt"))){
-				dout.writeUTF(dd);
 				dout.writeUTF(calendar.getCalText());
+				dout.writeUTF(dd);
 				
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
