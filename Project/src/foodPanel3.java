@@ -1,4 +1,4 @@
-package com.kh.project.view;
+
 
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -15,8 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
-import com.kh.project.common.ChangePanel;
-import com.kh.project.common.foodResult;
+
 
 public class foodPanel3 extends JPanel
 {
@@ -24,12 +23,12 @@ public class foodPanel3 extends JPanel
 	public static int count_food2 = 0;
 	public static int count_food3 = 0;
 	
-	private foodMenu fm;
+	//private foodMenu fm;
 	private JPanel foodPanel3;
 	
 	private SpinnerNumberModel numberModel1,numberModel2,numberModel3;
 	private static JSpinner spinner1,spinner2,spinner3;
-	
+	/*
 	public foodPanel3(foodMenu fm)
 	{		
 		this.fm = fm;
@@ -138,4 +137,5 @@ public class foodPanel3 extends JPanel
 	{
 		return (int) spinner3.getValue();
 	}
+	*/
 }

@@ -1,13 +1,11 @@
-package com.kh.project.common;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import com.kh.project.view.foodPanel1;
-import com.kh.project.view.foodPanel2;
-import com.kh.project.view.foodPanel3;
+
 
 public class foodResult implements ActionListener
 {
@@ -15,7 +13,7 @@ public class foodResult implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		String menu = "";
-
+		/*
 		int num1 = foodPanel1.getSpinner1();
 		int num2 = foodPanel1.getSpinner2();
 		int num3 = foodPanel1.getSpinner3();
@@ -72,5 +70,6 @@ public class foodResult implements ActionListener
 				JOptionPane.showMessageDialog(null,  "음식 구매 취소", "구매 취소",JOptionPane.ERROR_MESSAGE);
 			}
 		}
+		*/
 	}
 }
