@@ -136,8 +136,7 @@ public class ReserveInfo extends JPanel { // 비회원 예매내역 조회, 예매번호 입력
 		// 메인프레임에 패널 추가
 		mf.add(this);
 		
-				
-			
+	
 		}
 	}
 
