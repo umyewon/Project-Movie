@@ -6,6 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -21,8 +25,7 @@ public class RjTime extends JPanel {
 	private MainFrame mf;
 	private JPanel BwTime;
 	
-	public RjTime(MainFrame mf) {  // <= 저는 이게 없으면 오류나더라구요ㅠㅠ
-		this.mf = mf;
+	public RjTime(MainFrame mf) {  
 		this.BwTime = this;
 		
 		this.setBackground(Color.white);
@@ -199,12 +202,32 @@ public class RjTime extends JPanel {
 		checkbt.setBackground(new Color(33, 150, 83));
 		checkbt.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
 		this.add(checkbt);
-		// 이전버튼 클릭시 상영영화 페이지
+		// 확인버튼 클릭시 좌석선택 화면
 		checkbt.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// 좌석 선택 화면으로~~~~~~~~~~~
-				
+				// 확인버튼 클릭시 시간 정보 파일에 저장
+				if(msg.getText().contains(time1.getText())) {
+					fileSave(time1.getText());
+				} else if(msg.getText().contains(time2.getText())) {
+					fileSave(time2.getText());
+				} else if(msg.getText().contains(time3.getText())) {
+					fileSave(time3.getText());
+				} else if(msg.getText().contains(time4.getText())) {
+					fileSave(time4.getText());
+				} else if(msg.getText().contains(time5.getText())) {
+					fileSave(time5.getText());
+				} else if(msg.getText().contains(time6.getText())) {
+					fileSave(time6.getText());
+				} else if(msg.getText().contains(time7.getText())) {
+					fileSave(time7.getText());
+				} else if(msg.getText().contains(time8.getText())) {
+					fileSave(time8.getText());
+				} else if(msg.getText().contains(time9.getText())) {
+					fileSave(time9.getText());
+				}
+				// 좌석 선택 화면으로
+				new Seat();				
 				setVisible(false);
 			}
 		});
@@ -268,4 +291,17 @@ public class RjTime extends JPanel {
 		// 메인프레임에 패널 추가		
 		mf.add(this);
 	}	
+	
+	public void fileSave(String str) {
+		// 영화 시간 내역 파일에 저장
+		try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt"))){
+			
+			dout.writeUTF(str); // 영화시간
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

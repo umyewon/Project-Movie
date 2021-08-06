@@ -1,4 +1,4 @@
-package Reservation.seat;
+
 
 import java.awt.Color;
 import java.awt.Font;
