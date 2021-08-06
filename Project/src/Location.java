@@ -1,11 +1,6 @@
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -15,11 +10,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -207,7 +200,7 @@ public class Location extends JPanel {
 		JButton previous = new JButton("이  전");
 		previous.setFont(fontbtn);
 		previous.setBounds(20, 380, 90, 40);
-		previous.setForeground(new Color( 234, 234, 234 ));
+		previous.setForeground(new Color( 246, 246, 246 ));
 		previous.setBackground(new Color( 33, 150, 83));
 		previous.setBorderPainted(false);
 		previous.setFocusPainted(false);
@@ -217,30 +210,32 @@ public class Location extends JPanel {
 		JButton next = new JButton("다 음");
 		next.setFont(fontbtn);
 		next.setBounds(670, 380, 90, 40);
-		next.setForeground(new Color(234, 234, 234 ));
+		next.setForeground(new Color(246, 246, 246 ));
 		next.setBackground(new Color( 33, 150, 83));
 		next.setBorderPainted(false);
 		next.setFocusPainted(false);
 		this.add(next);
 		
-		previous.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e){
-				previous.setForeground(new Color(33, 150, 83));
-				previous.setBackground(new Color(246, 246, 246 ));
+		previous.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
 				new Date(mf);
 				setVisible(false);
+				
 			}
 		});
 		
-		next.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e){
-				next.setForeground(new Color(33, 150, 83));
-				next.setBackground(new Color(246, 246, 246 ));
+		next.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
 				new PlayingMovie(mf);
 				setVisible(false);
+				
 			}
 		});
-
+		
 
 
 		mf.add(this);

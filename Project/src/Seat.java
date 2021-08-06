@@ -34,7 +34,7 @@ public class Seat extends JPanel {
  	JComboBox clist;	 // ¿¹¸ÅÀÎ¿ø 
  	int count;			 // ¿¹¸Å ÀÎ¿ø ÀÐ¾î¿Ã º¯¼ö
  	JLabel seat;
- 	
+ 	int clickcnt;
  	
  	
 	public Seat(MainFrame mf) {
@@ -467,20 +467,23 @@ public class Seat extends JPanel {
 		
 		
 		
-		int clickcount = 1;
-		
 		// *** ÁÂ¼® ¹öÆ° ÀÌº¥Æ® Ã³¸® : ¼±ÅÃ µÈ ÀÚ¸® Ã¼Å©
+		clickcnt = 0;  // Å¬¸¯ È½¼ö
+
 		s1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
 				s1.setForeground(new Color(246, 246, 246));
 				s1.setBackground(new Color( 33, 150, 83));
 				seat.setText("1 ¹ø ÁÂ¼®");
-				int clickcount = 2;
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s1.setBackground(new Color(246, 246, 246));
+					s1.setForeground(new Color( 33, 150, 83));
+				}
 			}
 			
 		});
-		
 		
 		s2.addMouseListener(new MouseAdapter() {
 			@Override
@@ -488,14 +491,25 @@ public class Seat extends JPanel {
 				s2.setForeground(new Color(246, 246, 246));
 				s2.setBackground(new Color( 33, 150, 83));
 				seat.setText("2 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s2.setBackground(new Color(246, 246, 246));
+					s2.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s3.addMouseListener(new MouseAdapter() {
+			int clickcnt = 0;
 			@Override
 			public void mouseClicked(MouseEvent e){
 				s3.setForeground(new Color(246, 246, 246));
 				s3.setBackground(new Color( 33, 150, 83));
 				seat.setText("3 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s3.setBackground(new Color(246, 246, 246));
+					s3.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s4.addMouseListener(new MouseAdapter() {
@@ -504,6 +518,11 @@ public class Seat extends JPanel {
 				s4.setForeground(new Color(246, 246, 246));
 				s4.setBackground(new Color( 33, 150, 83));
 				seat.setText("4 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s4.setBackground(new Color(246, 246, 246));
+					s4.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s5.addMouseListener(new MouseAdapter() {
@@ -512,6 +531,11 @@ public class Seat extends JPanel {
 				s5.setForeground(new Color(246, 246, 246));
 				s5.setBackground(new Color( 33, 150, 83));
 				seat.setText("5 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s5.setBackground(new Color(246, 246, 246));
+					s5.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s6.addMouseListener(new MouseAdapter() {
@@ -520,6 +544,11 @@ public class Seat extends JPanel {
 				s6.setForeground(new Color(246, 246, 246));
 				s6.setBackground(new Color( 33, 150, 83));
 				seat.setText("6 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s6.setBackground(new Color(246, 246, 246));
+					s6.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s7.addMouseListener(new MouseAdapter() {
@@ -528,6 +557,11 @@ public class Seat extends JPanel {
 				s7.setForeground(new Color(246, 246, 246));
 				s7.setBackground(new Color( 33, 150, 83));
 				seat.setText("7 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s7.setBackground(new Color(246, 246, 246));
+					s7.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s8.addMouseListener(new MouseAdapter() {
@@ -536,6 +570,11 @@ public class Seat extends JPanel {
 				s8.setForeground(new Color(246, 246, 246));
 				s8.setBackground(new Color( 33, 150, 83));
 				seat.setText("8 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s8.setBackground(new Color(246, 246, 246));
+					s8.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s9.addMouseListener(new MouseAdapter() {
@@ -544,6 +583,11 @@ public class Seat extends JPanel {
 				s9.setForeground(new Color(246, 246, 246));
 				s9.setBackground(new Color( 33, 150, 83));
 				seat.setText("9 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s9.setBackground(new Color(246, 246, 246));
+					s9.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s10.addMouseListener(new MouseAdapter() {
@@ -552,6 +596,11 @@ public class Seat extends JPanel {
 				s10.setForeground(new Color(246, 246, 246));
 				s10.setBackground(new Color( 33, 150, 83));
 				seat.setText("10 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s10.setBackground(new Color(246, 246, 246));
+					s10.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s11.addMouseListener(new MouseAdapter() {
@@ -560,6 +609,11 @@ public class Seat extends JPanel {
 				s11.setForeground(new Color(246, 246, 246));
 				s11.setBackground(new Color( 33, 150, 83));
 				seat.setText("11 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s11.setBackground(new Color(246, 246, 246));
+					s11.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s12.addMouseListener(new MouseAdapter() {
@@ -568,6 +622,11 @@ public class Seat extends JPanel {
 				s12.setForeground(new Color(246, 246, 246));
 				s12.setBackground(new Color( 33, 150, 83));
 				seat.setText("12 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s12.setBackground(new Color(246, 246, 246));
+					s12.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s13.addMouseListener(new MouseAdapter() {
@@ -576,6 +635,11 @@ public class Seat extends JPanel {
 				s13.setForeground(new Color(246, 246, 246));
 				s13.setBackground(new Color( 33, 150, 83));
 				seat.setText("13 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s13.setBackground(new Color(246, 246, 246));
+					s13.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s14.addMouseListener(new MouseAdapter() {
@@ -584,6 +648,11 @@ public class Seat extends JPanel {
 				s14.setForeground(new Color(246, 246, 246));
 				s14.setBackground(new Color( 33, 150, 83));
 				seat.setText("14 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s14.setBackground(new Color(246, 246, 246));
+					s14.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s15.addMouseListener(new MouseAdapter() {
@@ -592,6 +661,11 @@ public class Seat extends JPanel {
 				s15.setForeground(new Color(246, 246, 246));
 				s15.setBackground(new Color( 33, 150, 83));
 				seat.setText("15 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s15.setBackground(new Color(246, 246, 246));
+					s15.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s16.addMouseListener(new MouseAdapter() {
@@ -600,6 +674,11 @@ public class Seat extends JPanel {
 				s16.setForeground(new Color(246, 246, 246));
 				s16.setBackground(new Color( 33, 150, 83));
 				seat.setText("16 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s16.setBackground(new Color(246, 246, 246));
+					s16.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s17.addMouseListener(new MouseAdapter() {
@@ -608,6 +687,11 @@ public class Seat extends JPanel {
 				s17.setForeground(new Color(246, 246, 246));
 				s17.setBackground(new Color( 33, 150, 83));
 				seat.setText("17 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s17.setBackground(new Color(246, 246, 246));
+					s17.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s18.addMouseListener(new MouseAdapter() {
@@ -616,6 +700,11 @@ public class Seat extends JPanel {
 				s18.setForeground(new Color(246, 246, 246));
 				s18.setBackground(new Color( 33, 150, 83));
 				seat.setText("18 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s18.setBackground(new Color(246, 246, 246));
+					s18.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s19.addMouseListener(new MouseAdapter() {
@@ -624,6 +713,11 @@ public class Seat extends JPanel {
 				s19.setForeground(new Color(246, 246, 246));
 				s19.setBackground(new Color( 33, 150, 83));
 				seat.setText("19 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s19.setBackground(new Color(246, 246, 246));
+					s19.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s20.addMouseListener(new MouseAdapter() {
@@ -632,6 +726,11 @@ public class Seat extends JPanel {
 				s20.setForeground(new Color(246, 246, 246));
 				s20.setBackground(new Color( 33, 150, 83));
 				seat.setText("20 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s20.setBackground(new Color(246, 246, 246));
+					s20.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s21.addMouseListener(new MouseAdapter() {
@@ -640,6 +739,11 @@ public class Seat extends JPanel {
 				s21.setForeground(new Color(246, 246, 246));
 				s21.setBackground(new Color( 33, 150, 83));
 				seat.setText("21 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s21.setBackground(new Color(246, 246, 246));
+					s21.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s22.addMouseListener(new MouseAdapter() {
@@ -648,6 +752,11 @@ public class Seat extends JPanel {
 				s21.setForeground(new Color(246, 246, 246));
 				s21.setBackground(new Color( 33, 150, 83));
 				seat.setText("22 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s22.setBackground(new Color(246, 246, 246));
+					s22.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s23.addMouseListener(new MouseAdapter() {
@@ -656,6 +765,11 @@ public class Seat extends JPanel {
 				s23.setForeground(new Color(246, 246, 246));
 				s23.setBackground(new Color( 33, 150, 83));
 				seat.setText("23 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s23.setBackground(new Color(246, 246, 246));
+					s23.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s24.addMouseListener(new MouseAdapter() {
@@ -664,6 +778,11 @@ public class Seat extends JPanel {
 				s24.setForeground(new Color(246, 246, 246));
 				s24.setBackground(new Color( 33, 150, 83));
 				seat.setText("24 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s24.setBackground(new Color(246, 246, 246));
+					s24.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s25.addMouseListener(new MouseAdapter() {
@@ -672,6 +791,11 @@ public class Seat extends JPanel {
 				s25.setForeground(new Color(246, 246, 246));
 				s25.setBackground(new Color( 33, 150, 83));
 				seat.setText("25 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s25.setBackground(new Color(246, 246, 246));
+					s25.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s26.addMouseListener(new MouseAdapter() {
@@ -680,6 +804,11 @@ public class Seat extends JPanel {
 				s26.setForeground(new Color(246, 246, 246));
 				s26.setBackground(new Color( 33, 150, 83));
 				seat.setText("26 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s26.setBackground(new Color(246, 246, 246));
+					s26.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s27.addMouseListener(new MouseAdapter() {
@@ -688,6 +817,11 @@ public class Seat extends JPanel {
 				s27.setForeground(new Color(246, 246, 246));
 				s27.setBackground(new Color( 33, 150, 83));
 				seat.setText("27 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s27.setBackground(new Color(246, 246, 246));
+					s27.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s28.addMouseListener(new MouseAdapter() {
@@ -696,6 +830,11 @@ public class Seat extends JPanel {
 				s28.setForeground(new Color(246, 246, 246));
 				s28.setBackground(new Color( 33, 150, 83));
 				seat.setText("28 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s28.setBackground(new Color(246, 246, 246));
+					s28.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s29.addMouseListener(new MouseAdapter() {
@@ -704,6 +843,11 @@ public class Seat extends JPanel {
 				s29.setForeground(new Color(246, 246, 246));
 				s29.setBackground(new Color( 33, 150, 83));
 				seat.setText("29 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s29.setBackground(new Color(246, 246, 246));
+					s29.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s30.addMouseListener(new MouseAdapter() {
@@ -712,6 +856,11 @@ public class Seat extends JPanel {
 				s30.setForeground(new Color(246, 246, 246));
 				s30.setBackground(new Color( 33, 150, 83));
 				seat.setText("30 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s30.setBackground(new Color(246, 246, 246));
+					s30.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s31.addMouseListener(new MouseAdapter() {
@@ -720,6 +869,11 @@ public class Seat extends JPanel {
 				s31.setForeground(new Color(246, 246, 246));
 				s31.setBackground(new Color( 33, 150, 83));
 				seat.setText("31 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s31.setBackground(new Color(246, 246, 246));
+					s31.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s32.addMouseListener(new MouseAdapter() {
@@ -728,6 +882,11 @@ public class Seat extends JPanel {
 				s31.setForeground(new Color(246, 246, 246));
 				s31.setBackground(new Color( 33, 150, 83));
 				seat.setText("32 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s32.setBackground(new Color(246, 246, 246));
+					s32.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s33.addMouseListener(new MouseAdapter() {
@@ -736,6 +895,11 @@ public class Seat extends JPanel {
 				s33.setForeground(new Color(246, 246, 246));
 				s33.setBackground(new Color( 33, 150, 83));
 				seat.setText("33 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s33.setBackground(new Color(246, 246, 246));
+					s33.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s34.addMouseListener(new MouseAdapter() {
@@ -744,6 +908,11 @@ public class Seat extends JPanel {
 				s34.setForeground(new Color(246, 246, 246));
 				s34.setBackground(new Color( 33, 150, 83));
 				seat.setText("34 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s34.setBackground(new Color(246, 246, 246));
+					s34.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s35.addMouseListener(new MouseAdapter() {
@@ -752,6 +921,11 @@ public class Seat extends JPanel {
 				s35.setForeground(new Color(246, 246, 246));
 				s35.setBackground(new Color( 33, 150, 83));
 				seat.setText("35 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s35.setBackground(new Color(246, 246, 246));
+					s35.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s36.addMouseListener(new MouseAdapter() {
@@ -760,6 +934,11 @@ public class Seat extends JPanel {
 				s36.setForeground(new Color(246, 246, 246));
 				s36.setBackground(new Color( 33, 150, 83));
 				seat.setText("36 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s36.setBackground(new Color(246, 246, 246));
+					s36.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s37.addMouseListener(new MouseAdapter() {
@@ -768,6 +947,11 @@ public class Seat extends JPanel {
 				s37.setForeground(new Color(246, 246, 246));
 				s37.setBackground(new Color( 33, 150, 83));
 				seat.setText("37 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s37.setBackground(new Color(246, 246, 246));
+					s37.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s38.addMouseListener(new MouseAdapter() {
@@ -776,6 +960,11 @@ public class Seat extends JPanel {
 				s38.setForeground(new Color(246, 246, 246));
 				s38.setBackground(new Color( 33, 150, 83));
 				seat.setText("38 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s38.setBackground(new Color(246, 246, 246));
+					s38.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s39.addMouseListener(new MouseAdapter() {
@@ -784,6 +973,11 @@ public class Seat extends JPanel {
 				s39.setForeground(new Color(246, 246, 246));
 				s39.setBackground(new Color( 33, 150, 83));
 				seat.setText("39 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s39.setBackground(new Color(246, 246, 246));
+					s39.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		s40.addMouseListener(new MouseAdapter() {
@@ -792,6 +986,11 @@ public class Seat extends JPanel {
 				s40.setForeground(new Color(246, 246, 246));
 				s40.setBackground(new Color( 33, 150, 83));
 				seat.setText("40 ¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s40.setBackground(new Color(246, 246, 246));
+					s40.setForeground(new Color( 33, 150, 83));
+				}
 			}
 		});
 		
@@ -825,7 +1024,8 @@ public class Seat extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				previous.setForeground(new Color(33, 150, 83));
 				previous.setBackground(new Color(246, 246, 246 ));
-				// ¿µÈ­ Á¶È¸ È­¸é
+				new PlayingMovie(mf);
+				setVisible(false);
 			}
 		});
 		
@@ -835,7 +1035,8 @@ public class Seat extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				next.setForeground(new Color(33, 150, 83));
 				next.setBackground(new Color(246, 246, 246 ));
-				// ¸ÅÁ¡ È­¸é
+				// ¸ÅÁ¡ È­¸éÀ¸·Î ÀÌµ¿
+				setVisible(false);
 			}
 		});
 		
