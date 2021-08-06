@@ -205,7 +205,7 @@ public class PlayingMovie extends JPanel /*implements Serializable*/ {
 	
 	public void fileSave(String str) {
 		// 영화 예매 내역 파일에 저장
-		try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt"))){
+		try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("movie.txt", true))){
 			
 			dout.writeUTF(str); // 영화제목
 			

@@ -134,7 +134,7 @@ public class JoinC extends JPanel{
 	
 	// 회원 정보 파일 저장
 	public void fileSave() {
-		try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt"))){
+		try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt", true))){
 			dout.writeUTF(idT.getText());
 			dout.writeUTF(pwT.getText());
 			dout.writeUTF(nameT.getText());
