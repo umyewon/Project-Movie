@@ -475,8 +475,8 @@ public class Seat extends JPanel {
 				s1.setForeground(new Color(246, 246, 246));
 				s1.setBackground(new Color( 33, 150, 83));
 				seat.setText("1 번 좌석");
-			}
-		});
+				}
+		});		
 		s2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
@@ -831,6 +831,9 @@ public class Seat extends JPanel {
 				next.setForeground(new Color(33, 150, 83));
 				next.setBackground(new Color(246, 246, 246 ));
 				// 매점 화면
+				// new memberReserveInfo(mf);
+				setVisible(false);
+				
 			}
 		});
 		
