@@ -181,7 +181,7 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 			} catch (EOFException e) {
 				// 계속 이 오류가 떠요....
 				e.printStackTrace();
-				//JOptionPane.showMessageDialog(null, "조회 완료되었습니다.", " ", JOptionPane.ERROR_MESSAGE);
+			//	JOptionPane.showMessageDialog(null, "조회 완료되었습니다.", " ", JOptionPane.ERROR_MESSAGE);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
