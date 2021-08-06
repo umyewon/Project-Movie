@@ -227,7 +227,7 @@ public class RjTime extends JPanel {
 					fileSave(time9.getText());
 				}
 				// 좌석 선택 화면으로
-				new Seat();				
+				new Seat(mf);				
 				setVisible(false);
 			}
 		});

@@ -228,7 +228,7 @@ public class BwTime extends JPanel /*implements Serializable*/ {
 					fileSave(time9.getText());
 				}
 				// 좌석 선택 화면으로
-				new Seat();				
+				new Seat(mf);				
 				setVisible(false);
 			}
 		});
