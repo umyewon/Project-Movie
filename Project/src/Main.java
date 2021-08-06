@@ -84,7 +84,7 @@ public class Main extends JPanel{
 		
 		mf.add(this);
 	}
-	
+
 }
 
 

@@ -15,7 +15,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class JoinC extends JPanel{
-	
+
 	private MainFrame mf;
 	private JPanel JoinC;
 	private JTextField idT;
