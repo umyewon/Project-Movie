@@ -6,6 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -13,7 +17,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class PlayingMovie extends JPanel {
+
+public class PlayingMovie extends JPanel /*implements Serializable*/ {
 	
 	private MainFrame mf;
 	private JPanel PlayingMovie;
@@ -37,6 +42,14 @@ public class PlayingMovie extends JPanel {
 		backBt.setBackground(Color.white);
 		backBt.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
 		this.add(backBt);
+		// 이전버튼 클릭시 영화관 검색창
+		backBt.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Location(mf); 
+				setVisible(false);
+			}
+		});
 		
 		// 영화 이미지
 		Image i1 = new ImageIcon("movie/blackwidow.png").getImage().getScaledInstance(110, 150, Image.SCALE_SMOOTH);
@@ -59,32 +72,50 @@ public class PlayingMovie extends JPanel {
 		this.add(mImage3);
 		this.add(mImage4);
 		// 블랙위도우
-		JLabel mTitle1 = new JLabel("제목 : 블랙 위도우 (134분)", JLabel.CENTER);
+		JLabel mTitle1 = new JLabel("제목 : ", JLabel.CENTER);
 		JLabel mDirector1 = new JLabel("감독 : 케이트 쇼트랜드", JLabel.CENTER);
 		JLabel mGrade1 = new JLabel("평점 : 9.08", JLabel.CENTER);
 		// 모가디슈
-		JLabel mTitle2 = new JLabel("제목 : 모가디슈 (121분)", JLabel.CENTER);
+		JLabel mTitle2 = new JLabel("제목 : ", JLabel.CENTER);
 		JLabel mDirector2 = new JLabel("감독 : 류승완", JLabel.CENTER);
 		JLabel mGrade2 = new JLabel("평점 : 9.16", JLabel.CENTER);
 		// 피닉스
-		JLabel mTitle3 = new JLabel("제목 : 피닉스 (98분)", JLabel.CENTER);
+		JLabel mTitle3 = new JLabel("제목 : ", JLabel.CENTER);
 		JLabel mDirector3 = new JLabel("감독 : 크리스티안 펫졸드", JLabel.CENTER);
 		JLabel mGrade3 = new JLabel("평점 : 8.43", JLabel.CENTER);
 		// 랑종
-		JLabel mTitle4 = new JLabel("제목 : 랑종 (131분)", JLabel.CENTER);
+		JLabel mTitle4 = new JLabel("제목 : ", JLabel.CENTER);
 		JLabel mDirector4 = new JLabel("감독 : 반종 피산다나쿤", JLabel.CENTER);
 		JLabel mGrade4 = new JLabel("평점 : 6.82", JLabel.CENTER);
 		
-		mTitle1.setBounds(16, 260, 200, 20);
+		// 제목 따로 생성
+		JLabel mTitle11 = new JLabel("블랙 위도우 (134분)", JLabel.CENTER);
+		JLabel mTitle22 = new JLabel("모가디슈 (121분)", JLabel.CENTER);
+		JLabel mTitle33 = new JLabel("피닉스 (98분)", JLabel.CENTER);
+		JLabel mTitle44 = new JLabel("랑종 (131분)", JLabel.CENTER);
+		mTitle11.setBounds(38, 260, 200, 20);
+		mTitle22.setBounds(215, 260, 200, 20);
+		mTitle33.setBounds(397, 260, 200, 20);
+		mTitle44.setBounds(578, 260, 200, 20);
+		this.add(mTitle11);
+		this.add(mTitle22);
+		this.add(mTitle33);
+		this.add(mTitle44);
+		
+		
+		mTitle1.setBounds(40, 260, 50, 20);
 		mDirector1.setBounds(16, 300, 200, 20);
 		mGrade1.setBounds(16, 340, 200, 20);
-		mTitle2.setBounds(198, 260, 200, 20);
+		
+		mTitle2.setBounds(225, 260, 50, 20);
 		mDirector2.setBounds(198, 300, 200, 20);
 		mGrade2.setBounds(198, 340, 200, 20);
-		mTitle3.setBounds(380, 260, 200, 20);
+		
+		mTitle3.setBounds(415, 260, 50, 20);
 		mDirector3.setBounds(380, 300, 200, 20);
 		mGrade3.setBounds(380, 340, 200, 20);
-		mTitle4.setBounds(560, 260, 200, 20);
+		
+		mTitle4.setBounds(600, 260, 50, 20);
 		mDirector4.setBounds(560, 300, 200, 20);
 		mGrade4.setBounds(560, 340, 200, 20);
 		// 패널 올리기
@@ -136,6 +167,7 @@ public class PlayingMovie extends JPanel {
 		mButton1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				fileSave(mTitle11.getText()); // 버튼 클릭시 영화제목 파일 저장
 				new BwTime(mf);
 				setVisible(false);
 			}
@@ -143,7 +175,7 @@ public class PlayingMovie extends JPanel {
 		mButton2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				fileSave(mTitle22.getText());
 				new MgTime(mf);
 				setVisible(false);
 			}
@@ -151,6 +183,7 @@ public class PlayingMovie extends JPanel {
 		mButton3.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				fileSave(mTitle33.getText());
 				new PnTime(mf);
 				setVisible(false);
 			}
@@ -158,6 +191,7 @@ public class PlayingMovie extends JPanel {
 		mButton4.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				fileSave(mTitle44.getText());
 				new RjTime(mf);
 				setVisible(false);
 			}
@@ -165,5 +199,20 @@ public class PlayingMovie extends JPanel {
 		
 		// 메인프레임에 패널 추가
 		mf.add(this);
+	}
+	
+	
+	public void fileSave(String str) {
+		// 영화 예매 내역 파일에 저장
+		try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt"))){
+			
+			dout.writeUTF(str); // 영화제목
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 }
