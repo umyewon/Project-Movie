@@ -97,7 +97,7 @@ public class LoginC extends JPanel{
 				String pw = din.readUTF();
 
 				if (id.equals(idT.getText()) && pw.equals(pwT.getText())) {
-					new Date(mf);
+					new memberReserveInfo(mf);
 					setVisible(false);
 					
 				} else if (!id.equals(idT.getText())) {
