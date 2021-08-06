@@ -97,7 +97,7 @@ public class LoginC extends JPanel{
 				String pw = din.readUTF();
 
 				if (id.equals(idT.getText()) && pw.equals(pwT.getText())) {
-					// 예매 창으로 이동
+					new Date(mf);
 					setVisible(false);
 					
 				} else if (!id.equals(idT.getText())) {

@@ -23,7 +23,7 @@ import javax.swing.JPanel;
 
 public class Date extends JPanel implements ActionListener {
 	private MainFrame mf;
-	JPanel pnmonth; // 타이틀, 달력, 버튼 패널
+	JPanel pnmonth, pndate; // 타이틀, 달력, 버튼 패널
 	JLabel month_value;
 	JButton[] date_value = new JButton[49];
 	JButton left;   // 왼쪽 버튼
@@ -100,7 +100,8 @@ public class Date extends JPanel implements ActionListener {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// 로그인화면
+				new Main(mf);
+				setVisible(false);
 			}
 		});
 
@@ -108,7 +109,8 @@ public class Date extends JPanel implements ActionListener {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// 영화 조회 화면
+				new Location(mf);
+				setVisible(false);
 			}
 		});
 		
@@ -117,9 +119,10 @@ public class Date extends JPanel implements ActionListener {
 		
 		
 		// 캘린더 (요일, 일)
-		JPanel pndate = new JPanel();    // 요일,일
+		pndate = new JPanel();    // 요일,일
 		pndate.setBackground(Color.white);
 		pndate.setLayout(new GridLayout(0,7,5,5));  // 일은 그리드 레이아웃으로 설정
+		pndate.setBounds(100,110, 600, 400);
 		String dd = "";
 		
 		for(int i =0; i < date_value.length; i++) { 
@@ -162,6 +165,7 @@ public class Date extends JPanel implements ActionListener {
 					date_value[8].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "2일";
 					System.out.println(dd);
+					
 			}
 		});
 		date_value[9].addMouseListener(new MouseAdapter() {
@@ -412,6 +416,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[36].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "30일";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -422,6 +427,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[36].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "31일";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);	
 			}
 		});
@@ -432,8 +438,7 @@ public class Date extends JPanel implements ActionListener {
 		
 		
 		
-		this.add(pnmonth);
-		this.add(pndate, "South");
+		this.add(pndate, "Center");
 		this.setVisible(true);
 		
 		mf.add(this);

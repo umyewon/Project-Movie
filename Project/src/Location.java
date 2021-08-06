@@ -38,8 +38,8 @@ public class Location extends JPanel {
 		this.pnlocation = this;
 
 		pnlocation = new JPanel();
-		pnlocation.setLayout(null);
-		pnlocation.setBackground(Color.white);
+		setLayout(null);
+		setBackground(Color.white);
 
 		Font font = new Font("HY견고딕", Font.PLAIN, 24);
 		Font fontip = new Font("맑은고딕", Font.PLAIN, 20);
@@ -50,17 +50,17 @@ public class Location extends JPanel {
 		JLabel title = new JLabel("지  점  선  택");
 		title.setFont(font);
 		title.setBounds(320, 30, 150, 30);
-		pnlocation.add(title);
+		this.add(title);
 
 		// 사용자 입력 받기
 		input = new JTextField(30);
-		input.setBounds(160, 90, 410, 55);
+		input.setBounds(180, 90, 410, 55);
 		input.setFont(fontip);
 		input.setForeground(new Color(33, 150, 83));
 
 		Icon btn1 = new ImageIcon("icon/search.png");
 		search = new JButton(btn1);
-		search.setBounds(565, 90, 50, 50);
+		search.setBounds(580, 95, 50, 50);
 		search.setBorderPainted(false);
 		search.setFocusPainted(false);
 		search.setContentAreaFilled(false);
@@ -151,41 +151,49 @@ public class Location extends JPanel {
 						th1.setForeground(new Color(246, 246, 246));
 						th1.setBackground(new Color(33, 150, 83).darker());
 						System.out.println(str[0] + " 점");
+						break;
 					} else if (input.getText().contains(str[1])) {
 						th2.setForeground(new Color(246, 246, 246));
 						th2.setBackground(new Color(33, 150, 83).darker());
 						System.out.println(str[1] + " 점");
 						ll = str[1];
+						break;
 					} else if (input.getText().contains(str[2])) {
 						th3.setForeground(new Color(246, 246, 246));
 						th3.setBackground(new Color(33, 150, 83).darker());
 						System.out.println(str[2] + " 점");
 						ll = str[2];
+						break;
 					} else if (input.getText().contains(str[3])) {
 						th4.setForeground(new Color(246, 246, 246));
 						th4.setBackground(new Color(33, 150, 83).darker());
 						System.out.println(str[3] + " 점");
 						ll = str[3];
+						break;
 					} else if (input.getText().contains(str[4])) {
 						th5.setForeground(new Color(246, 246, 246));
 						th5.setBackground(new Color(33, 150, 83).darker());
 						System.out.println(str[4] + " 점");
 						ll = str[4];
+						break;
 					} else if (input.getText().contains(str[5])) {
 						th6.setForeground(new Color(246, 246, 246));
 						th6.setBackground(new Color(33, 150, 83).darker());
 						System.out.println(str[5] + " 점");
 						ll = str[5];
+						break;
 					} else if (input.getText().contains(str[6])) {
 						th7.setForeground(new Color(246, 246, 246));
 						th7.setBackground(new Color(33, 150, 83).darker());
 						System.out.println(str[6] + " 점");
 						ll = str[6];
+						break;
 					} else if (input.getText().contains(str[7])) {
 						th8.setForeground(new Color(246, 246, 246));
 						th8.setBackground(new Color(33, 150, 83).darker());
 						System.out.println(str[7] + " 점");
 						ll = str[7];
+						break;
 					} else {
 						input.setText("존재하지 않는 지점입니다 다시 입력하세요.");
 					}
@@ -219,7 +227,8 @@ public class Location extends JPanel {
 			public void mousePressed(MouseEvent e){
 				previous.setForeground(new Color(33, 150, 83));
 				previous.setBackground(new Color(246, 246, 246 ));
-				// 날짜선택으로
+				new Date(mf);
+				setVisible(false);
 			}
 		});
 		
@@ -228,6 +237,7 @@ public class Location extends JPanel {
 				next.setForeground(new Color(33, 150, 83));
 				next.setBackground(new Color(246, 246, 246 ));
 				// 영화선택으로
+				setVisible(false);
 			}
 		});
 
