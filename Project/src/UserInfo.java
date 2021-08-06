@@ -7,6 +7,7 @@ public class UserInfo /*implements Serializable*/ {
 	private String userName;
 	private String userPhone;
 	private String mDate;
+	private String mLocation;
 	private String mTitle;
 	private String mTime;
 	private String mSeat;
@@ -14,14 +15,15 @@ public class UserInfo /*implements Serializable*/ {
 	
 	public UserInfo() {}
 
-	public UserInfo(String userID, String userPW, String userName, String userPhone, String mDate, String mTitle,
-			String mTime, String mSeat, String mNumber) {
+	public UserInfo(String userID, String userPW, String userName, String userPhone, String mDate, String mLocation,
+			String mTitle, String mTime, String mSeat, String mNumber) {
 		super();
 		this.userID = userID;
 		this.userPW = userPW;
 		this.userName = userName;
 		this.userPhone = userPhone;
 		this.mDate = mDate;
+		this.mLocation = mLocation;
 		this.mTitle = mTitle;
 		this.mTime = mTime;
 		this.mSeat = mSeat;
@@ -68,6 +70,14 @@ public class UserInfo /*implements Serializable*/ {
 		this.mDate = mDate;
 	}
 
+	public String getmLocation() {
+		return mLocation;
+	}
+
+	public void setmLocation(String mLocation) {
+		this.mLocation = mLocation;
+	}
+
 	public String getmTitle() {
 		return mTitle;
 	}
@@ -103,8 +113,8 @@ public class UserInfo /*implements Serializable*/ {
 	@Override
 	public String toString() {
 		return "UserInfo [userID=" + userID + ", userPW=" + userPW + ", userName=" + userName + ", userPhone="
-				+ userPhone + ", mDate=" + mDate + ", mTitle=" + mTitle + ", mTime=" + mTime + ", mSeat=" + mSeat
-				+ ", mNumber=" + mNumber + "]";
+				+ userPhone + ", mDate=" + mDate + ", mLocation=" + mLocation + ", mTitle=" + mTitle + ", mTime="
+				+ mTime + ", mSeat=" + mSeat + ", mNumber=" + mNumber + "]";
 	}
 
 	@Override
@@ -112,6 +122,7 @@ public class UserInfo /*implements Serializable*/ {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((mDate == null) ? 0 : mDate.hashCode());
+		result = prime * result + ((mLocation == null) ? 0 : mLocation.hashCode());
 		result = prime * result + ((mNumber == null) ? 0 : mNumber.hashCode());
 		result = prime * result + ((mSeat == null) ? 0 : mSeat.hashCode());
 		result = prime * result + ((mTime == null) ? 0 : mTime.hashCode());
@@ -136,6 +147,11 @@ public class UserInfo /*implements Serializable*/ {
 			if (other.mDate != null)
 				return false;
 		} else if (!mDate.equals(other.mDate))
+			return false;
+		if (mLocation == null) {
+			if (other.mLocation != null)
+				return false;
+		} else if (!mLocation.equals(other.mLocation))
 			return false;
 		if (mNumber == null) {
 			if (other.mNumber != null)
@@ -179,10 +195,7 @@ public class UserInfo /*implements Serializable*/ {
 			return false;
 		return true;
 	}
-	
-	
 
-	
 	
 	
 }

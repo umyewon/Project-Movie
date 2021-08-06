@@ -165,13 +165,14 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 					String userName = dis.readUTF();
 					String userPhone = dis.readUTF();
 					String mDate = dis.readUTF();
+					String mLocation = dis.readUTF();
 					String mTitle = dis.readUTF();
 					String mTime = dis.readUTF();
 					String mSeat = dis.readUTF();
 					String mNumber = dis.readUTF();
 					
 					
-					uif.add(new UserInfo(userID, userPW, userName, userPhone, mDate, mTitle, mTime, mSeat, mNumber));
+					uif.add(new UserInfo(userID, userPW, userName, userPhone, mDate, mLocation, mTitle, mTime, mSeat, mNumber));
 				}
 				
 				
