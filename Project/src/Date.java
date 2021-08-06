@@ -154,6 +154,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[7].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "1老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -164,6 +165,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[8].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "2老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 					
 			}
@@ -174,6 +176,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[9].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "3老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -183,6 +186,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[10].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "4老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -192,6 +196,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[11].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "5老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -201,6 +206,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[12].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "6老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -210,6 +216,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[13].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "7老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -219,6 +226,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[14].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "8老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -228,6 +236,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[15].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "9老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -238,6 +247,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[16].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "10老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -247,6 +257,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[17].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "11老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -256,6 +267,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[18].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "12老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});date_value[19].addMouseListener(new MouseAdapter() {
@@ -264,6 +276,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[19].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "13老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -273,6 +286,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[20].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "14老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -282,6 +296,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[21].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "15老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -291,6 +306,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[22].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "16老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -300,6 +316,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[23].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "17老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -309,6 +326,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[24].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "18老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -318,6 +336,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[25].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "19老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -327,6 +346,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[26].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "20老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -336,6 +356,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[27].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "21老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});date_value[28].addMouseListener(new MouseAdapter() {
@@ -344,6 +365,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[28].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "22老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -353,6 +375,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[29].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "23老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -362,6 +385,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[30].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "24老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -371,6 +395,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[31].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "25老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -380,6 +405,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[32].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "26老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -389,6 +415,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[33].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "27老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -398,6 +425,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[34].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "28老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});
@@ -407,6 +435,7 @@ public class Date extends JPanel implements ActionListener {
 			public void mousePressed(MouseEvent e) {
 					date_value[35].setIcon(new ImageIcon("icon/circle.png"));
 					String dd = "29老";
+					System.out.print(calendar.getCalText());
 					System.out.println(dd);
 			}
 		});

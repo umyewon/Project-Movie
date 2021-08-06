@@ -236,7 +236,7 @@ public class Location extends JPanel {
 			public void mousePressed(MouseEvent e){
 				next.setForeground(new Color(33, 150, 83));
 				next.setBackground(new Color(246, 246, 246 ));
-				// 영화선택으로
+				new PlayingMovie(mf);
 				setVisible(false);
 			}
 		});
