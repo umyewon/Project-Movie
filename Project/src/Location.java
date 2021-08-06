@@ -246,7 +246,7 @@ public class Location extends JPanel {
 		mf.add(this);
 	}
 	
-	// 좌석 정보 유저 파일에 저장   
+	// 영화관 정보 유저 파일에 저장   
 		public void fileSave() {
 			try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt"))){
 				dout.writeUTF(ll);

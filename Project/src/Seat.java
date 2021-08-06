@@ -467,7 +467,8 @@ public class Seat extends JPanel {
 		
 		
 		
-					
+		int clickcount = 1;
+		
 		// *** 좌석 버튼 이벤트 처리 : 선택 된 자리 체크
 		s1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -475,8 +476,12 @@ public class Seat extends JPanel {
 				s1.setForeground(new Color(246, 246, 246));
 				s1.setBackground(new Color( 33, 150, 83));
 				seat.setText("1 번 좌석");
+				int clickcount = 2;
 			}
+			
 		});
+		
+		
 		s2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
