@@ -505,27 +505,18 @@ public class Date extends JPanel implements ActionListener {
 	}
 	
 	// 날짜 선택 정보 유저 파일에 저장   
-<<<<<<< HEAD
+
 		public void fileSave(String str) {
 			try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("movie.txt", true))){
 				//dout.writeUTF(calendar.getCalText());
 				dout.writeUTF(str);
-=======
-		public void fileSave() {
-			try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt"))){
-				dout.writeUTF(calendar.getCalText());
-				dout.writeUTF(dd);
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
-				
+
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-	
-	
-	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -596,5 +587,4 @@ public class Date extends JPanel implements ActionListener {
 		
 		
 	}
-	
-}
+	}

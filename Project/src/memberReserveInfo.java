@@ -115,6 +115,7 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 		reList = new JPanel();
 		reList.setBounds(0, 100, 800, 260);
 		reList.setLayout(null);
+		
 		this.add(reList);
 		
 		// 메인프레임에 추가

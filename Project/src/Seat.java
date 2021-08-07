@@ -24,13 +24,8 @@ public class Seat extends JPanel {
  	JButton next;		 // ´ÙÀ½À¸·Î ¹öÆ° (¸ÅÁ¡)
  	JComboBox clist;	 // ¿¹¸ÅÀÎ¿ø 
  	int count;			 // ¿¹¸Å ÀÎ¿ø ÀÐ¾î¿Ã º¯¼ö
-<<<<<<< HEAD
- 	JLabel seat;
- 	 	
-=======
  	JLabel seat;
  	int clickcnt;
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
  	
  	
 	public Seat(MainFrame mf) {
@@ -472,37 +467,27 @@ public class Seat extends JPanel {
 				s1.setForeground(new Color(246, 246, 246));
 				s1.setBackground(new Color( 33, 150, 83));
 				seat.setText("1 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-				}
-		});		
-
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s1.setBackground(new Color(246, 246, 246));
 					s1.setForeground(new Color( 33, 150, 83));
 				}
 			}
-			
 		});
 		
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 		s2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
 				s2.setForeground(new Color(246, 246, 246));
 				s2.setBackground(new Color( 33, 150, 83));
 				seat.setText("2 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s2.setBackground(new Color(246, 246, 246));
 					s2.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s3.addMouseListener(new MouseAdapter() {
@@ -512,15 +497,12 @@ public class Seat extends JPanel {
 				s3.setForeground(new Color(246, 246, 246));
 				s3.setBackground(new Color( 33, 150, 83));
 				seat.setText("3 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s3.setBackground(new Color(246, 246, 246));
 					s3.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s4.addMouseListener(new MouseAdapter() {
@@ -529,15 +511,12 @@ public class Seat extends JPanel {
 				s4.setForeground(new Color(246, 246, 246));
 				s4.setBackground(new Color( 33, 150, 83));
 				seat.setText("4 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s4.setBackground(new Color(246, 246, 246));
 					s4.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s5.addMouseListener(new MouseAdapter() {
@@ -546,15 +525,12 @@ public class Seat extends JPanel {
 				s5.setForeground(new Color(246, 246, 246));
 				s5.setBackground(new Color( 33, 150, 83));
 				seat.setText("5 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s5.setBackground(new Color(246, 246, 246));
 					s5.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s6.addMouseListener(new MouseAdapter() {
@@ -563,15 +539,12 @@ public class Seat extends JPanel {
 				s6.setForeground(new Color(246, 246, 246));
 				s6.setBackground(new Color( 33, 150, 83));
 				seat.setText("6 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s6.setBackground(new Color(246, 246, 246));
 					s6.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s7.addMouseListener(new MouseAdapter() {
@@ -580,15 +553,12 @@ public class Seat extends JPanel {
 				s7.setForeground(new Color(246, 246, 246));
 				s7.setBackground(new Color( 33, 150, 83));
 				seat.setText("7 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s7.setBackground(new Color(246, 246, 246));
 					s7.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s8.addMouseListener(new MouseAdapter() {
@@ -597,15 +567,12 @@ public class Seat extends JPanel {
 				s8.setForeground(new Color(246, 246, 246));
 				s8.setBackground(new Color( 33, 150, 83));
 				seat.setText("8 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s8.setBackground(new Color(246, 246, 246));
 					s8.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s9.addMouseListener(new MouseAdapter() {
@@ -614,15 +581,12 @@ public class Seat extends JPanel {
 				s9.setForeground(new Color(246, 246, 246));
 				s9.setBackground(new Color( 33, 150, 83));
 				seat.setText("9 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s9.setBackground(new Color(246, 246, 246));
 					s9.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s10.addMouseListener(new MouseAdapter() {
@@ -631,15 +595,12 @@ public class Seat extends JPanel {
 				s10.setForeground(new Color(246, 246, 246));
 				s10.setBackground(new Color( 33, 150, 83));
 				seat.setText("10 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s10.setBackground(new Color(246, 246, 246));
 					s10.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s11.addMouseListener(new MouseAdapter() {
@@ -648,15 +609,12 @@ public class Seat extends JPanel {
 				s11.setForeground(new Color(246, 246, 246));
 				s11.setBackground(new Color( 33, 150, 83));
 				seat.setText("11 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s11.setBackground(new Color(246, 246, 246));
 					s11.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s12.addMouseListener(new MouseAdapter() {
@@ -665,15 +623,12 @@ public class Seat extends JPanel {
 				s12.setForeground(new Color(246, 246, 246));
 				s12.setBackground(new Color( 33, 150, 83));
 				seat.setText("12 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s12.setBackground(new Color(246, 246, 246));
 					s12.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s13.addMouseListener(new MouseAdapter() {
@@ -682,15 +637,12 @@ public class Seat extends JPanel {
 				s13.setForeground(new Color(246, 246, 246));
 				s13.setBackground(new Color( 33, 150, 83));
 				seat.setText("13 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s13.setBackground(new Color(246, 246, 246));
 					s13.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s14.addMouseListener(new MouseAdapter() {
@@ -699,15 +651,12 @@ public class Seat extends JPanel {
 				s14.setForeground(new Color(246, 246, 246));
 				s14.setBackground(new Color( 33, 150, 83));
 				seat.setText("14 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s14.setBackground(new Color(246, 246, 246));
 					s14.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s15.addMouseListener(new MouseAdapter() {
@@ -716,15 +665,12 @@ public class Seat extends JPanel {
 				s15.setForeground(new Color(246, 246, 246));
 				s15.setBackground(new Color( 33, 150, 83));
 				seat.setText("15 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s15.setBackground(new Color(246, 246, 246));
 					s15.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s16.addMouseListener(new MouseAdapter() {
@@ -733,15 +679,12 @@ public class Seat extends JPanel {
 				s16.setForeground(new Color(246, 246, 246));
 				s16.setBackground(new Color( 33, 150, 83));
 				seat.setText("16 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s16.setBackground(new Color(246, 246, 246));
 					s16.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s17.addMouseListener(new MouseAdapter() {
@@ -750,15 +693,12 @@ public class Seat extends JPanel {
 				s17.setForeground(new Color(246, 246, 246));
 				s17.setBackground(new Color( 33, 150, 83));
 				seat.setText("17 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s17.setBackground(new Color(246, 246, 246));
 					s17.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s18.addMouseListener(new MouseAdapter() {
@@ -767,15 +707,12 @@ public class Seat extends JPanel {
 				s18.setForeground(new Color(246, 246, 246));
 				s18.setBackground(new Color( 33, 150, 83));
 				seat.setText("18 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s18.setBackground(new Color(246, 246, 246));
 					s18.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s19.addMouseListener(new MouseAdapter() {
@@ -783,17 +720,14 @@ public class Seat extends JPanel {
 			public void mouseClicked(MouseEvent e){
 				s19.setForeground(new Color(246, 246, 246));
 				s19.setBackground(new Color( 33, 150, 83));
-<<<<<<< HEAD
 				seat.setText("19 ¹ø ÁÂ¼®");
 				fileSave(seat.getText());
-=======
 				seat.setText("19 ¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s19.setBackground(new Color(246, 246, 246));
 					s19.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s20.addMouseListener(new MouseAdapter() {
@@ -801,17 +735,14 @@ public class Seat extends JPanel {
 			public void mouseClicked(MouseEvent e){
 				s20.setForeground(new Color(246, 246, 246));
 				s20.setBackground(new Color( 33, 150, 83));
-<<<<<<< HEAD
 				seat.setText("20 ¹ø ÁÂ¼®");
 				fileSave(seat.getText());
-=======
 				seat.setText("20 ¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s20.setBackground(new Color(246, 246, 246));
 					s20.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s21.addMouseListener(new MouseAdapter() {
@@ -819,17 +750,14 @@ public class Seat extends JPanel {
 			public void mouseClicked(MouseEvent e){
 				s21.setForeground(new Color(246, 246, 246));
 				s21.setBackground(new Color( 33, 150, 83));
-<<<<<<< HEAD
 				seat.setText("21 ¹ø ÁÂ¼®");
 				fileSave(seat.getText());
-=======
 				seat.setText("21 ¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s21.setBackground(new Color(246, 246, 246));
 					s21.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s22.addMouseListener(new MouseAdapter() {
@@ -837,11 +765,8 @@ public class Seat extends JPanel {
 			public void mouseClicked(MouseEvent e){
 				s21.setForeground(new Color(246, 246, 246));
 				s21.setBackground(new Color( 33, 150, 83));
-<<<<<<< HEAD
 				seat.setText("22 ¹ø ÁÂ¼®");
 				fileSave(seat.getText());
-			}
-=======
 				seat.setText("22 ¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
@@ -849,24 +774,20 @@ public class Seat extends JPanel {
 					s22.setForeground(new Color( 33, 150, 83));
 				}
 			}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 		});
 		s23.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
 				s23.setForeground(new Color(246, 246, 246));
 				s23.setBackground(new Color( 33, 150, 83));
-<<<<<<< HEAD
 				seat.setText("23 ¹ø ÁÂ¼®");
 				fileSave(seat.getText());
-=======
 				seat.setText("23 ¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s23.setBackground(new Color(246, 246, 246));
 					s23.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s24.addMouseListener(new MouseAdapter() {
@@ -888,15 +809,12 @@ public class Seat extends JPanel {
 				s25.setForeground(new Color(246, 246, 246));
 				s25.setBackground(new Color( 33, 150, 83));
 				seat.setText("25 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s25.setBackground(new Color(246, 246, 246));
 					s25.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s26.addMouseListener(new MouseAdapter() {
@@ -904,11 +822,8 @@ public class Seat extends JPanel {
 			public void mouseClicked(MouseEvent e){
 				s26.setForeground(new Color(246, 246, 246));
 				s26.setBackground(new Color( 33, 150, 83));
-<<<<<<< HEAD
 				seat.setText("26 ¹ø ÁÂ¼®");
 				fileSave(seat.getText());
-			}
-=======
 				seat.setText("26 ¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
@@ -916,24 +831,20 @@ public class Seat extends JPanel {
 					s26.setForeground(new Color( 33, 150, 83));
 				}
 			}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 		});
 		s27.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
 				s27.setForeground(new Color(246, 246, 246));
 				s27.setBackground(new Color( 33, 150, 83));
-<<<<<<< HEAD
 				seat.setText("27 ¹ø ÁÂ¼®");
 				fileSave(seat.getText());
-=======
 				seat.setText("27 ¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s27.setBackground(new Color(246, 246, 246));
 					s27.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s28.addMouseListener(new MouseAdapter() {
@@ -942,15 +853,12 @@ public class Seat extends JPanel {
 				s28.setForeground(new Color(246, 246, 246));
 				s28.setBackground(new Color( 33, 150, 83));
 				seat.setText("28 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s28.setBackground(new Color(246, 246, 246));
 					s28.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s29.addMouseListener(new MouseAdapter() {
@@ -959,15 +867,12 @@ public class Seat extends JPanel {
 				s29.setForeground(new Color(246, 246, 246));
 				s29.setBackground(new Color( 33, 150, 83));
 				seat.setText("29 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s29.setBackground(new Color(246, 246, 246));
 					s29.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s30.addMouseListener(new MouseAdapter() {
@@ -976,15 +881,12 @@ public class Seat extends JPanel {
 				s30.setForeground(new Color(246, 246, 246));
 				s30.setBackground(new Color( 33, 150, 83));
 				seat.setText("30 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s30.setBackground(new Color(246, 246, 246));
 					s30.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s31.addMouseListener(new MouseAdapter() {
@@ -993,15 +895,12 @@ public class Seat extends JPanel {
 				s31.setForeground(new Color(246, 246, 246));
 				s31.setBackground(new Color( 33, 150, 83));
 				seat.setText("31 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s31.setBackground(new Color(246, 246, 246));
 					s31.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s32.addMouseListener(new MouseAdapter() {
@@ -1010,15 +909,12 @@ public class Seat extends JPanel {
 				s31.setForeground(new Color(246, 246, 246));
 				s31.setBackground(new Color( 33, 150, 83));
 				seat.setText("32 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s32.setBackground(new Color(246, 246, 246));
 					s32.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s33.addMouseListener(new MouseAdapter() {
@@ -1027,15 +923,12 @@ public class Seat extends JPanel {
 				s33.setForeground(new Color(246, 246, 246));
 				s33.setBackground(new Color( 33, 150, 83));
 				seat.setText("33 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s33.setBackground(new Color(246, 246, 246));
 					s33.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s34.addMouseListener(new MouseAdapter() {
@@ -1044,15 +937,12 @@ public class Seat extends JPanel {
 				s34.setForeground(new Color(246, 246, 246));
 				s34.setBackground(new Color( 33, 150, 83));
 				seat.setText("34 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s34.setBackground(new Color(246, 246, 246));
 					s34.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s35.addMouseListener(new MouseAdapter() {
@@ -1061,15 +951,12 @@ public class Seat extends JPanel {
 				s35.setForeground(new Color(246, 246, 246));
 				s35.setBackground(new Color( 33, 150, 83));
 				seat.setText("35 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s35.setBackground(new Color(246, 246, 246));
 					s35.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s36.addMouseListener(new MouseAdapter() {
@@ -1078,15 +965,12 @@ public class Seat extends JPanel {
 				s36.setForeground(new Color(246, 246, 246));
 				s36.setBackground(new Color( 33, 150, 83));
 				seat.setText("36 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s36.setBackground(new Color(246, 246, 246));
 					s36.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s37.addMouseListener(new MouseAdapter() {
@@ -1095,15 +979,12 @@ public class Seat extends JPanel {
 				s37.setForeground(new Color(246, 246, 246));
 				s37.setBackground(new Color( 33, 150, 83));
 				seat.setText("37 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s37.setBackground(new Color(246, 246, 246));
 					s37.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s38.addMouseListener(new MouseAdapter() {
@@ -1112,15 +993,12 @@ public class Seat extends JPanel {
 				s38.setForeground(new Color(246, 246, 246));
 				s38.setBackground(new Color( 33, 150, 83));
 				seat.setText("38 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s38.setBackground(new Color(246, 246, 246));
 					s38.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s39.addMouseListener(new MouseAdapter() {
@@ -1129,15 +1007,12 @@ public class Seat extends JPanel {
 				s39.setForeground(new Color(246, 246, 246));
 				s39.setBackground(new Color( 33, 150, 83));
 				seat.setText("39 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s39.setBackground(new Color(246, 246, 246));
 					s39.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		s40.addMouseListener(new MouseAdapter() {
@@ -1146,20 +1021,15 @@ public class Seat extends JPanel {
 				s40.setForeground(new Color(246, 246, 246));
 				s40.setBackground(new Color( 33, 150, 83));
 				seat.setText("40 ¹ø ÁÂ¼®");
-<<<<<<< HEAD
 				fileSave(seat.getText());
-=======
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s40.setBackground(new Color(246, 246, 246));
 					s40.setForeground(new Color( 33, 150, 83));
 				}
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		
-		
-	
 		
 		// ÀÌÀü, ´ÙÀ½ ¹öÆ° 
 		JButton previous = new JButton("ÀÌ  Àü");
@@ -1198,17 +1068,10 @@ public class Seat extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				next.setForeground(new Color(33, 150, 83));
-<<<<<<< HEAD
 				next.setBackground(new Color(246, 246, 246 ));
 				// ¸ÅÁ¡ È­¸é
 				new memberReserveInfo(mf);
 				setVisible(false);
-				
-=======
-				next.setBackground(new Color(246, 246, 246 ));
-				// ¸ÅÁ¡ È­¸éÀ¸·Î ÀÌµ¿
-				setVisible(false);
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 			}
 		});
 		
@@ -1217,7 +1080,7 @@ public class Seat extends JPanel {
 	}
 
 
-	// ÁÂ¼® Á¤º¸ À¯Àú ÆÄÀÏ¿¡ ÀúÀå   
+	// ÁÂ¼® Á¤º¸ ¹«ºñ ÆÄÀÏ¿¡ ÀúÀå   
 	public void fileSave(String str) {
 		try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("movie.txt", true))){
 			

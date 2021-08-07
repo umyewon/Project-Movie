@@ -244,9 +244,6 @@ public class Location extends JPanel {
 				
 			}
 		});
-		
-
-
 		mf.add(this);
 	}
 	
