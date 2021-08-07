@@ -1,14 +1,17 @@
 
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.BorderFactory;
@@ -30,15 +33,19 @@ public class PlayingMovie extends JPanel /*implements Serializable*/ {
 		this.setLayout(null);
 		this.setBackground(Color.white);
 		
-		JLabel label = new JLabel();
-		label.setText("상영 영화");
-		label.setFont(label.getFont().deriveFont(30.0f));  // 글씨크기
-		label.setBounds(320, 8, 200, 50);
+		Font hfont = new Font("맑은고딕", Font.BOLD, 30);
+		Font tfont = new Font("맑은고딕", Font.BOLD, 15);
+		Font font = new Font("맑은고딕", Font.BOLD, 12);
+		
+		JLabel label = new JLabel("상영 영화", JLabel.CENTER);
+		label.setFont(hfont);
+		label.setBounds(310, 8, 200, 50);
 		this.add(label);
 		
 		// 이전버튼
 		JButton backBt = new JButton("이  전");
 		backBt.setBounds(60, 10, 80, 40);
+		backBt.setFont(font);
 		backBt.setBackground(Color.white);
 		backBt.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
 		this.add(backBt);
@@ -76,24 +83,40 @@ public class PlayingMovie extends JPanel /*implements Serializable*/ {
 		JLabel mTitle1 = new JLabel("제목 : ", JLabel.CENTER);
 		JLabel mDirector1 = new JLabel("감독 : 케이트 쇼트랜드", JLabel.CENTER);
 		JLabel mGrade1 = new JLabel("평점 : 9.08", JLabel.CENTER);
+		mTitle1.setFont(font);
+		mDirector1.setFont(font);
+		mGrade1.setFont(font);
 		// 모가디슈
 		JLabel mTitle2 = new JLabel("제목 : ", JLabel.CENTER);
 		JLabel mDirector2 = new JLabel("감독 : 류승완", JLabel.CENTER);
 		JLabel mGrade2 = new JLabel("평점 : 9.16", JLabel.CENTER);
+		mTitle2.setFont(font);
+		mDirector2.setFont(font);
+		mGrade2.setFont(font);
 		// 피닉스
 		JLabel mTitle3 = new JLabel("제목 : ", JLabel.CENTER);
 		JLabel mDirector3 = new JLabel("감독 : 크리스티안 펫졸드", JLabel.CENTER);
 		JLabel mGrade3 = new JLabel("평점 : 8.43", JLabel.CENTER);
+		mTitle3.setFont(font);
+		mDirector3.setFont(font);
+		mGrade3.setFont(font);
 		// 랑종
 		JLabel mTitle4 = new JLabel("제목 : ", JLabel.CENTER);
 		JLabel mDirector4 = new JLabel("감독 : 반종 피산다나쿤", JLabel.CENTER);
 		JLabel mGrade4 = new JLabel("평점 : 6.82", JLabel.CENTER);
+		mTitle4.setFont(font);
+		mDirector4.setFont(font);
+		mGrade4.setFont(font);
 		
 		// 제목 따로 생성
 		JLabel mTitle11 = new JLabel("블랙 위도우 (134분)", JLabel.CENTER);
 		JLabel mTitle22 = new JLabel("모가디슈 (121분)", JLabel.CENTER);
 		JLabel mTitle33 = new JLabel("피닉스 (98분)", JLabel.CENTER);
 		JLabel mTitle44 = new JLabel("랑종 (131분)", JLabel.CENTER);
+		mTitle11.setFont(font);
+		mTitle22.setFont(font);
+		mTitle33.setFont(font);
+		mTitle44.setFont(font);
 		mTitle11.setBounds(38, 260, 200, 20);
 		mTitle22.setBounds(215, 260, 200, 20);
 		mTitle33.setBounds(397, 260, 200, 20);
@@ -139,10 +162,14 @@ public class PlayingMovie extends JPanel /*implements Serializable*/ {
 		JButton mButton3 = new JButton("영화 예매");
 		JButton mButton4 = new JButton("영화 예매");
 	
-		mButton1.setBounds(70, 380, 100, 40);
-		mButton2.setBounds(250, 380, 100, 40);
-		mButton3.setBounds(430, 380, 100, 40);
-		mButton4.setBounds(610, 380, 100, 40);
+		mButton1.setBounds(70, 380, 90, 40);
+		mButton2.setBounds(252, 380, 90, 40);
+		mButton3.setBounds(435, 380, 90, 40);
+		mButton4.setBounds(615, 380, 90, 40);
+		mButton1.setFont(tfont);
+		mButton2.setFont(tfont);
+		mButton3.setFont(tfont);
+		mButton4.setFont(tfont);
 		// 버튼 배경색
 		mButton1.setBackground(new Color(33, 150, 83));
 		mButton2.setBackground(new Color(33, 150, 83));
@@ -205,9 +232,9 @@ public class PlayingMovie extends JPanel /*implements Serializable*/ {
 	
 	public void fileSave(String str) {
 		// 영화 예매 내역 파일에 저장
-		try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("movie.txt", true))){
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter("movie.txt", true))){
 			
-			dout.writeUTF(str); // 영화제목
+			bw.write(str+ ","); // 영화제목
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

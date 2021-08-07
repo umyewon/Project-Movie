@@ -1,32 +1,42 @@
 // movie.txt 파일에 입력되는 순서
 public class MovieInfo {
 
-	String mDate1;
-	//String mDate2;	
-	String mLocation;
-	String mTitle ;
-	String mTime;
-	String mSeat;
-	
+	private String userID;
+	private String mDate;	
+	private String mLocation;
+	private String mTitle ;
+	private String mTime;
+	private String mSeat;
+	private String mNumber;
 	
 	public MovieInfo() {}
 
-	public MovieInfo(String mDate1, String mLocation, String mTitle, String mTime, String mSeat) {
+	public MovieInfo(String userID, String mDate, String mLocation, String mTitle, String mTime, String mSeat,
+			String mNumber) {
 		super();
-		this.mDate1 = mDate1;
+		this.userID = userID;
+		this.mDate = mDate;
 		this.mLocation = mLocation;
 		this.mTitle = mTitle;
 		this.mTime = mTime;
 		this.mSeat = mSeat;
-		
+		this.mNumber = mNumber;
 	}
 
-	public String getmDate1() {
-		return mDate1;
+	public String getUserID() {
+		return userID;
 	}
 
-	public void setmDate1(String mDate1) {
-		this.mDate1 = mDate1;
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
+
+	public String getmDate() {
+		return mDate;
+	}
+
+	public void setmDate(String mDate) {
+		this.mDate = mDate;
 	}
 
 	public String getmLocation() {
@@ -61,22 +71,31 @@ public class MovieInfo {
 		this.mSeat = mSeat;
 	}
 
-	
+	public String getmNumber() {
+		return mNumber;
+	}
+
+	public void setmNumber(String mNumber) {
+		this.mNumber = mNumber;
+	}
+
 	@Override
 	public String toString() {
-		return "MovieInfo [mDate1=" + mDate1 + ", mLocation=" + mLocation + ", mTitle=" + mTitle
-				+ ", mTime=" + mTime + ", mSeat=" + mSeat + "]";
+		return "MovieInfo [userID=" + userID + ", mDate=" + mDate + ", mLocation=" + mLocation + ", mTitle=" + mTitle
+				+ ", mTime=" + mTime + ", mSeat=" + mSeat + ", mNumber=" + mNumber + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((mDate1 == null) ? 0 : mDate1.hashCode());
+		result = prime * result + ((mDate == null) ? 0 : mDate.hashCode());
 		result = prime * result + ((mLocation == null) ? 0 : mLocation.hashCode());
+		result = prime * result + ((mNumber == null) ? 0 : mNumber.hashCode());
 		result = prime * result + ((mSeat == null) ? 0 : mSeat.hashCode());
 		result = prime * result + ((mTime == null) ? 0 : mTime.hashCode());
 		result = prime * result + ((mTitle == null) ? 0 : mTitle.hashCode());
+		result = prime * result + ((userID == null) ? 0 : userID.hashCode());
 		return result;
 	}
 
@@ -89,15 +108,20 @@ public class MovieInfo {
 		if (getClass() != obj.getClass())
 			return false;
 		MovieInfo other = (MovieInfo) obj;
-		if (mDate1 == null) {
-			if (other.mDate1 != null)
+		if (mDate == null) {
+			if (other.mDate != null)
 				return false;
-		} else if (!mDate1.equals(other.mDate1))
+		} else if (!mDate.equals(other.mDate))
 			return false;
 		if (mLocation == null) {
 			if (other.mLocation != null)
 				return false;
 		} else if (!mLocation.equals(other.mLocation))
+			return false;
+		if (mNumber == null) {
+			if (other.mNumber != null)
+				return false;
+		} else if (!mNumber.equals(other.mNumber))
 			return false;
 		if (mSeat == null) {
 			if (other.mSeat != null)
@@ -114,8 +138,14 @@ public class MovieInfo {
 				return false;
 		} else if (!mTitle.equals(other.mTitle))
 			return false;
+		if (userID == null) {
+			if (other.userID != null)
+				return false;
+		} else if (!userID.equals(other.userID))
+			return false;
 		return true;
 	}
+
 	
 	
 }

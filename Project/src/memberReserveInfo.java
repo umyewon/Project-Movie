@@ -1,18 +1,19 @@
 
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.DataInputStream;
-import java.io.EOFException;
-import java.io.FileInputStream;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -37,17 +38,16 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 	private List<MovieInfo> mif = new ArrayList<>();
 	
 	private JPanel reList; // 정보 출력될 패널
-	/*
-	private String userID;
-	private String userPW;
-	private String userName;
-	private String userPhone;
-	private String mDate;
-	private String mTitle;
-	private String mTime;
-	private String mSeat;
-	private String mNumber;
-	*/
+	private JDialog dialog;
+	
+	private JLabel relabel1;
+	private JLabel relabel2;
+	private JLabel relabel3;
+	private JLabel relabel4;
+	private JLabel relabel5;
+	private JLabel relabel6;
+	private JLabel relabel7;
+	
 	
 	public memberReserveInfo(MainFrame mf) {
 		this.mf = mf;
@@ -56,14 +56,18 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 		this.setLayout(null);
 		this.setBackground(Color.white);
 		
-		JLabel label = new JLabel();
-		label.setText("회원 예매 내역");
-		label.setFont(label.getFont().deriveFont(30.0f));  // 글씨크기
-		label.setBounds(290, 8, 400, 50);
+		Font hfont = new Font("맑은고딕", Font.BOLD, 30);
+		Font tfont = new Font("맑은고딕", Font.BOLD, 15);
+		Font font = new Font("맑은고딕", Font.BOLD, 13);
+		
+		JLabel label = new JLabel("회원 예매 내역", JLabel.CENTER);
+		label.setFont(hfont);
+		label.setBounds(190, 8, 400, 50);
 		this.add(label);
 		
 		JButton backbt = new JButton("이  전");
 		backbt.setBounds(60, 10, 80, 40);
+		backbt.setFont(font);
 		backbt.setBackground(Color.white);
 		backbt.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
 		this.add(backbt);
@@ -78,12 +82,11 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 			
 		JButton checkbt = new JButton("조 회");
 		checkbt.setBounds(350, 380, 90, 40);
-		checkbt.setFont(checkbt.getFont().deriveFont(15.0f));
+		checkbt.setFont(tfont);
 		checkbt.setForeground(Color.white);
 		checkbt.setBackground(new Color(33, 150, 83));
 		checkbt.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
 		this.add(checkbt);
-		
 		
 		JLabel list1 = new JLabel("순번", JLabel.CENTER);
 		JLabel list2 = new JLabel("날짜", JLabel.CENTER);
@@ -93,14 +96,22 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 		JLabel list6 = new JLabel("지점", JLabel.CENTER);
 		JLabel list7 = new JLabel("예약번호", JLabel.CENTER);
 		
+		list1.setBounds(20, 80, 100, 20);  // 순번
+		list2.setBounds(100, 80, 100, 20); // 날짜
+		list3.setBounds(240, 80, 100, 20); // 영화
+		list4.setBounds(354, 80, 100, 20); // 시간
+		list5.setBounds(455, 80, 100, 20); // 좌석
+		list6.setBounds(553, 80, 100, 20); // 지점
+		list7.setBounds(650, 80, 100, 20); // 예약번호
 		
-		list1.setBounds(30, 70, 100, 20); // 순번
-		list2.setBounds(100, 70, 100, 20); // 날짜
-		list3.setBounds(240, 70, 100, 20); // 영화
-		list4.setBounds(380, 70, 100, 20); // 시간
-		list5.setBounds(480, 70, 100, 20); // 좌석
-		list6.setBounds(590, 70, 100, 20); // 지점
-		list7.setBounds(640, 70, 100, 20); // 예약번호
+		list1.setFont(font);
+		list2.setFont(font);
+		list3.setFont(font);
+		list4.setFont(font);
+		list5.setFont(font);
+		list6.setFont(font);
+		list7.setFont(font);
+		
 		
 		this.add(list1);
 		this.add(list2);
@@ -110,113 +121,98 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 		this.add(list6);
 		this.add(list7);
 		
+		relabel1 = new JLabel("", JLabel.CENTER);
+		relabel2 = new JLabel("", JLabel.CENTER);
+		relabel3 = new JLabel("", JLabel.CENTER);
+		relabel4 = new JLabel("", JLabel.CENTER);
+		relabel5 = new JLabel("", JLabel.CENTER);
+		relabel6 = new JLabel("", JLabel.CENTER);
+		relabel7 = new JLabel("", JLabel.CENTER);
+		
+		relabel1.setFont(font);
+		relabel2.setFont(font);
+		relabel3.setFont(font);
+		relabel4.setFont(font);
+		relabel5.setFont(font);
+		relabel6.setFont(font);
+		relabel7.setFont(font);
+				
+		this.add(relabel1);
+		this.add(relabel2);
+		this.add(relabel3);
+		this.add(relabel4);
+		this.add(relabel5);
+		this.add(relabel6);
+		this.add(relabel7);
+		
 		// 조회 버튼 클릭시 조회된 정보 출력
-		checkbt.addActionListener(new Myevent());
-		reList = new JPanel();
-		reList.setBounds(0, 100, 800, 260);
-		reList.setLayout(null);
-		this.add(reList);
+		checkbt.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				checkbt.setEnabled(false);
+				try (BufferedReader br = new BufferedReader(new FileReader("movie.txt"))) {
+					
+					String line = "";
+					while((line = br.readLine()) != null) {
+						
+						String[] str = line.split(",");
+						for(int i= 0; i < str.length/7; i++) {
+							mif.add(new MovieInfo(str[i*7], str[(i*7)+1], str[(i*7)+2], str[(i*7)+3], str[(i*7)+4], str[(i*7)+5] , str[(i*7)+6]));
+						}						
+						resultinfo();
+					}
+				} catch (FileNotFoundException e1) {
+					JOptionPane.showMessageDialog(null, "Filenot", " ", JOptionPane.ERROR_MESSAGE);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
 		
 		// 메인프레임에 추가
 		mf.add(this);
 	}
-
-
-
-	class Myevent implements ActionListener{
-		
-		@Override
-		public void actionPerformed(ActionEvent event) {
-			uinfo(); // 회원정보
-			minfo(); // 예매정보
-			
-			int count = 1;
-			for(int i = 0; i < uif.size(); i++) {
-			   // 순번
-			   JLabel relabel1 = new JLabel(count++ +"", JLabel.CENTER);
-			   relabel1.setBounds(30, (20 + (i*30)), 100, 20);
-			   reList.add(relabel1);
-			   // 날짜
-			   JLabel relabel2 = new JLabel(mif.get(i).getmDate1(), JLabel.CENTER);
-			   relabel2.setBounds(100, (20 + (i*30)), 100, 20);
-			   reList.add(relabel2);
-			   // 제목
-			   JLabel relabel3 = new JLabel(mif.get(i).getmTitle(), JLabel.CENTER);
-			   relabel3.setBounds(240, (20 + (i*30)), 200, 20);
-			   reList.add(relabel3);
-			   // 시간
-			   JLabel relabel4 = new JLabel(mif.get(i).getmTime(), JLabel.CENTER);
-			   relabel4.setBounds(380, (20 + (i*30)), 100, 20);
-			   reList.add(relabel4);
-			   // 좌석
-			   JLabel relabel5 = new JLabel(mif.get(i).getmSeat(), JLabel.CENTER);
-			   relabel5.setBounds(480, (20 + (i*30)), 100, 20);
-			   reList.add(relabel5);
-			   // 지점
-			   JLabel relabel6 = new JLabel(mif.get(i).getmLocation(), JLabel.CENTER);
-			   relabel6.setBounds(590, (20 + (i*30)), 100, 20);
-			   reList.add(relabel6);
-			   // 예약번호
-			   JLabel relabel7 = new JLabel("12345", JLabel.CENTER);
-			   relabel7.setBounds(640, (20 + (i*30)), 100, 20);
-			   reList.add(relabel7);
-			}	
-		}
-	}
 	
-	
-	// 유저 파일읽어오기
-	public void uinfo() {
+
+	public void resultinfo() {
 		
-		try(DataInputStream dis = new DataInputStream(new FileInputStream("user.txt"))){
-			
-			while(true) {
-				String userID = dis.readUTF();
-				String userPW = dis.readUTF();
-				String userName = dis.readUTF();
-				String userPhone = dis.readUTF();
-				//String renumber = dis.readUTF();  //예약번호 => 나중에 예약같은지 확인
-				
-				uif.add(new UserInfo(userID, userPW, userName, userPhone)); // 여기 다읽어와서 eofec출력
+		// 정보 화면 출력용
+		
+		for(int i = 0; i < mif.size(); i++) {
+			//if(idT.getText().equals(mif.get(i).getUserID())) {
+				// 순번
+				relabel1.setText("1");
+				relabel1.setBounds(20, 130, 100, 20);
+				// 날짜
+				relabel2.setText(mif.get(i).getmDate());
+				relabel2.setBounds(103, 130, 100, 20);
+				// 제목
+				relabel3.setText(mif.get(i).getmTitle());
+				relabel3.setBounds(193, 130, 200, 20);
+				// 시간
+				relabel4.setText(mif.get(i).getmTime());
+				relabel4.setBounds(355, 130, 100, 20);
+				// 좌석
+				relabel5.setText(mif.get(i).getmSeat());
+				relabel5.setBounds(455, 130, 100, 20);
+				// 지점
+				relabel6.setText(mif.get(i).getmLocation());
+				relabel6.setBounds(555, 130, 100, 20);
+				// 예약번호
+				relabel7.setText(mif.get(i).getmNumber());
+				relabel7.setBounds(650, 130, 100, 20);
+			/*
+			} else {
+				JOptionPane.showMessageDialog(null, "구매한 내역이 없습니다.", null, JOptionPane.INFORMATION_MESSAGE);
 			}
-				
-				
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (EOFException e) {
-			JOptionPane.showMessageDialog(null, "조회 완료되었습니다.", "", JOptionPane.INFORMATION_MESSAGE);
+			*/
+		}	
 			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
-	public void minfo() {
 		
-		try(DataInputStream dis = new DataInputStream(new FileInputStream("movie.txt"))){
-			
-			while(true) {
-				
-				String mDate = dis.readUTF(); // 날짜 하나로 합침
-				String mLocation = dis.readUTF();
-				String mTitle = dis.readUTF();
-				String mTime = dis.readUTF();
-				String mSeat = dis.readUTF();
-				//String mNumber = dis.readUTF(); //예약번호
-				
-				mif.add(new MovieInfo(mDate, mLocation, mTitle, mTime, mSeat));
-				
-			}
-		
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (EOFException e) {
-			//JOptionPane.showMessageDialog(null, "조회 완료되었습니다.", "", JOptionPane.INFORMATION_MESSAGE);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 }
+	
+	
+
 
   

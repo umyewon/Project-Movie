@@ -8,9 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 
@@ -23,15 +25,16 @@ import javax.swing.JPanel;
 
 public class Date extends JPanel implements ActionListener {
 	private MainFrame mf;
-	JPanel pnmonth, pndate; // 타이틀, 달력, 버튼 패널
+	JPanel pnmonth, pndate; // 타이틀 + 버튼 패널 / 달력 패널
 	JLabel month_value;
 	JButton[] date_value = new JButton[49];
-	JButton left;   // 왼쪽 버튼
-	JButton right;  // 오른쪽 버튼
+	JButton left;        // 이전 달 버튼
+	JButton right;       // 다음 달 버튼
 	JButton previous;    // 이전으로 버튼 (메인화면)
  	JButton next;		 // 다음으로 버튼 (지점 선택)
 	calendar calendar = new calendar();
 	String dd;
+	int clickcnt;
 	
 	public Date(MainFrame mf) {
 		this.mf = mf;
@@ -109,6 +112,75 @@ public class Date extends JPanel implements ActionListener {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				// 날짜 변경 됐을 때 변경된 값만 저장하게 무비 파일에 저장할 날짜 정보 여기서 입력
+				if(dd.equals("1일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("2일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("3일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("4일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("5일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("6일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("7일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("8일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("9일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("10일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("11일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("12일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("13일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("14일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("15일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("16일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("17일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("18일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("19일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("20일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("21일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("22일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("23일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("24일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("25일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("26일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("27일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("28일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("28일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("29일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("30일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				else if(dd.equals("31일"))
+					fileSave(calendar.getCalText() + " " +dd);
+				
+				
+				// 지점 선택 화면으로 이동
 				new Location(mf);
 				setVisible(false);
 			}
@@ -123,7 +195,7 @@ public class Date extends JPanel implements ActionListener {
 		pndate.setBackground(Color.white);
 		pndate.setLayout(new GridLayout(0,7,5,5));  // 일은 그리드 레이아웃으로 설정
 		pndate.setBounds(100,110, 600, 400);
-		String dd = "";
+		dd = "";
 		
 		for(int i =0; i < date_value.length; i++) { 
 			String[] d= {"  일  ", "  월  ", "  화  ", "  수  ", "  목  ", "  금  ", "  토  "};
@@ -147,16 +219,19 @@ public class Date extends JPanel implements ActionListener {
 		}
 		
 		
-		// 캘린더 날짜 선택 이벤트 처리
+		// **** 캘린더 날짜 선택 시 이벤트 처리 : 선택 된 날짜 표시하고, 날짜 변경 시 표시된 위치 바뀜
+		clickcnt = 0;  // 클릭 횟수
 		date_value[7].addMouseListener(new MouseAdapter() {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[7].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "1일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd ="1일"; 
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[7].setIcon(null);
+						dd="";
+					}
 			}
 		});
 		
@@ -165,10 +240,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[8].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "2일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "2일";
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[8].setIcon(null);
+						dd="";
+					}
 					
 			}
 		});
@@ -177,10 +254,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[9].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "3일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "3일";
+					 ++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[9].setIcon(null);
+						dd="";
+					}
 			}
 		});
 		date_value[10].addMouseListener(new MouseAdapter() {
@@ -188,10 +267,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[10].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "4일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "4일";
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[10].setIcon(null);
+						dd="";
+					}
 			}
 		});
 		date_value[11].addMouseListener(new MouseAdapter() {
@@ -199,10 +280,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[11].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "5일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "5일";
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[11].setIcon(null);
+						dd="";
+					}
 			}
 		});
 		date_value[12].addMouseListener(new MouseAdapter() {
@@ -210,10 +293,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[12].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "6일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "6일";
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[12].setIcon(null);
+						dd="";
+					}
 			}
 		});
 		date_value[13].addMouseListener(new MouseAdapter() {
@@ -221,10 +306,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[13].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "7일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "7일";
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[13].setIcon(null);
+						dd="";
+					}
 			}
 		});
 		date_value[14].addMouseListener(new MouseAdapter() {
@@ -232,10 +319,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[14].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "8일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "8일";
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[134].setIcon(null);
+						dd="";
+					}
 			}
 		});
 		date_value[15].addMouseListener(new MouseAdapter() {
@@ -243,10 +332,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[15].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "9일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "9일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[15].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		
@@ -255,10 +346,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[16].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "10일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "10일";
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[16].setIcon(null);
+						dd="";
+					}
 			}
 		});
 		date_value[17].addMouseListener(new MouseAdapter() {
@@ -266,10 +359,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[17].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "11일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "11일";
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[17].setIcon(null);
+						dd="";
+					}
 			}
 		});
 		date_value[18].addMouseListener(new MouseAdapter() {
@@ -277,20 +372,24 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[18].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "12일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "12일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[18].setIcon(null);
+							dd="";
+						}
 			}
 		});date_value[19].addMouseListener(new MouseAdapter() {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[19].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "13일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "13일";
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						date_value[19].setIcon(null);
+						dd="";
+					}
 			}
 		});
 		date_value[20].addMouseListener(new MouseAdapter() {
@@ -298,10 +397,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[20].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "14일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "14일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[20].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[21].addMouseListener(new MouseAdapter() {
@@ -309,10 +410,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[21].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "15일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "15일";
+					++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[21].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[22].addMouseListener(new MouseAdapter() {
@@ -320,10 +423,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[22].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "16일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "16일";
+					++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[22].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[23].addMouseListener(new MouseAdapter() {
@@ -331,10 +436,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[23].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "17일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "17일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[23].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[24].addMouseListener(new MouseAdapter() {
@@ -342,10 +449,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[24].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "18일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "18일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[24].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[25].addMouseListener(new MouseAdapter() {
@@ -353,10 +462,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[25].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "19일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "19일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[25].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[26].addMouseListener(new MouseAdapter() {
@@ -364,10 +475,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[26].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "20일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "20일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[26].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[27].addMouseListener(new MouseAdapter() {
@@ -375,20 +488,24 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[27].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "21일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "21일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[27].setIcon(null);
+							dd="";
+						}
 			}
 		});date_value[28].addMouseListener(new MouseAdapter() {
 
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[28].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "22일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "22일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[28].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[29].addMouseListener(new MouseAdapter() {
@@ -396,10 +513,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[29].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "23일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "23일";
+					++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[29].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[30].addMouseListener(new MouseAdapter() {
@@ -407,10 +526,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[30].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "24일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "24일";
+					++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[30].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[31].addMouseListener(new MouseAdapter() {
@@ -418,10 +539,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[31].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "25일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "25일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[31].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[32].addMouseListener(new MouseAdapter() {
@@ -429,10 +552,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[32].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "26일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "26일";
+					++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[32].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[33].addMouseListener(new MouseAdapter() {
@@ -440,10 +565,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[33].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "27일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					 dd = "27일";
+					 ++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[33].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[34].addMouseListener(new MouseAdapter() {
@@ -451,10 +578,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[34].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "28일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "28일";
+					++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[34].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[35].addMouseListener(new MouseAdapter() {
@@ -462,10 +591,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[35].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "29일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "29일";
+					++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[35].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		date_value[36].addMouseListener(new MouseAdapter() {
@@ -473,10 +604,12 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[36].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "30일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "30일";
+					++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[36].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		
@@ -485,18 +618,17 @@ public class Date extends JPanel implements ActionListener {
 			@Override
 			public void mousePressed(MouseEvent e) {
 					date_value[36].setIcon(new ImageIcon("icon/circle.png"));
-					String dd = "31일";
-					//System.out.print(calendar.getCalText());
-					//System.out.println(dd);
-					fileSave(calendar.getCalText() +" "+ dd);
+					dd = "31일";
+					++clickcnt;
+					 if(clickcnt % 2 == 0) {
+							date_value[37].setIcon(null);
+							dd="";
+						}
 			}
 		});
 		
 		calendar.setButton(date_value);
 		calendar.calSet();
-		
-		
-		
 		
 		this.add(pndate, "Center");
 		this.setVisible(true);
@@ -504,29 +636,20 @@ public class Date extends JPanel implements ActionListener {
 		mf.add(this);
 	}
 	
-	// 날짜 선택 정보 유저 파일에 저장   
-<<<<<<< HEAD
-		public void fileSave(String str) {
-			try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("movie.txt", true))){
-				//dout.writeUTF(calendar.getCalText());
-				dout.writeUTF(str);
-=======
-		public void fileSave() {
-			try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt"))){
-				dout.writeUTF(calendar.getCalText());
-				dout.writeUTF(dd);
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
-				
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+	// 날짜 선택 정보 무비 파일에 저장   
+	// DataOutput/InputStream 사용하니깐 계속 EOFException 오류나서 BufferedWirter/Reader로 변경
+	// 콤마는 split 사용하기 위해 구분자 입력
+	public void fileSave(String str) {
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter("movie.txt", true))){
+			bw.write(str + ","); 				
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+	}
 	
-	
-	
-	
+	// <, > 아이콘 클릭 시 이전달, 다음달 달력으로 이동
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == left) {  // 이전달
@@ -596,5 +719,4 @@ public class Date extends JPanel implements ActionListener {
 		
 		
 	}
-	
-}
+	}

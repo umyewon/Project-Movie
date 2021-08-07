@@ -5,9 +5,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.Icon;
@@ -129,7 +131,7 @@ public class Location extends JPanel {
 		this.add(th8);
 
 		
-		// **** 버튼 클릭 이벤트 처리 ****
+		// **** 검색 버튼 이벤트 처리 ****
 		// 1. 검색 버튼 클릭 : 사용자가 검색한 지점이 표시됨
 		// 존재하지 않는 지점 선택 시 다시 입력
 		search.addMouseListener(new MouseAdapter() {
@@ -143,56 +145,48 @@ public class Location extends JPanel {
 					if (input.getText().contains(str[0])) {
 						th1.setForeground(new Color(246, 246, 246));
 						th1.setBackground(new Color(33, 150, 83).darker());
-						//System.out.println(str[0] + " 점");
 						ll = str[0];
 						fileSave(ll + "점");
 						break;
 					} else if (input.getText().contains(str[1])) {
 						th2.setForeground(new Color(246, 246, 246));
 						th2.setBackground(new Color(33, 150, 83).darker());
-						//System.out.println(str[1] + " 점");
 						ll = str[1];
 						fileSave(ll + "점");
 						break;
 					} else if (input.getText().contains(str[2])) {
 						th3.setForeground(new Color(246, 246, 246));
 						th3.setBackground(new Color(33, 150, 83).darker());
-						//System.out.println(str[2] + " 점");
 						ll = str[2];
 						fileSave(ll + "점");
 						break;
 					} else if (input.getText().contains(str[3])) {
 						th4.setForeground(new Color(246, 246, 246));
 						th4.setBackground(new Color(33, 150, 83).darker());
-						//System.out.println(str[3] + " 점");
 						ll = str[3];
 						fileSave(ll + "점");
 						break;
 					} else if (input.getText().contains(str[4])) {
 						th5.setForeground(new Color(246, 246, 246));
 						th5.setBackground(new Color(33, 150, 83).darker());
-						//System.out.println(str[4] + " 점");
 						ll = str[4];
 						fileSave(ll + "점");
 						break;
 					} else if (input.getText().contains(str[5])) {
 						th6.setForeground(new Color(246, 246, 246));
 						th6.setBackground(new Color(33, 150, 83).darker());
-						//System.out.println(str[5] + " 점");
 						ll = str[5];
 						fileSave(ll + "점");
 						break;
 					} else if (input.getText().contains(str[6])) {
 						th7.setForeground(new Color(246, 246, 246));
 						th7.setBackground(new Color(33, 150, 83).darker());
-						//System.out.println(str[6] + " 점");
 						ll = str[6];
 						fileSave(ll + "점");
 						break;
 					} else if (input.getText().contains(str[7])) {
 						th8.setForeground(new Color(246, 246, 246));
 						th8.setBackground(new Color(33, 150, 83).darker());
-						//System.out.println(str[7] + " 점");
 						ll = str[7];
 						fileSave(ll + "점");
 						break;
@@ -244,23 +238,21 @@ public class Location extends JPanel {
 				
 			}
 		});
-		
-
-
 		mf.add(this);
 	}
 	
 	// 영화관 정보 유저 파일에 저장   
-		public void fileSave(String str) {
-			try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("movie.txt", true))){
-				dout.writeUTF(str);
-				
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+	// DataOutput/InputStream 사용하니깐 계속 EOFException 오류나서 BufferedWirter/Reader로 변경
+	// 콤마는 split 사용하기 위해 구분자 입력
+	public void fileSave(String str) {
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter("movie.txt", true))){
+			bw.write(str + ","); 				
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+	}
 
 
 }

@@ -4,9 +4,11 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.JButton;
@@ -134,12 +136,20 @@ public class JoinR extends JPanel{
 	
 	// 회원 정보 파일 저장
 	public void fileSave() {
-		try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("user.txt", true))){
-			dout.writeUTF(idT.getText());
-			dout.writeUTF(pwT.getText());
-			dout.writeUTF(nameT.getText());
-			dout.writeUTF(telT.getText());		
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter("user.txt", true))){
+			bw.write(idT.getText() + ",");
+			bw.write(pwT.getText() + ",");
+			bw.write(nameT.getText() + ",");
+			bw.write(telT.getText() + ",");
 			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		// 아이디 movie.txt에 저장 => 추후 회원 조회할때 아이디 값으로 비교
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter("movie.txt", true))){
+			bw.write(idT.getText() + ",");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

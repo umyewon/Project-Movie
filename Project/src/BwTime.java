@@ -1,14 +1,17 @@
 
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.BorderFactory;
@@ -32,15 +35,19 @@ public class BwTime extends JPanel /*implements Serializable*/ {
 		this.setBackground(Color.white);
 		this.setLayout(null);
 		
-		JLabel label = new JLabel();
-		label.setText("상영 시간");
-		label.setFont(label.getFont().deriveFont(30.0f));  // 글씨크기
-		label.setBounds(320, 8, 200, 50);
+		Font hfont = new Font("맑은고딕", Font.BOLD, 30);
+		Font tfont = new Font("맑은고딕", Font.BOLD, 15);
+		Font font = new Font("맑은고딕", Font.BOLD, 12);
+		
+		JLabel label = new JLabel("상영 시간", JLabel.CENTER);
+		label.setFont(hfont);  // 글씨크기
+		label.setBounds(310, 8, 200, 50);
 		this.add(label);
 		
 		// 이전버튼
 		JButton backbt = new JButton("이  전");
 		backbt.setBounds(60, 10, 80, 40);
+		backbt.setFont(font);
 		backbt.setBackground(Color.white);
 		backbt.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
 		this.add(backbt);
@@ -60,7 +67,7 @@ public class BwTime extends JPanel /*implements Serializable*/ {
 		this.add(mImage1);
 		// 제목
 		JLabel mTitle1 = new JLabel("블랙 위도우 (134분)", JLabel.CENTER);
-		mTitle1.setFont(mTitle1.getFont().deriveFont(15.0f)); 
+		mTitle1.setFont(tfont); 
 		mTitle1.setBounds(60, 370, 200, 20);
 		this.add(mTitle1);
 		
@@ -89,55 +96,55 @@ public class BwTime extends JPanel /*implements Serializable*/ {
 		time1.setOpaque(true);
 		time1.setBackground(new Color(33, 150, 83));
 		time1.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
-		time1.setFont(time1.getFont().deriveFont(15.0f));
+		time1.setFont(tfont); 
 		time1.setForeground(Color.white);
 		JLabel time2 = new JLabel("08:30", JLabel.CENTER);
 		time2.setOpaque(true);
 		time2.setBackground(new Color(33, 150, 83));
 		time2.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
-		time2.setFont(time2.getFont().deriveFont(15.0f));
+		time2.setFont(tfont); 
 		time2.setForeground(Color.white);
 		JLabel time3 = new JLabel("11:00", JLabel.CENTER);
 		time3.setOpaque(true);
 		time3.setBackground(new Color(33, 150, 83));
 		time3.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
-		time3.setFont(time3.getFont().deriveFont(15.0f));
+		time3.setFont(tfont); 
 		time3.setForeground(Color.white);
 		JLabel time4 = new JLabel("13:30", JLabel.CENTER);
 		time4.setOpaque(true);
 		time4.setBackground(new Color(33, 150, 83));
 		time4.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
-		time4.setFont(time4.getFont().deriveFont(15.0f));
+		time4.setFont(tfont); 
 		time4.setForeground(Color.white);
 		JLabel time5 = new JLabel("16:00", JLabel.CENTER);
 		time5.setOpaque(true);
 		time5.setBackground(new Color(33, 150, 83));
 		time5.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
-		time5.setFont(time5.getFont().deriveFont(15.0f));
+		time5.setFont(tfont); 
 		time5.setForeground(Color.white);
 		JLabel time6 = new JLabel("18:30", JLabel.CENTER);
 		time6.setOpaque(true);
 		time6.setBackground(new Color(33, 150, 83));
 		time6.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
-		time6.setFont(time6.getFont().deriveFont(15.0f));
+		time6.setFont(tfont); 
 		time6.setForeground(Color.white);
 		JLabel time7 = new JLabel("21:00", JLabel.CENTER);
 		time7.setOpaque(true);
 		time7.setBackground(new Color(33, 150, 83));
 		time7.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
-		time7.setFont(time7.getFont().deriveFont(15.0f));
+		time7.setFont(tfont); 
 		time7.setForeground(Color.white);
 		JLabel time8 = new JLabel("23:30", JLabel.CENTER);
 		time8.setOpaque(true);
 		time8.setBackground(new Color(33, 150, 83));
 		time8.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
-		time8.setFont(time8.getFont().deriveFont(15.0f));
+		time8.setFont(tfont); 
 		time8.setForeground(Color.white);
 		JLabel time9 = new JLabel("26:00", JLabel.CENTER);
 		time9.setOpaque(true);
 		time9.setBackground(new Color(33, 150, 83));
 		time9.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
-		time9.setFont(time9.getFont().deriveFont(15.0f));
+		time9.setFont(tfont); 
 		time9.setForeground(Color.white);	
 		
 		// 위치 및 크기
@@ -193,12 +200,12 @@ public class BwTime extends JPanel /*implements Serializable*/ {
 		// 확인 문구
 		JLabel msg = new JLabel("시간 선택해 주십시오.", JLabel.CENTER);
 		msg.setBounds(370, 300, 300, 50);
-		msg.setFont(msg.getFont().deriveFont(15.0f));
+		msg.setFont(tfont); 
 		this.add(msg);
 		// 확인 버튼
 		JButton checkbt = new JButton("확 인");
 		checkbt.setBounds(470, 360, 90, 40);
-		checkbt.setFont(checkbt.getFont().deriveFont(15.0f));
+		checkbt.setFont(tfont); 
 		checkbt.setForeground(Color.white);
 		checkbt.setBackground(new Color(33, 150, 83));
 		checkbt.setBorder(BorderFactory.createLineBorder(new Color(33, 150, 83)));
@@ -295,9 +302,9 @@ public class BwTime extends JPanel /*implements Serializable*/ {
 	
 	public void fileSave(String str) {
 		// 영화 시간 내역 파일에 저장
-		try(DataOutputStream dout = new DataOutputStream(new FileOutputStream("movie.txt", true))){
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter("movie.txt", true))){
 			
-			dout.writeUTF(str); // 영화시간
+			bw.write(str + ","); // 영화시간
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

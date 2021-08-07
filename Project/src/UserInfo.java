@@ -1,12 +1,11 @@
 // user파일에 저장된 순서
 public class UserInfo /*implements Serializable*/ {
 
-	
 	private String userID;
 	private String userPW;
 	private String userName;
 	private String userPhone;
-	
+
 	
 	public UserInfo() {}
 
@@ -111,7 +110,5 @@ public class UserInfo /*implements Serializable*/ {
 		return true;
 	}
 
-	
-	
 	
 }

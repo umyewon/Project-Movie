@@ -2,10 +2,16 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -20,6 +26,7 @@ public class LoginC extends JPanel{
 	private JPanel LoginC;
 	private JButton login, join;
 	private JTextField idT, pwT;
+	private List<UserInfo> uif = new ArrayList<>();
 	
 	public LoginC(MainFrame mf) {
 		this.mf = mf;
@@ -88,33 +95,41 @@ public class LoginC extends JPanel{
 		mf.add(this);
 	}
 
-	private class userFile implements ActionListener {
-
+	public class userFile implements ActionListener {
+		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			try (DataInputStream din = new DataInputStream(new FileInputStream("user.txt"))) {
-				String id = din.readUTF();
-				String pw = din.readUTF();
-
-				if (id.equals(idT.getText()) && pw.equals(pwT.getText())) {
-					new memberReserveInfo(mf);
-					setVisible(false);
-					
-				} else if (!id.equals(idT.getText())) {
-					JOptionPane.showMessageDialog(null, "존재하지 않는 회원입니다.", " ", JOptionPane.ERROR_MESSAGE);
-				} else if (!pw.equals(pwT.getText())) {
-					JOptionPane.showMessageDialog(null, "비밀번호가 일치하지 않습니다.", " ", JOptionPane.ERROR_MESSAGE);
-				}
-	
+			
+			try (BufferedReader br = new BufferedReader(new FileReader("user.txt"))) {
 				
+				String line = "";
+				while((line = br.readLine()) != null) {
+									
+					String[] str = line.split(",");	
+					for(int i= 0; i < str.length/4; i++) {
+						uif.add(new UserInfo(str[i*4], str[(i*4)+1], str[(i*4)+2], str[(i*4)+3]));
+					}
+				}
+				
+				// 제일 처음에 저장한 회원정보는 인덱스 0 으로 잘읽히는데 추가로 회원가입하면 인덱스1 부터는 안읽혀요...왜그럴까요...?
+				for(int i = 0; i < uif.size(); i++) {
+					if ((uif.get(i).getUserID()).equals(idT.getText()) && (uif.get(i).getUserPW()).equals(pwT.getText())) {
+						new memberReserveInfo(mf);
+						setVisible(false);
+						break;						
+					} else if (!(uif.get(i).getUserID()).equals(idT.getText())) {
+						JOptionPane.showMessageDialog(null, "존재하지 않는 회원입니다.", " ", JOptionPane.ERROR_MESSAGE);
+						break;
+					} else if (!(uif.get(i).getUserPW()).equals(pwT.getText())) {
+						JOptionPane.showMessageDialog(null, "비밀번호가 일치하지 않습니다.", " ", JOptionPane.ERROR_MESSAGE);
+						break;
+					}
+				}
 			} catch (FileNotFoundException e1) {
-				JOptionPane.showMessageDialog(null, "존재하지 않는 회원입니다.", " ", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Filenot", " ", JOptionPane.ERROR_MESSAGE);
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-
 		}
-
 	}
-
 }
