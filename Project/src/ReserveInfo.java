@@ -16,7 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class ReserveInfo extends JPanel /*implements Serializable*/ {
-	
 
 	private MainFrame mf;
 	private JPanel ReserveInfo;
