@@ -69,8 +69,7 @@ public class Seat extends JPanel {
 		this.add(clist);
 		
 		
-		// *** 버튼 클릭 이벤트 처리  : 예매인원 한번 선택하면 변경 불가
-		
+		// *** 콤보박스 이벤트 처리  : 예매인원 한번 선택하면 변경 불가 
 		clist.addActionListener(new ActionListener() {
 			
 			@Override
@@ -458,7 +457,7 @@ public class Seat extends JPanel {
 		
 		
 		
-		// *** 좌석 버튼 이벤트 처리 : 선택 된 자리 체크
+		// *** 좌석 버튼 이벤트 처리 : 선택 된 자리 색 변경으로 체크 (자리 변경 가능)
 		clickcnt = 0;  // 클릭 횟수
 
 		s1.addMouseListener(new MouseAdapter() {
