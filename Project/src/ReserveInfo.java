@@ -15,8 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
-
 public class ReserveInfo extends JPanel /*implements Serializable*/ {
 	
 
@@ -177,8 +175,8 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
 				   // 예약번호
 				   JLabel relabel7 = new JLabel(mif.get(i).getmNumber, JLabel.CENTER);
 				   relabel7.setBounds(640, (20 + (30)), 100, 20);
-				   reList.add(relabel7);
-								
+				   reList.add(relabel7);			
+				  
 			}else { // 중복되는 값이 없을 경우
 				re.setText("번호를 다시 확인하여 주십시오."); // false일 시 번호를 다시 확인해달라는 라벨 띄움					
 			}
@@ -198,7 +196,7 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
 				String mSeat = dis.readUTF();
 				//String mNumber = dis.readUTF(); //예매번호
 				
-				mif.add(new MovieInfo(mDate, mLocation, mTitle, mTime, mSeat/*, mNumber*/));			
+				mif.add(new MovieInfo(mDate, mLocation, mTitle, mTime, mSeat, mNumber));			
 			}	
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
