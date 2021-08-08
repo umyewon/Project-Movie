@@ -57,7 +57,7 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       this.add(label);
  
       // 텍스트 필드 생성 후 패널에 부착
-      JTextField text = new JTextField(15);
+      text = new JTextField(15);
       text.setBounds(132, 22, 150, 30);
       this.add(text);
       
@@ -98,7 +98,6 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       JLabel list6 = new JLabel("지점", JLabel.CENTER);
       JLabel list7 = new JLabel("예약번호", JLabel.CENTER);
       
-      
       list1.setBounds(30, 70, 100, 20); // 순번
       list2.setBounds(120, 70, 100, 20); // 날짜
       list3.setBounds(250, 70, 100, 20); // 영화
@@ -106,7 +105,6 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       list5.setBounds(470, 70, 100, 20); // 좌석
       list6.setBounds(557, 70, 100, 20); // 지점
       list7.setBounds(640, 70, 100, 20); // 예약번호
-      
       
       list1.setFont(font);
       list2.setFont(font);
@@ -116,8 +114,6 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       list6.setFont(font);
       list7.setFont(font);
       
-      
-      
       this.add(list1);
       this.add(list2);
       this.add(list3);
@@ -125,7 +121,6 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       this.add(list5);
       this.add(list6);
       this.add(list7);
-      
       
       relabel1 = new JLabel("", JLabel.CENTER);
       relabel2 = new JLabel("", JLabel.CENTER);
@@ -150,7 +145,6 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       this.add(relabel5);
       this.add(relabel6);
       this.add(relabel7);
-      
 
       // 조회 버튼 클릭시 조회된 정보 출력
       checkbt.addActionListener(new ActionListener() {
@@ -188,8 +182,10 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       // 정보 화면 출력용
       int index = -1; //for문은 0부터 돌기 때문에 index를 0으로 설정하면 내가 찾는 값과 배열의 담긴 값이 같지 않아도 출력될 수 있기 때문.
       for(int i = 0; i < mif.size(); i++) {   //mif라는 객체배열 전체 크기만큼 돌아서
+    	     	  
          if(text.getText().equals(mif.get(i).getmNumber())){  //이미 저장되있는 예매번호와 사용자에게 입력받은 text가 일치하는지 여부 확인 
-            index = i;
+        	index = i;
+        	
          }
       }
       if(index > -1) { //일치 값이 있어서 인덱스가 값이 변했다면, 일치한 i번째 값을 모두 가져와 JLabel에 넣고 위치지정하여 보여준다.(예매번호는 중복되지 않으므로 배열사용 안 함)
