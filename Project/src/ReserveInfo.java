@@ -36,7 +36,6 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
    private List<MovieInfo> mif = new ArrayList<>();
    
    JTextField text;
-   JLabel re;
    int i;
 
    public ReserveInfo(MainFrame mf) {
@@ -60,12 +59,6 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       text = new JTextField(15);
       text.setBounds(132, 22, 150, 30);
       this.add(text);
-      
-      JLabel re = new JLabel(" "); // 추후 예매번호 틀릴 시 내용 변경 "번호를 다시 확인해주십시오."됨.
-      re.setBounds(290, 15, 300, 50);
-      re.setFont(tfont);
-      re.setForeground(Color.red);
-      this.add(re);
     
       JButton backbt = new JButton("이  전");
       backbt.setBounds(670, 10, 80, 40);
@@ -166,7 +159,6 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
                }
             } catch (FileNotFoundException e1) {
                JOptionPane.showMessageDialog(null, "Filenot", " ", JOptionPane.ERROR_MESSAGE);
-               re.setText("번호를 다시 확인하여 주십시오.");
             } catch (IOException e1) {
                e1.printStackTrace();
             }
@@ -183,10 +175,8 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       // 정보 화면 출력용
       int index = -1; //for문은 0부터 돌기 때문에 index를 0으로 설정하면 내가 찾는 값과 배열의 담긴 값이 같지 않아도 출력될 수 있기 때문.
       for(int i = 0; i < mif.size(); i++) {   //mif라는 객체배열 전체 크기만큼 돌아서
-    	     	  
          if(text.getText().equals(mif.get(i).getmNumber())){  //이미 저장되있는 예매번호와 사용자에게 입력받은 text가 일치하는지 여부 확인 
         	index = i;
-        	
          }
       }
       if(index > -1) { //일치 값이 있어서 인덱스가 값이 변했다면, 일치한 i번째 값을 모두 가져와 JLabel에 넣고 위치지정하여 보여준다.(예매번호는 중복되지 않으므로 배열사용 안 함)
@@ -211,10 +201,10 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
             // 예약번호
             relabel7.setText(mif.get(i).getmNumber());
             relabel7.setBounds(640, 100, 100, 20);
-            re.setText(" "); //정상 출력될 때 번호 다시 확인해달라는 라벨 지움. 
-      }else { // 중복되는 값이 없을 경우
-         re.setText("번호를 다시 확인하여 주십시오."); // false일 시 번호를 다시 확인해달라는 라벨 띄움               
       }   
+      if(!text.getText().equals(mif.get(i).getmNumber())){
+    	  JOptionPane.showMessageDialog(null, "예매번호 다시 확인하십시오.", " ", JOptionPane.ERROR_MESSAGE);
+      }
    }
 }
 
