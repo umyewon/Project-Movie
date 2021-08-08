@@ -57,7 +57,11 @@ public class WaitingR extends JPanel{	//예매
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< HEAD
 				new ReserveInfo(mf);		// 버튼 클릭 시 클래스 전환
+=======
+				new Date(mf);		// 버튼 클릭 시 클래스 전환
+>>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 				setVisible(false);	// 기존 창 보이지 않게
 			}
 		});

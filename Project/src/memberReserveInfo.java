@@ -185,6 +185,7 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 		for(int i = 0; i < mif.size(); i++) {
 			
 			//if(idT.getText().equals(mif.get(i).getUserID())) {
+			
 				// 순번
 				relabel1.setText("1");
 				relabel1.setBounds(20, 130, 100, 20);
@@ -206,10 +207,16 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 				// 예약번호
 				relabel7.setText(mif.get(i).getmNumber());
 				relabel7.setBounds(650, 130, 100, 20);
+<<<<<<< HEAD
 			
 			/*	
 			} 
 			else {
+=======
+				
+			/*
+			} else {
+>>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
 				JOptionPane.showMessageDialog(null, "구매한 내역이 없습니다.", null, JOptionPane.INFORMATION_MESSAGE);
 			}
 			*/
@@ -232,6 +239,3 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 }
 	
 	
-
-
-  
