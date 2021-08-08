@@ -19,6 +19,14 @@ public class MainFrame extends JFrame{
 			e.printStackTrace();
 		}
 		
+		
+		this.add(new foodPanel2(this));
+	      this.remove(new foodPanel2(this));
+	      this.add(new foodPanel3(this));
+	      this.remove(new foodPanel3(this));
+	      this.revalidate();
+	      this.repaint();
+		
 		// 메인 페이지
 		new Main(this);
 
