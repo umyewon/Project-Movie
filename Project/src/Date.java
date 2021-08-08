@@ -646,7 +646,7 @@ public class Date extends JPanel implements ActionListener {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+	
 	}
 	
 	// <, > 아이콘 클릭 시 이전달, 다음달 달력으로 이동
