@@ -140,7 +140,7 @@ public class JoinR extends JPanel{
 			bw.write(idT.getText() + ",");
 			bw.write(pwT.getText() + ",");
 			bw.write(nameT.getText() + ",");
-			bw.write(telT.getText() + ",");
+			bw.write(telT.getText() + ",12345,");
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

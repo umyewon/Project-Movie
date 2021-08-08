@@ -1891,7 +1891,7 @@ public class Seat extends JPanel {
 	// 콤마는 split 사용하기 위해 구분자 입력
 	public void fileSave(String str) {
 		try(BufferedWriter bw = new BufferedWriter(new FileWriter("movie.txt", true))){
-			bw.write(str + "," +"12345"); 				
+			bw.write(str + "," +"12345,"); 				
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
