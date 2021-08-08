@@ -56,7 +56,7 @@ public class WaitingC extends JPanel{	//조회
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//new Waiting();		// 버튼 클릭 시 클래스 전환
+				new ReserveInfo(mf);		// 버튼 클릭 시 클래스 전환
 				setVisible(false);	// 기존 창 보이지 않게
 			}
 		});
