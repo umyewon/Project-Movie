@@ -194,7 +194,7 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       
       int index = -1; //for문은 0부터 돌기 때문에 index를 0으로 설정하면 내가 찾는 값과 배열의 담긴 값이 같지 않아도 출력될 수 있기 때문.
       for(int i = 0; i < mif.size(); i++) {   //mif라는 객체배열 전체 크기만큼 돌아서
-         if(text.equals(mif.get(i).getmNumber())){  //이미 저장되있는 예매번호와 사용자에게 입력받은 text가 일치하는지 여부 확인 
+         if(text.getText().equals(mif.get(i).getmNumber())){  //이미 저장되있는 예매번호와 사용자에게 입력받은 text가 일치하는지 여부 확인 
             index = i;
          }
       }
