@@ -1,9 +1,10 @@
-
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -17,9 +18,9 @@ import javax.swing.SpinnerNumberModel;
 
 public class foodPanel1 extends JPanel
 {
-	public static int count_food1 = 0;
-	public static int count_food2 = 0;
-	public static int count_food3 = 0;
+	private static int count_food1 = 0;
+	private static int count_food2 = 0;
+	private static int count_food3 = 0;
 	
 	private MainFrame fm;
 	private JPanel foodPanel1;
@@ -46,15 +47,15 @@ public class foodPanel1 extends JPanel
 		
 		fm.add(this);
 		
-		JButton button_ok = new JButton("ê²? ? •");
+		JButton button_ok = new JButton("ê²° ì •");
 		button_ok.setBackground(new Color(33, 150, 83));
 		button_ok.setForeground(Color.white);
 		button_ok.setFont(new Font("",Font.PLAIN,20));
-		JButton button_left = new JButton("??");
+		JButton button_left = new JButton("â—€");
 		button_left.setBackground(new Color(33, 150, 83));
 		button_left.setForeground(Color.white);
 		button_left.setFont(new Font("",Font.PLAIN,20));
-		JButton button_right = new JButton("?–¶");
+		JButton button_right = new JButton("â–¶");
 		button_right.setBackground(new Color(33, 150, 83));
 		button_right.setForeground(Color.white);
 		button_right.setFont(new Font("",Font.PLAIN,20));
@@ -71,15 +72,15 @@ public class foodPanel1 extends JPanel
 		panel2.add(label2);
 		panel3.add(label3);
 		
-		JLabel money1 = new JLabel("5000?›");
+		JLabel money1 = new JLabel("5000ì›");
 		money1.setFont(new Font("",Font.PLAIN,20));
 		panel4.add(money1);
 		
-		JLabel money2 = new JLabel("7000?›");
+		JLabel money2 = new JLabel("7000ì›");
 		money2.setFont(new Font("",Font.PLAIN,20));
 		panel5.add(money2);
 		
-		JLabel money3 = new JLabel("7000?›");
+		JLabel money3 = new JLabel("7000ì›");
 		money3.setFont(new Font("",Font.PLAIN,20));
 		panel6.add(money3);
 		
@@ -104,12 +105,12 @@ public class foodPanel1 extends JPanel
 		panel6.add(button_right);
 		
 		panel5.add(new JLabel(" "));
-		JLabel menu_name = new JLabel("?Œì½? ë©”ë‰´");
+		JLabel menu_name = new JLabel("íŒì½˜ ë©”ë‰´");
 		menu_name.setFont(new Font("",Font.PLAIN,20));
 		panel5.add(menu_name);
 		
-		button_ok.addMouseListener(new MyMouseAdapterToBill());
-		button_right.addMouseListener(new MyMouseAdapter());
+		button_ok.addActionListener(new MyActionListenerToBill());
+		button_right.addActionListener(new MyActionListener());
 		
 		this.setBackground(Color.white);
 		panel1.setBackground(Color.white);
@@ -127,15 +128,16 @@ public class foodPanel1 extends JPanel
 		foodPanel1.add(panel6);
 	}
 	
-	class MyMouseAdapter extends MouseAdapter
+	class MyActionListener implements ActionListener
 	{
 		@Override
-		public void mouseClicked(MouseEvent e)
+		public void actionPerformed(ActionEvent e) 
 		{
 			count_food1 = (int) spinner1.getValue();
 			count_food2 = (int) spinner2.getValue();
 			count_food3 = (int) spinner3.getValue();
-			ChangePanel.ChangePanel(fm,foodPanel1,new foodPanel2(fm));
+			new foodPanel2(fm);
+			setVisible(false);
 		}
 	}
 	
@@ -152,10 +154,10 @@ public class foodPanel1 extends JPanel
 		return (int) spinner3.getValue();
 	}
 	
-	class MyMouseAdapterToBill extends MouseAdapter
+	class MyActionListenerToBill implements ActionListener
 	{
 		@Override
-		public void mouseClicked(MouseEvent e)
+		public void actionPerformed(ActionEvent e) 
 		{
 			String menu = "";
 	
@@ -174,49 +176,51 @@ public class foodPanel1 extends JPanel
 			int num9 = foodPanel3.getSpinner3();
 			
 			if(num1 > 0)
-				menu += "ê¸°ë³¸ ?Œì½?" + num1 + "ê°? ";
+				menu += "ê¸°ë³¸ íŒì½˜" + num1 + "ê°œ ";
 			if(num2 > 0)
-				menu += "ìº¬ë¼ë©? ?Œì½?" + num2 + "ê°? ";
+				menu += "ìº¬ë¼ë©œ íŒì½˜" + num2 + "ê°œ ";
 			if(num3 > 0)
-				menu += "ì¹˜ì¦ˆ ?Œì½?" + num3 + "ê°? ";
+				menu += "ì¹˜ì¦ˆ íŒì½˜" + num3 + "ê°œ ";
 			if(num4 > 0)
-				menu += "?‚˜ì´?" + num4 + "ê°? ";
+				menu += "ë‚˜ì´ˆ" + num4 + "ê°œ ";
 			if(num5 > 0)
-				menu += "ê°ìì¹?" + num5 + "ê°? ";
+				menu += "ê°ìì¹©" + num5 + "ê°œ ";
 			if(num6 > 0)
-				menu += "?”„? ˆì²?" + num6 + "ê°? ";
+				menu += "í”„ë ˆì²¼" + num6 + "ê°œ ";
 			if(num7 > 0)
-				menu += "ì½œë¼" + num7 + "ê°? ";
+				menu += "ì½œë¼" + num7 + "ê°œ ";
 			if(num8 > 0)
-				menu += "?‚¬?´?‹¤" + num8 + "ê°? ";
+				menu += "ì‚¬ì´ë‹¤" + num8 + "ê°œ ";
 			if(num9 > 0)
-				menu += "?™˜??" + num9 + "ê°? ";
+				menu += "í™˜íƒ€" + num9 + "ê°œ ";
 			
 			if(menu == "")
 			{
-				int result = JOptionPane.showConfirmDialog(null, "?•„ë¬´ê²ƒ?„ êµ¬ë§¤?•˜ì§? ?•Š?œ¼?‹œê² ìŠµ?‹ˆê¹??","?™•?¸ ì°?",JOptionPane.YES_NO_OPTION);
+				int result = JOptionPane.showConfirmDialog(null, "ì•„ë¬´ê²ƒë„ êµ¬ë§¤í•˜ì§€ ì•Šìœ¼ì‹œê² ìŠµë‹ˆê¹Œ?","í™•ì¸ ì°½",JOptionPane.YES_NO_OPTION);
 				
 				if(result == 0)
 				{
-					ChangePanel.ChangePanel(fm,foodPanel1,new bill(fm));
+					new bill(fm);
+					setVisible(false);
 				}
 				else if(result == 1)
 				{
-					JOptionPane.showMessageDialog(null,  "?Œ?‹ êµ¬ë§¤ ì·¨ì†Œ", "êµ¬ë§¤ ì·¨ì†Œ",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,  "ìŒì‹ êµ¬ë§¤ ì·¨ì†Œ", "êµ¬ë§¤ ì·¨ì†Œ",JOptionPane.ERROR_MESSAGE);
 				}
 			}
 			else
 			{
-				menu+=" êµ¬ë§¤?•˜?‹œê² ìŠµ?‹ˆê¹??";
-				int result = JOptionPane.showConfirmDialog(null, menu,"?™•?¸ ì°?",JOptionPane.YES_NO_OPTION);
+				menu+=" êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?";
+				int result = JOptionPane.showConfirmDialog(null, menu,"í™•ì¸ ì°½",JOptionPane.YES_NO_OPTION);
 				
 				if(result == 0)
 				{
-					ChangePanel.ChangePanel(fm,foodPanel1,new bill(fm));
+					new bill(fm);
+					setVisible(false);
 				}
 				else if(result == 1)
 				{
-					JOptionPane.showMessageDialog(null,  "?Œ?‹ êµ¬ë§¤ ì·¨ì†Œ", "êµ¬ë§¤ ì·¨ì†Œ",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,  "ìŒì‹ êµ¬ë§¤ ì·¨ì†Œ", "êµ¬ë§¤ ì·¨ì†Œ",JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		}
