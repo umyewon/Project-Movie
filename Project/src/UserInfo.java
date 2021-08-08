@@ -84,8 +84,8 @@ public class UserInfo implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserInfo [uNumber=" + uNumber + ", userID=" + userID + ", userName=" + userName + ", userPhone="
-				+ userPhone + ", userPW=" + userPW + "]";
+		return "UserInfo [userID=" + userID + ", userName=" + userName + ", userPhone="
+				+ userPhone + ", userPW=" + userPW + ", uNumber=" + uNumber + "]";
 	}
 
 

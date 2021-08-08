@@ -3,6 +3,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -50,20 +54,18 @@ public class WaitingR extends JPanel{	//예매
 				setVisible(false);	// 기존 창 보이지 않게
 			}
 		});
-				
 		
 		// 비회원 - 예매 페이지로 이동
 		Nmem.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
-				new ReserveInfo(mf);		// 버튼 클릭 시 클래스 전환
+				fileSave();
+				new Date(mf);		// 버튼 클릭 시 클래스 전환
 				setVisible(false);	// 기존 창 보이지 않게
 			}
 		});
 		
-			
 		add(member);
 		add(Nmem);
 		add(back);
@@ -72,5 +74,20 @@ public class WaitingR extends JPanel{	//예매
 	
 	}
 	
+	// 비회원 정보 저장 => 공백저장
+	public void fileSave() {
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter("user.txt", true))){
+			bw.write(" " + ",");
+			bw.write(" " + ",");
+			bw.write(" " + ",");
+			bw.write(" " + ",");		
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 	
 }

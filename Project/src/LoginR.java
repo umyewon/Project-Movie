@@ -102,15 +102,17 @@ public class LoginR extends JPanel {		// 예매 로그인
 		
 				String line = "";
 				while((line = br.readLine()) != null) {	
-					
 					String[] str = line.split(",");	
 					for(int i= 0; i < str.length/4; i++) {
-						uif.add(new UserInfo(str[i*4], str[(i*4)+1], str[(i*4)+2], str[(i*4)+3], str[(i*5)+4]));
+						uif.add(new UserInfo(str[i*4], str[(i*4)+1], str[(i*4)+2], str[(i*4)+3], str[(i*4)+4]));
 					}
+					break;
 				}
-				
+				br.close();
 				// 회원 정보가 2개일때 확인하는 방법 생각해봐야될것같아요...
 				// 제일 처음에 저장한 회원정보는 인덱스 0 으로 잘읽히는데 추가로 회원가입하면 인덱스1 부터는 안읽혀요...왜그럴까요...?
+				System.out.println("여기는 로그인알-예매");
+				System.out.println(uif.size());
 				for(int i = 0; i < uif.size(); i++) {
 					if ((uif.get(i).getUserID()).equals(idT.getText()) && (uif.get(i).getUserPW()).equals(pwT.getText())) {
 						new Date(mf);

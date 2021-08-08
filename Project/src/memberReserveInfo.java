@@ -40,9 +40,6 @@ public class memberReserveInfo extends JPanel {
 	private List<UserInfo> uif = new ArrayList<>();
 	private List<MovieInfo> mif = new ArrayList<>();
 	
-	private JPanel reList; // 정보 출력될 패널
-	private JDialog dialog;
-	
 	private JLabel relabel1;
 	private JLabel relabel2;
 	private JLabel relabel3;
@@ -50,6 +47,9 @@ public class memberReserveInfo extends JPanel {
 	private JLabel relabel5;
 	private JLabel relabel6;
 	private JLabel relabel7;
+
+	private String[] str; 
+	private JLabel[] labelbt;
 	
 	
 	public memberReserveInfo(MainFrame mf) {
@@ -115,7 +115,6 @@ public class memberReserveInfo extends JPanel {
 		list6.setFont(font);
 		list7.setFont(font);
 		
-		
 		this.add(list1);
 		this.add(list2);
 		this.add(list3);
@@ -130,8 +129,7 @@ public class memberReserveInfo extends JPanel {
 		relabel4 = new JLabel("", JLabel.CENTER);
 		relabel5 = new JLabel("", JLabel.CENTER);
 		relabel6 = new JLabel("", JLabel.CENTER);
-		relabel7 = new JLabel("", JLabel.CENTER);
-		
+		relabel7 = new JLabel("", JLabel.CENTER);			
 		relabel1.setFont(font);
 		relabel2.setFont(font);
 		relabel3.setFont(font);
@@ -139,7 +137,7 @@ public class memberReserveInfo extends JPanel {
 		relabel5.setFont(font);
 		relabel6.setFont(font);
 		relabel7.setFont(font);
-				
+		
 		this.add(relabel1);
 		this.add(relabel2);
 		this.add(relabel3);
@@ -158,13 +156,11 @@ public class memberReserveInfo extends JPanel {
 					String line = "";
 					while((line = br.readLine()) != null) {
 						
-						String[] str = line.split(",");
+						str = line.split(",");
 						for(int i= 0; i < str.length/6; i++) {
 							mif.add(new MovieInfo(str[i*6], str[(i*6)+1], str[(i*6)+2], str[(i*6)+3], str[(i*6)+4], str[(i*6)+5]));
 						}		
 						resultinfo();
-						//System.out.println(uif.get(0));
-						//resultinfo(idT.getText());  // 아이디가 같은지 
 					}
 				} catch (FileNotFoundException e1) {
 					JOptionPane.showMessageDialog(null, "Filenot", " ", JOptionPane.ERROR_MESSAGE);
@@ -173,63 +169,50 @@ public class memberReserveInfo extends JPanel {
 				}
 			}
 		});
-		
 		// 메인프레임에 추가
 		mf.add(this);
 	}
 	
-
 	public void resultinfo() {
-		
 		// 정보 화면 출력용
-		for(int i = 0; i < mif.size(); i++) {
+		try (BufferedReader br = new BufferedReader(new FileReader("user.txt"))) {
 			
-			//if(idT.getText().equals(mif.get(i).getUserID())) {
-			
-				// 순번
-				relabel1.setText("1");
-				relabel1.setBounds(20, 130, 100, 20);
-				// 날짜
-				relabel2.setText(mif.get(i).getmDate());
-				relabel2.setBounds(103, 130, 100, 20);
-				// 제목
-				relabel3.setText(mif.get(i).getmTitle());
-				relabel3.setBounds(193, 130, 200, 20);
-				// 시간
-				relabel4.setText(mif.get(i).getmTime());
-				relabel4.setBounds(355, 130, 100, 20);
-				// 좌석
-				relabel5.setText(mif.get(i).getmSeat());
-				relabel5.setBounds(455, 130, 100, 20);
-				// 지점
-				relabel6.setText(mif.get(i).getmLocation());
-				relabel6.setBounds(555, 130, 100, 20);
-				// 예약번호
-				relabel7.setText(mif.get(i).getmNumber());
-				relabel7.setBounds(650, 130, 100, 20);
-
+			String line = "";
+			while((line = br.readLine()) != null) {	
 				
-			/*
-			} else {
-
+				String[] str = line.split(",");	
+				for(int i= 0; i < str.length/4; i++) {
+					uif.add(new UserInfo(str[i*4], str[(i*4)+1], str[(i*4)+2], str[(i*4)+3], str[(i*4)+4]));
+				}			
+				for(int i = 0; i < uif.size(); i++) {
+					for(int j = 0; j < mif.size(); j++) {
+						if(uif.get(i).getuNumber().contains(mif.get(j).getmNumber())) {
+							relabel1.setText((j+1)+"");
+							relabel1.setBounds(20, 130+(j*40), 100, 20);
+							relabel2.setText(mif.get(j).getmDate());
+							relabel2.setBounds(103, 130+(j*40), 100, 20);
+							relabel3.setText(mif.get(j).getmTitle());
+							relabel3.setBounds(193, 130+(j*40), 200, 20);
+							relabel4.setText(mif.get(j).getmTime());
+							relabel4.setBounds(355, 130+(j*40), 100, 20);
+							relabel5.setText(mif.get(j).getmSeat());
+							relabel5.setBounds(455, 130+(j*40), 100, 20);
+							relabel6.setText(mif.get(j).getmLocation());
+							relabel6.setBounds(555, 130+(j*40), 100, 20);
+							relabel7.setText(mif.get(j).getmNumber());
+							relabel7.setBounds(650, 130+(j*40), 100, 20);
+						} else {
+							JOptionPane.showMessageDialog(null, "예약된 정보가 없습니다.", "Filenot", JOptionPane.INFORMATION_MESSAGE);
+						}
+					}
+				}		
 			}
-			*/
-		}		
-	}
-	
-	
-	public void movieSearch(){
-		System.out.println(idT.getText());
-		
-		for(int i = 0; i < mif.size(); i++) {
-				
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		
-		//boolean re = mif.contains();
-		
-		return;
-	}
-	
+	}	
 }
 	
 	
