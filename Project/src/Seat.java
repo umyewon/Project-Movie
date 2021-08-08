@@ -474,6 +474,7 @@ public class Seat extends JPanel {
 					s1.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+				
 			}
 		});
 
@@ -1080,6 +1081,7 @@ public class Seat extends JPanel {
 				next.setBackground(new Color(246, 246, 246 ));
 				
 				// 좌석 변경 상황을 위해 무비 파일에 저장할 좌석 정보 여기서 입력
+				
 				if(s1.getText().contains("1")) 
 					fileSave(seat.getText());
 				else if(s2.getText().contains("2"))
@@ -1160,7 +1162,8 @@ public class Seat extends JPanel {
 					fileSave(seat.getText());
 				else if(s40.getText().contains("40")) 
 					fileSave(seat.getText());
-				
+			
+		
 				// 매점 화면 으로 이동 ********************************************************
 				new memberReserveInfo(mf);        // <= 수정하기
 				setVisible(false);
