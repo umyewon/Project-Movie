@@ -106,8 +106,8 @@ public class LoginC extends JPanel{
 				while((line = br.readLine()) != null) {
 									
 					String[] str = line.split(",");	
-					for(int i= 0; i < str.length/4; i++) {
-						uif.add(new UserInfo(str[i*4], str[(i*4)+1], str[(i*4)+2], str[(i*4)+3]));
+					for(int i= 0; i < str.length/5; i++) {
+						uif.add(new UserInfo(str[i*4], str[(i*4)+1], str[(i*4)+2], str[(i*4)+3], str[(i*5)+4]));
 					}
 				}
 				

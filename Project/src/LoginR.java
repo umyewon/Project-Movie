@@ -105,7 +105,7 @@ public class LoginR extends JPanel {		// 예매 로그인
 					
 					String[] str = line.split(",");	
 					for(int i= 0; i < str.length/4; i++) {
-						uif.add(new UserInfo(str[i*4], str[(i*4)+1], str[(i*4)+2], str[(i*4)+3]));
+						uif.add(new UserInfo(str[i*4], str[(i*4)+1], str[(i*4)+2], str[(i*4)+3], str[(i*5)+4]));
 					}
 				}
 				

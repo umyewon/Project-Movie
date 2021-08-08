@@ -7,7 +7,7 @@ public class MovieInfo implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String userID;
+
 	private String mDate;	
 	private String mLocation;
 	private String mTitle ;
@@ -17,24 +17,14 @@ public class MovieInfo implements Serializable {
 	
 	public MovieInfo() {}
 
-	public MovieInfo(String userID, String mDate, String mLocation, String mTitle, String mTime, String mSeat,
-			String mNumber) {
+	public MovieInfo(String mDate, String mLocation, String mTitle, String mTime, String mSeat, String mNumber) {
 		super();
-		this.userID = userID;
 		this.mDate = mDate;
 		this.mLocation = mLocation;
 		this.mTitle = mTitle;
 		this.mTime = mTime;
 		this.mSeat = mSeat;
 		this.mNumber = mNumber;
-	}
-
-	public String getUserID() {
-		return userID;
-	}
-
-	public void setUserID(String userID) {
-		this.userID = userID;
 	}
 
 	public String getmDate() {
@@ -85,10 +75,14 @@ public class MovieInfo implements Serializable {
 		this.mNumber = mNumber;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public String toString() {
-		return "MovieInfo [userID=" + userID + ", mDate=" + mDate + ", mLocation=" + mLocation + ", mTitle=" + mTitle
-				+ ", mTime=" + mTime + ", mSeat=" + mSeat + ", mNumber=" + mNumber + "]";
+		return "MovieInfo [mDate=" + mDate + ", mLocation=" + mLocation + ", mTitle=" + mTitle + ", mTime=" + mTime
+				+ ", mSeat=" + mSeat + ", mNumber=" + mNumber + "]";
 	}
 
 	@Override
@@ -101,7 +95,6 @@ public class MovieInfo implements Serializable {
 		result = prime * result + ((mSeat == null) ? 0 : mSeat.hashCode());
 		result = prime * result + ((mTime == null) ? 0 : mTime.hashCode());
 		result = prime * result + ((mTitle == null) ? 0 : mTitle.hashCode());
-		result = prime * result + ((userID == null) ? 0 : userID.hashCode());
 		return result;
 	}
 
@@ -144,14 +137,8 @@ public class MovieInfo implements Serializable {
 				return false;
 		} else if (!mTitle.equals(other.mTitle))
 			return false;
-		if (userID == null) {
-			if (other.userID != null)
-				return false;
-		} else if (!userID.equals(other.userID))
-			return false;
 		return true;
 	}
 
-	
 	
 }

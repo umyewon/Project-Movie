@@ -11,17 +11,19 @@ public class UserInfo implements Serializable {
 	private String userPW;
 	private String userName;
 	private String userPhone;
+	private String uNumber;
 
 	
 	public UserInfo() {}
 
 
-	public UserInfo(String userID, String userPW, String userName, String userPhone) {
+	public UserInfo(String userID, String userPW, String userName, String userPhone, String uNumber) {
 		super();
 		this.userID = userID;
 		this.userPW = userPW;
 		this.userName = userName;
 		this.userPhone = userPhone;
+		this.uNumber = uNumber;
 	}
 
 
@@ -65,10 +67,25 @@ public class UserInfo implements Serializable {
 	}
 
 
+	public String getuNumber() {
+		return uNumber;
+	}
+
+
+	public void setuNumber(String uNumber) {
+		this.uNumber = uNumber;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
 	@Override
 	public String toString() {
-		return "UserInfo [userID=" + userID + ", userPW=" + userPW + ", userName=" + userName + ", userPhone="
-				+ userPhone + "]";
+		return "UserInfo [uNumber=" + uNumber + ", userID=" + userID + ", userName=" + userName + ", userPhone="
+				+ userPhone + ", userPW=" + userPW + "]";
 	}
 
 
@@ -76,6 +93,7 @@ public class UserInfo implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((uNumber == null) ? 0 : uNumber.hashCode());
 		result = prime * result + ((userID == null) ? 0 : userID.hashCode());
 		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		result = prime * result + ((userPW == null) ? 0 : userPW.hashCode());
@@ -93,6 +111,11 @@ public class UserInfo implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		UserInfo other = (UserInfo) obj;
+		if (uNumber == null) {
+			if (other.uNumber != null)
+				return false;
+		} else if (!uNumber.equals(other.uNumber))
+			return false;
 		if (userID == null) {
 			if (other.userID != null)
 				return false;
@@ -115,6 +138,7 @@ public class UserInfo implements Serializable {
 			return false;
 		return true;
 	}
+
 
 	
 }

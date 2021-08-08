@@ -166,8 +166,8 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
                while((line = br.readLine()) != null) {
                   
                   String[] str = line.split(",");
-                  for(int i= 0; i < str.length/7; i++) {
-                     mif.add(new MovieInfo(str[i*7], str[(i*7)+1], str[(i*7)+2], str[(i*7)+3], str[(i*7)+4], str[(i*7)+5] , str[(i*7)+6]));
+                  for(int i= 0; i < str.length/6; i++) {
+                     mif.add(new MovieInfo(str[i*6], str[(i*6)+1], str[(i*6)+2], str[(i*6)+3], str[(i*6)+4], str[(i*6)+5]));
                   }                  
                   resultinfo();
                }
