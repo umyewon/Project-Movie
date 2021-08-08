@@ -47,15 +47,15 @@ public class foodPanel2 extends JPanel
 
 		fm.add(this);
 		
-		JButton button_ok = new JButton("ê²° ì •");
+		JButton button_ok = new JButton("°á Á¤");
 		button_ok.setBackground(new Color(33, 150, 83));
 		button_ok.setForeground(Color.white);
 		button_ok.setFont(new Font("",Font.PLAIN,20));
-		JButton button_left = new JButton("â—€");
+		JButton button_left = new JButton("¢¸");
 		button_left.setBackground(new Color(33, 150, 83));
 		button_left.setForeground(Color.white);
 		button_left.setFont(new Font("",Font.PLAIN,20));
-		JButton button_right = new JButton("â–¶");
+		JButton button_right = new JButton("¢º");
 		button_right.setBackground(new Color(33, 150, 83));
 		button_right.setForeground(Color.white);
 		button_right.setFont(new Font("",Font.PLAIN,20));
@@ -72,15 +72,15 @@ public class foodPanel2 extends JPanel
 		panel2.add(label2);
 		panel3.add(label3);
 		
-		JLabel money1 = new JLabel("4000ì›");
+		JLabel money1 = new JLabel("4000¿ø");
 		money1.setFont(new Font("",Font.PLAIN,20));
 		panel4.add(money1);
 		
-		JLabel money2 = new JLabel("3000ì›");
+		JLabel money2 = new JLabel("3000¿ø");
 		money2.setFont(new Font("",Font.PLAIN,20));
 		panel5.add(money2);
 		
-		JLabel money3 = new JLabel("3000ì›");
+		JLabel money3 = new JLabel("3000¿ø");
 		money3.setFont(new Font("",Font.PLAIN,20));
 		panel6.add(money3);
 		
@@ -105,7 +105,7 @@ public class foodPanel2 extends JPanel
 		panel6.add(button_right);
 		
 		panel5.add(new JLabel(" "));
-		JLabel menu_name = new JLabel("ê°„ì‹ ë©”ë‰´");
+		JLabel menu_name = new JLabel("°£½Ä ¸Ş´º");
 		menu_name.setFont(new Font("",Font.PLAIN,20));
 		panel5.add(menu_name);
 		
@@ -190,27 +190,27 @@ public class foodPanel2 extends JPanel
 			count_food3 = (int) spinner3.getValue();
 			
 			if(num1 > 0)
-				menu += "ê¸°ë³¸ íŒì½˜" + num1 + "ê°œ ";
+				menu += "±âº» ÆËÄÜ" + num1 + "°³ ";
 			if(num2 > 0)
-				menu += "ìº¬ë¼ë©œ íŒì½˜" + num2 + "ê°œ ";
+				menu += "Ä¼¶ó¸á ÆËÄÜ" + num2 + "°³ ";
 			if(num3 > 0)
-				menu += "ì¹˜ì¦ˆ íŒì½˜" + num3 + "ê°œ ";
+				menu += "Ä¡Áî ÆËÄÜ" + num3 + "°³ ";
 			if(num4 > 0)
-				menu += "ë‚˜ì´ˆ" + num4 + "ê°œ ";
+				menu += "³ªÃÊ" + num4 + "°³ ";
 			if(num5 > 0)
-				menu += "ê°ìì¹©" + num5 + "ê°œ ";
+				menu += "°¨ÀÚÄ¨" + num5 + "°³ ";
 			if(num6 > 0)
-				menu += "í”„ë ˆì²¼" + num6 + "ê°œ ";
+				menu += "ÇÁ·¹Ã¿" + num6 + "°³ ";
 			if(num7 > 0)
-				menu += "ì½œë¼" + num7 + "ê°œ ";
+				menu += "Äİ¶ó" + num7 + "°³ ";
 			if(num8 > 0)
-				menu += "ì‚¬ì´ë‹¤" + num8 + "ê°œ ";
+				menu += "»çÀÌ´Ù" + num8 + "°³ ";
 			if(num9 > 0)
-				menu += "í™˜íƒ€" + num9 + "ê°œ ";
+				menu += "È¯Å¸" + num9 + "°³ ";
 			
 			if(menu == "")
 			{
-				int result = JOptionPane.showConfirmDialog(null, "ì•„ë¬´ê²ƒë„ êµ¬ë§¤í•˜ì§€ ì•Šìœ¼ì‹œê² ìŠµë‹ˆê¹Œ?","í™•ì¸ ì°½",JOptionPane.YES_NO_OPTION);
+				int result = JOptionPane.showConfirmDialog(null, "¾Æ¹«°Íµµ ±¸¸ÅÇÏÁö ¾ÊÀ¸½Ã°Ú½À´Ï±î?","È®ÀÎ Ã¢",JOptionPane.YES_NO_OPTION);
 				
 				if(result == 0)
 				{
@@ -219,13 +219,13 @@ public class foodPanel2 extends JPanel
 				}
 				else if(result == 1)
 				{
-					JOptionPane.showMessageDialog(null,  "ìŒì‹ êµ¬ë§¤ ì·¨ì†Œ", "êµ¬ë§¤ ì·¨ì†Œ",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,  "À½½Ä ±¸¸Å Ãë¼Ò", "±¸¸Å Ãë¼Ò",JOptionPane.ERROR_MESSAGE);
 				}
 			}
 			else
 			{
-				menu+=" êµ¬ë§¤í•˜ì‹œê² ìŠµë‹ˆê¹Œ?";
-				int result = JOptionPane.showConfirmDialog(null, menu,"í™•ì¸ ì°½",JOptionPane.YES_NO_OPTION);
+				menu+=" ±¸¸ÅÇÏ½Ã°Ú½À´Ï±î?";
+				int result = JOptionPane.showConfirmDialog(null, menu,"È®ÀÎ Ã¢",JOptionPane.YES_NO_OPTION);
 				
 				if(result == 0)
 				{
@@ -234,7 +234,7 @@ public class foodPanel2 extends JPanel
 				}
 				else if(result == 1)
 				{
-					JOptionPane.showMessageDialog(null,  "ìŒì‹ êµ¬ë§¤ ì·¨ì†Œ", "êµ¬ë§¤ ì·¨ì†Œ",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null,  "À½½Ä ±¸¸Å Ãë¼Ò", "±¸¸Å Ãë¼Ò",JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		}
