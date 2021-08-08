@@ -211,7 +211,7 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
             // 예약번호
             relabel7.setText(mif.get(i).getmNumber());
             relabel7.setBounds(640, 100, 100, 20);
-            re.setText(" "); //정상 출력될 때 번호 다시 확인해달라는 라벨 지움.
+            re.setText(" "); //정상 출력될 때 번호 다시 확인해달라는 라벨 지움. 
       }else { // 중복되는 값이 없을 경우
          re.setText("번호를 다시 확인하여 주십시오."); // false일 시 번호를 다시 확인해달라는 라벨 띄움               
       }   
