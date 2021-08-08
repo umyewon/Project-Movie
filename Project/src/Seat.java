@@ -465,6 +465,7 @@ public class Seat extends JPanel {
 		s1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s1.setForeground(new Color(246, 246, 246));
 				s1.setBackground(new Color( 33, 150, 83));
 				seat.setText("1 ¹ø ÁÂ¼®");
@@ -474,12 +475,28 @@ public class Seat extends JPanel {
 					s1.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			} else if(count == 2) {
+				s1.setForeground(new Color(246, 246, 246));
+				s1.setBackground(new Color( 33, 150, 83));
+				s2.setForeground(new Color(246, 246, 246));
+				s2.setBackground(new Color( 33, 150, 83));
+				seat.setText("1¹ø2¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s1.setBackground(new Color(246, 246, 246));
+					s1.setForeground(new Color( 33, 150, 83));
+					s2.setBackground(new Color(246, 246, 246));
+					s2.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 
 		s2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s2.setForeground(new Color(246, 246, 246));
 				s2.setBackground(new Color( 33, 150, 83));
 				seat.setText("2 ¹ø ÁÂ¼®");
@@ -489,55 +506,119 @@ public class Seat extends JPanel {
 					s2.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s1.setForeground(new Color(246, 246, 246));
+				s1.setBackground(new Color( 33, 150, 83));
+				s2.setForeground(new Color(246, 246, 246));
+				s2.setBackground(new Color( 33, 150, 83));
+				seat.setText("1¹ø2¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s1.setBackground(new Color(246, 246, 246));
+					s1.setForeground(new Color( 33, 150, 83));
+					s2.setBackground(new Color(246, 246, 246));
+					s2.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s3.addMouseListener(new MouseAdapter() {
 			int clickcnt = 0;
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s3.setForeground(new Color(246, 246, 246));
 				s3.setBackground(new Color( 33, 150, 83));
-				seat.setText("3 ¹ø ÁÂ¼®");
+				seat.setText("3¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s3.setBackground(new Color(246, 246, 246));
 					s3.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s3.setForeground(new Color(246, 246, 246));
+				s3.setBackground(new Color( 33, 150, 83));
+				s4.setForeground(new Color(246, 246, 246));
+				s4.setBackground(new Color( 33, 150, 83));
+				seat.setText("3¹ø4¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s3.setBackground(new Color(246, 246, 246));
+					s3.setForeground(new Color( 33, 150, 83));
+					s4.setBackground(new Color(246, 246, 246));
+					s4.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
+			
 			}
 		});
 		s4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s4.setForeground(new Color(246, 246, 246));
 				s4.setBackground(new Color( 33, 150, 83));
-				seat.setText("4 ¹ø ÁÂ¼®");
+				seat.setText("4¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s4.setBackground(new Color(246, 246, 246));
 					s4.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s3.setForeground(new Color(246, 246, 246));
+				s3.setBackground(new Color( 33, 150, 83));
+				s4.setForeground(new Color(246, 246, 246));
+				s4.setBackground(new Color( 33, 150, 83));
+				seat.setText("3¹ø4¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s3.setBackground(new Color(246, 246, 246));
+					s3.setForeground(new Color( 33, 150, 83));
+					s4.setBackground(new Color(246, 246, 246));
+					s4.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s5.setForeground(new Color(246, 246, 246));
 				s5.setBackground(new Color( 33, 150, 83));
-				seat.setText("5 ¹ø ÁÂ¼®");
-				seat.setText("5 ¹ø ÁÂ¼®");
+				seat.setText("5¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s5.setBackground(new Color(246, 246, 246));
 					s5.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s5.setForeground(new Color(246, 246, 246));
+				s5.setBackground(new Color( 33, 150, 83));
+				s6.setForeground(new Color(246, 246, 246));
+				s6.setBackground(new Color( 33, 150, 83));
+				seat.setText("5¹ø6¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s5.setBackground(new Color(246, 246, 246));
+					s5.setForeground(new Color( 33, 150, 83));
+					s6.setBackground(new Color(246, 246, 246));
+					s6.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s6.setForeground(new Color(246, 246, 246));
 				s6.setBackground(new Color( 33, 150, 83));
 				seat.setText("6 ¹ø ÁÂ¼®");
@@ -547,494 +628,1045 @@ public class Seat extends JPanel {
 					s6.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s5.setForeground(new Color(246, 246, 246));
+				s5.setBackground(new Color( 33, 150, 83));
+				s6.setForeground(new Color(246, 246, 246));
+				s6.setBackground(new Color( 33, 150, 83));
+				seat.setText("5¹ø6¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s5.setBackground(new Color(246, 246, 246));
+					s5.setForeground(new Color( 33, 150, 83));
+					s6.setBackground(new Color(246, 246, 246));
+					s6.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
-				s7.setForeground(new Color(246, 246, 246));
-				s7.setBackground(new Color( 33, 150, 83));
-				seat.setText("7 ¹ø ÁÂ¼®");
-				++clickcnt;
-				if(clickcnt % 2 == 0) {
-					s7.setBackground(new Color(246, 246, 246));
-					s7.setForeground(new Color( 33, 150, 83));
-					seat.setText("");
+			if(count == 1) {
+					s7.setForeground(new Color(246, 246, 246));
+					s7.setBackground(new Color( 33, 150, 83));
+					seat.setText("7¹ø ÁÂ¼®");
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						s7.setBackground(new Color(246, 246, 246));
+						s7.setForeground(new Color( 33, 150, 83));
+						seat.setText("");
+					}
+			}else if(count == 2) {
+					s7.setForeground(new Color(246, 246, 246));
+					s7.setBackground(new Color( 33, 150, 83));
+					s8.setForeground(new Color(246, 246, 246));
+					s8.setBackground(new Color( 33, 150, 83));
+					seat.setText("7¹ø8¹ø ÁÂ¼®");
+					++clickcnt;
+					if(clickcnt % 2 == 0) {
+						s7.setBackground(new Color(246, 246, 246));
+						s7.setForeground(new Color( 33, 150, 83));
+						s8.setBackground(new Color(246, 246, 246));
+						s8.setForeground(new Color( 33, 150, 83));
+						seat.setText("");
+					}
 				}
 			}
 		});
 		s8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s8.setForeground(new Color(246, 246, 246));
 				s8.setBackground(new Color( 33, 150, 83));
-				seat.setText("8 ¹ø ÁÂ¼®");
+				seat.setText("8¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s8.setBackground(new Color(246, 246, 246));
 					s8.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s7.setForeground(new Color(246, 246, 246));
+				s7.setBackground(new Color( 33, 150, 83));
+				s8.setForeground(new Color(246, 246, 246));
+				s8.setBackground(new Color( 33, 150, 83));
+				seat.setText("7¹ø8¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s7.setBackground(new Color(246, 246, 246));
+					s7.setForeground(new Color( 33, 150, 83));
+					s8.setBackground(new Color(246, 246, 246));
+					s8.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s9.setForeground(new Color(246, 246, 246));
 				s9.setBackground(new Color( 33, 150, 83));
-				seat.setText("9 ¹ø ÁÂ¼®");
+				seat.setText("9¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s9.setBackground(new Color(246, 246, 246));
 					s9.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s9.setForeground(new Color(246, 246, 246));
+				s9.setBackground(new Color( 33, 150, 83));
+				s10.setForeground(new Color(246, 246, 246));
+				s10.setBackground(new Color( 33, 150, 83));
+				seat.setText("9¹ø10¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s9.setBackground(new Color(246, 246, 246));
+					s9.setForeground(new Color( 33, 150, 83));
+					s10.setBackground(new Color(246, 246, 246));
+					s10.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
+			
 			}
 		});
 		s10.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s10.setForeground(new Color(246, 246, 246));
 				s10.setBackground(new Color( 33, 150, 83));
-				seat.setText("10 ¹ø ÁÂ¼®");
+				seat.setText("10¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s10.setBackground(new Color(246, 246, 246));
 					s10.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s9.setForeground(new Color(246, 246, 246));
+				s9.setBackground(new Color( 33, 150, 83));
+				s10.setForeground(new Color(246, 246, 246));
+				s10.setBackground(new Color( 33, 150, 83));
+				seat.setText("9¹ø10¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s9.setBackground(new Color(246, 246, 246));
+					s9.setForeground(new Color( 33, 150, 83));
+					s10.setBackground(new Color(246, 246, 246));
+					s10.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s11.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s11.setForeground(new Color(246, 246, 246));
 				s11.setBackground(new Color( 33, 150, 83));
-				seat.setText("11 ¹ø ÁÂ¼®");
+				seat.setText("11¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s11.setBackground(new Color(246, 246, 246));
 					s11.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s11.setForeground(new Color(246, 246, 246));
+				s11.setBackground(new Color( 33, 150, 83));
+				s12.setForeground(new Color(246, 246, 246));
+				s12.setBackground(new Color( 33, 150, 83));
+				seat.setText("11¹ø12¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s11.setBackground(new Color(246, 246, 246));
+					s11.setForeground(new Color( 33, 150, 83));
+					s12.setBackground(new Color(246, 246, 246));
+					s12.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s12.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s12.setForeground(new Color(246, 246, 246));
 				s12.setBackground(new Color( 33, 150, 83));
-				seat.setText("12 ¹ø ÁÂ¼®");
+				seat.setText("12¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s12.setBackground(new Color(246, 246, 246));
 					s12.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s11.setForeground(new Color(246, 246, 246));
+				s11.setBackground(new Color( 33, 150, 83));
+				s12.setForeground(new Color(246, 246, 246));
+				s12.setBackground(new Color( 33, 150, 83));
+				seat.setText("11¹ø12¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s11.setBackground(new Color(246, 246, 246));
+					s11.setForeground(new Color( 33, 150, 83));
+					s12.setBackground(new Color(246, 246, 246));
+					s12.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s13.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s13.setForeground(new Color(246, 246, 246));
 				s13.setBackground(new Color( 33, 150, 83));
-				seat.setText("13 ¹ø ÁÂ¼®");
+				seat.setText("13¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s13.setBackground(new Color(246, 246, 246));
 					s13.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s13.setForeground(new Color(246, 246, 246));
+				s13.setBackground(new Color( 33, 150, 83));
+				s14.setForeground(new Color(246, 246, 246));
+				s14.setBackground(new Color( 33, 150, 83));
+				seat.setText("13¹ø14¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s13.setBackground(new Color(246, 246, 246));
+					s13.setForeground(new Color( 33, 150, 83));
+					s14.setBackground(new Color(246, 246, 246));
+					s14.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s14.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s14.setForeground(new Color(246, 246, 246));
 				s14.setBackground(new Color( 33, 150, 83));
-				seat.setText("14 ¹ø ÁÂ¼®");
+				seat.setText("14¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s14.setBackground(new Color(246, 246, 246));
 					s14.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s13.setForeground(new Color(246, 246, 246));
+				s13.setBackground(new Color( 33, 150, 83));
+				s14.setForeground(new Color(246, 246, 246));
+				s14.setBackground(new Color( 33, 150, 83));
+				seat.setText("13¹ø14¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s13.setBackground(new Color(246, 246, 246));
+					s13.setForeground(new Color( 33, 150, 83));
+					s14.setBackground(new Color(246, 246, 246));
+					s14.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s15.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s15.setForeground(new Color(246, 246, 246));
 				s15.setBackground(new Color( 33, 150, 83));
-				seat.setText("15 ¹ø ÁÂ¼®");
+				seat.setText("15¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s15.setBackground(new Color(246, 246, 246));
 					s15.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s15.setForeground(new Color(246, 246, 246));
+				s15.setBackground(new Color( 33, 150, 83));
+				s16.setForeground(new Color(246, 246, 246));
+				s16.setBackground(new Color( 33, 150, 83));
+				seat.setText("15¹ø16¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s15.setBackground(new Color(246, 246, 246));
+					s15.setForeground(new Color( 33, 150, 83));
+					s16.setBackground(new Color(246, 246, 246));
+					s16.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s16.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s16.setForeground(new Color(246, 246, 246));
 				s16.setBackground(new Color( 33, 150, 83));
-				seat.setText("16 ¹ø ÁÂ¼®");
+				seat.setText("16¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s16.setBackground(new Color(246, 246, 246));
 					s16.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s15.setForeground(new Color(246, 246, 246));
+				s15.setBackground(new Color( 33, 150, 83));
+				s16.setForeground(new Color(246, 246, 246));
+				s16.setBackground(new Color( 33, 150, 83));
+				seat.setText("15¹ø16¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s15.setBackground(new Color(246, 246, 246));
+					s15.setForeground(new Color( 33, 150, 83));
+					s16.setBackground(new Color(246, 246, 246));
+					s16.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s17.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s17.setForeground(new Color(246, 246, 246));
 				s17.setBackground(new Color( 33, 150, 83));
-				seat.setText("17 ¹ø ÁÂ¼®");
+				seat.setText("17¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s17.setBackground(new Color(246, 246, 246));
 					s17.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s17.setForeground(new Color(246, 246, 246));
+				s17.setBackground(new Color( 33, 150, 83));
+				s18.setForeground(new Color(246, 246, 246));
+				s18.setBackground(new Color( 33, 150, 83));
+				seat.setText("17¹ø18¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s17.setBackground(new Color(246, 246, 246));
+					s17.setForeground(new Color( 33, 150, 83));
+					s18.setBackground(new Color(246, 246, 246));
+					s18.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s18.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s18.setForeground(new Color(246, 246, 246));
 				s18.setBackground(new Color( 33, 150, 83));
-				seat.setText("18 ¹ø ÁÂ¼®");
+				seat.setText("18¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s18.setBackground(new Color(246, 246, 246));
 					s18.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s17.setForeground(new Color(246, 246, 246));
+				s17.setBackground(new Color( 33, 150, 83));
+				s18.setForeground(new Color(246, 246, 246));
+				s18.setBackground(new Color( 33, 150, 83));
+				seat.setText("17¹ø18¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s17.setBackground(new Color(246, 246, 246));
+					s17.setForeground(new Color( 33, 150, 83));
+					s18.setBackground(new Color(246, 246, 246));
+					s18.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s19.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s19.setForeground(new Color(246, 246, 246));
 				s19.setBackground(new Color( 33, 150, 83));
 				s19.setBackground(new Color( 33, 150, 83));
-				seat.setText("19 ¹ø ÁÂ¼®");
-				seat.setText("19 ¹ø ÁÂ¼®");
+				seat.setText("19¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s19.setBackground(new Color(246, 246, 246));
 					s19.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
-			}
-		});
-		s20.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e){
+			}else if(count == 2) {
+				s19.setForeground(new Color(246, 246, 246));
+				s19.setBackground(new Color( 33, 150, 83));
 				s20.setForeground(new Color(246, 246, 246));
 				s20.setBackground(new Color( 33, 150, 83));
-				s20.setBackground(new Color( 33, 150, 83));
-				seat.setText("20 ¹ø ÁÂ¼®");
-				seat.setText("20 ¹ø ÁÂ¼®");
+				seat.setText("19¹ø20¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
+					s19.setBackground(new Color(246, 246, 246));
+					s19.setForeground(new Color( 33, 150, 83));
 					s20.setBackground(new Color(246, 246, 246));
 					s20.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
 			}
+			}
+		});
+		s20.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
+				s20.setForeground(new Color(246, 246, 246));
+				s20.setBackground(new Color( 33, 150, 83));
+				s20.setBackground(new Color( 33, 150, 83));
+				seat.setText("20¹ø ÁÂ¼®");
+				if(clickcnt % 2 == 0) {
+					s20.setBackground(new Color(246, 246, 246));
+					s20.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}else if(count == 2) {
+				s19.setForeground(new Color(246, 246, 246));
+				s19.setBackground(new Color( 33, 150, 83));
+				s20.setForeground(new Color(246, 246, 246));
+				s20.setBackground(new Color( 33, 150, 83));
+				seat.setText("19¹ø20¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s19.setBackground(new Color(246, 246, 246));
+					s19.setForeground(new Color( 33, 150, 83));
+					s20.setBackground(new Color(246, 246, 246));
+					s20.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
+			}
 		});
 		s21.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 21) {
 				s21.setForeground(new Color(246, 246, 246));
 				s21.setBackground(new Color( 33, 150, 83));
-				seat.setText("21 ¹ø ÁÂ¼®");
-				seat.setText("21 ¹ø ÁÂ¼®");
+				seat.setText("21¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s21.setBackground(new Color(246, 246, 246));
 					s21.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s21.setForeground(new Color(246, 246, 246));
+				s21.setBackground(new Color( 33, 150, 83));
+				s22.setForeground(new Color(246, 246, 246));
+				s22.setBackground(new Color( 33, 150, 83));
+				seat.setText("21¹ø22¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s21.setBackground(new Color(246, 246, 246));
+					s21.setForeground(new Color( 33, 150, 83));
+					s22.setBackground(new Color(246, 246, 246));
+					s22.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s22.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s21.setForeground(new Color(246, 246, 246));
 				s21.setBackground(new Color( 33, 150, 83));
 				s21.setBackground(new Color( 33, 150, 83));
-				seat.setText("22 ¹ø ÁÂ¼®");
-				seat.setText("22 ¹ø ÁÂ¼®");
+				seat.setText("22¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s22.setBackground(new Color(246, 246, 246));
 					s22.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s21.setForeground(new Color(246, 246, 246));
+				s21.setBackground(new Color( 33, 150, 83));
+				s22.setForeground(new Color(246, 246, 246));
+				s22.setBackground(new Color( 33, 150, 83));
+				seat.setText("21¹ø22¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s21.setBackground(new Color(246, 246, 246));
+					s21.setForeground(new Color( 33, 150, 83));
+					s22.setBackground(new Color(246, 246, 246));
+					s22.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s23.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s23.setForeground(new Color(246, 246, 246));
 				s23.setBackground(new Color( 33, 150, 83));
 				s23.setBackground(new Color( 33, 150, 83));
-				seat.setText("23 ¹ø ÁÂ¼®");
-				seat.setText("23 ¹ø ÁÂ¼®");
+				seat.setText("23¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s23.setBackground(new Color(246, 246, 246));
 					s23.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s23.setForeground(new Color(246, 246, 246));
+				s23.setBackground(new Color( 33, 150, 83));
+				s24.setForeground(new Color(246, 246, 246));
+				s25.setBackground(new Color( 33, 150, 83));
+				seat.setText("23¹ø24¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s23.setBackground(new Color(246, 246, 246));
+					s23.setForeground(new Color( 33, 150, 83));
+					s24.setBackground(new Color(246, 246, 246));
+					s24.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s24.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s24.setForeground(new Color(246, 246, 246));
 				s24.setBackground(new Color( 33, 150, 83));
-				seat.setText("24 ¹ø ÁÂ¼®");
+				seat.setText("24¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s24.setBackground(new Color(246, 246, 246));
 					s24.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s23.setForeground(new Color(246, 246, 246));
+				s23.setBackground(new Color( 33, 150, 83));
+				s24.setForeground(new Color(246, 246, 246));
+				s25.setBackground(new Color( 33, 150, 83));
+				seat.setText("23¹ø24¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s23.setBackground(new Color(246, 246, 246));
+					s23.setForeground(new Color( 33, 150, 83));
+					s24.setBackground(new Color(246, 246, 246));
+					s24.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s25.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s25.setForeground(new Color(246, 246, 246));
 				s25.setBackground(new Color( 33, 150, 83));
-				seat.setText("25 ¹ø ÁÂ¼®");
+				seat.setText("25¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s25.setBackground(new Color(246, 246, 246));
 					s25.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s25.setForeground(new Color(246, 246, 246));
+				s25.setBackground(new Color( 33, 150, 83));
+				s26.setForeground(new Color(246, 246, 246));
+				s26.setBackground(new Color( 33, 150, 83));
+				seat.setText("25¹ø26¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s25.setBackground(new Color(246, 246, 246));
+					s25.setForeground(new Color( 33, 150, 83));
+					s26.setBackground(new Color(246, 246, 246));
+					s26.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s26.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s26.setForeground(new Color(246, 246, 246));
 				s26.setBackground(new Color( 33, 150, 83));
-				seat.setText("26 ¹ø ÁÂ¼®");
-				seat.setText("26 ¹ø ÁÂ¼®");
+				seat.setText("26¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s26.setBackground(new Color(246, 246, 246));
 					s26.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s25.setForeground(new Color(246, 246, 246));
+				s25.setBackground(new Color( 33, 150, 83));
+				s26.setForeground(new Color(246, 246, 246));
+				s26.setBackground(new Color( 33, 150, 83));
+				seat.setText("25¹ø26¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s25.setBackground(new Color(246, 246, 246));
+					s25.setForeground(new Color( 33, 150, 83));
+					s26.setBackground(new Color(246, 246, 246));
+					s26.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s27.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s27.setForeground(new Color(246, 246, 246));
 				s27.setBackground(new Color( 33, 150, 83));
-				seat.setText("27 ¹ø ÁÂ¼®");
-				s27.setBackground(new Color( 33, 150, 83));
-				seat.setText("27 ¹ø ÁÂ¼®");
+				seat.setText("27¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s27.setBackground(new Color(246, 246, 246));
 					s27.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s27.setForeground(new Color(246, 246, 246));
+				s27.setBackground(new Color( 33, 150, 83));
+				s28.setForeground(new Color(246, 246, 246));
+				s28.setBackground(new Color( 33, 150, 83));
+				seat.setText("27¹ø28¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s27.setBackground(new Color(246, 246, 246));
+					s27.setForeground(new Color( 33, 150, 83));
+					s28.setBackground(new Color(246, 246, 246));
+					s28.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s28.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s28.setForeground(new Color(246, 246, 246));
 				s28.setBackground(new Color( 33, 150, 83));
-				seat.setText("28 ¹ø ÁÂ¼®");
+				seat.setText("28¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s28.setBackground(new Color(246, 246, 246));
 					s28.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s27.setForeground(new Color(246, 246, 246));
+				s27.setBackground(new Color( 33, 150, 83));
+				s28.setForeground(new Color(246, 246, 246));
+				s28.setBackground(new Color( 33, 150, 83));
+				seat.setText("27¹ø28¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s27.setBackground(new Color(246, 246, 246));
+					s27.setForeground(new Color( 33, 150, 83));
+					s28.setBackground(new Color(246, 246, 246));
+					s28.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s29.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s29.setForeground(new Color(246, 246, 246));
 				s29.setBackground(new Color( 33, 150, 83));
-				seat.setText("29 ¹ø ÁÂ¼®");
+				seat.setText("29¹ø ÁÂ¼®");
 				++clickcnt;
 				if (clickcnt % 2 == 0) {
 					s29.setBackground(new Color(246, 246, 246));
 					s29.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s29.setForeground(new Color(246, 246, 246));
+				s29.setBackground(new Color( 33, 150, 83));
+				s30.setForeground(new Color(246, 246, 246));
+				s30.setBackground(new Color( 33, 150, 83));
+				seat.setText("29¹ø30¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s29.setBackground(new Color(246, 246, 246));
+					s29.setForeground(new Color( 33, 150, 83));
+					s30.setBackground(new Color(246, 246, 246));
+					s30.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s30.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s30.setForeground(new Color(246, 246, 246));
 				s30.setBackground(new Color( 33, 150, 83));
-				seat.setText("30 ¹ø ÁÂ¼®");
+				seat.setText("30¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s30.setBackground(new Color(246, 246, 246));
 					s30.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s29.setForeground(new Color(246, 246, 246));
+				s29.setBackground(new Color( 33, 150, 83));
+				s30.setForeground(new Color(246, 246, 246));
+				s30.setBackground(new Color( 33, 150, 83));
+				seat.setText("29¹ø30¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s29.setBackground(new Color(246, 246, 246));
+					s29.setForeground(new Color( 33, 150, 83));
+					s30.setBackground(new Color(246, 246, 246));
+					s30.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s31.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s31.setForeground(new Color(246, 246, 246));
 				s31.setBackground(new Color( 33, 150, 83));
-				seat.setText("31 ¹ø ÁÂ¼®");
+				seat.setText("31¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s31.setBackground(new Color(246, 246, 246));
 					s31.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s31.setForeground(new Color(246, 246, 246));
+				s31.setBackground(new Color( 33, 150, 83));
+				s32.setForeground(new Color(246, 246, 246));
+				s32.setBackground(new Color( 33, 150, 83));
+				seat.setText("31¹ø32¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s31.setBackground(new Color(246, 246, 246));
+					s31.setForeground(new Color( 33, 150, 83));
+					s32.setBackground(new Color(246, 246, 246));
+					s32.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s32.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s31.setForeground(new Color(246, 246, 246));
 				s31.setBackground(new Color( 33, 150, 83));
-				seat.setText("32 ¹ø ÁÂ¼®");
+				seat.setText("32¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s32.setBackground(new Color(246, 246, 246));
 					s32.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s31.setForeground(new Color(246, 246, 246));
+				s31.setBackground(new Color( 33, 150, 83));
+				s32.setForeground(new Color(246, 246, 246));
+				s32.setBackground(new Color( 33, 150, 83));
+				seat.setText("31¹ø32¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s31.setBackground(new Color(246, 246, 246));
+					s31.setForeground(new Color( 33, 150, 83));
+					s32.setBackground(new Color(246, 246, 246));
+					s32.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s33.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s33.setForeground(new Color(246, 246, 246));
 				s33.setBackground(new Color( 33, 150, 83));
-				seat.setText("33 ¹ø ÁÂ¼®");
+				seat.setText("33¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s33.setBackground(new Color(246, 246, 246));
 					s33.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s33.setForeground(new Color(246, 246, 246));
+				s33.setBackground(new Color( 33, 150, 83));
+				s34.setForeground(new Color(246, 246, 246));
+				s34.setBackground(new Color( 33, 150, 83));
+				seat.setText("33¹ø34¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s33.setBackground(new Color(246, 246, 246));
+					s33.setForeground(new Color( 33, 150, 83));
+					s34.setBackground(new Color(246, 246, 246));
+					s34.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s34.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s34.setForeground(new Color(246, 246, 246));
 				s34.setBackground(new Color( 33, 150, 83));
-				seat.setText("34 ¹ø ÁÂ¼®");
+				seat.setText("34¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s34.setBackground(new Color(246, 246, 246));
 					s34.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s33.setForeground(new Color(246, 246, 246));
+				s33.setBackground(new Color( 33, 150, 83));
+				s34.setForeground(new Color(246, 246, 246));
+				s34.setBackground(new Color( 33, 150, 83));
+				seat.setText("33¹ø34¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s33.setBackground(new Color(246, 246, 246));
+					s33.setForeground(new Color( 33, 150, 83));
+					s34.setBackground(new Color(246, 246, 246));
+					s34.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s35.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s35.setForeground(new Color(246, 246, 246));
 				s35.setBackground(new Color( 33, 150, 83));
-				seat.setText("35 ¹ø ÁÂ¼®");		
+				seat.setText("35¹ø ÁÂ¼®");		
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s35.setBackground(new Color(246, 246, 246));
 					s35.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s35.setForeground(new Color(246, 246, 246));
+				s35.setBackground(new Color( 33, 150, 83));
+				s36.setForeground(new Color(246, 246, 246));
+				s36.setBackground(new Color( 33, 150, 83));
+				seat.setText("35¹ø36¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s35.setBackground(new Color(246, 246, 246));
+					s35.setForeground(new Color( 33, 150, 83));
+					s36.setBackground(new Color(246, 246, 246));
+					s36.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s36.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s36.setForeground(new Color(246, 246, 246));
 				s36.setBackground(new Color( 33, 150, 83));
-				seat.setText("36 ¹ø ÁÂ¼®");
+				seat.setText("36¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s36.setBackground(new Color(246, 246, 246));
 					s36.setForeground(new Color( 33, 150, 83));
 					seat.setText("");				
 				}
+			}else if(count == 2) {
+				s35.setForeground(new Color(246, 246, 246));
+				s35.setBackground(new Color( 33, 150, 83));
+				s36.setForeground(new Color(246, 246, 246));
+				s36.setBackground(new Color( 33, 150, 83));
+				seat.setText("35¹ø36¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s35.setBackground(new Color(246, 246, 246));
+					s35.setForeground(new Color( 33, 150, 83));
+					s36.setBackground(new Color(246, 246, 246));
+					s36.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s37.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s37.setForeground(new Color(246, 246, 246));
 				s37.setBackground(new Color( 33, 150, 83));
-				seat.setText("37 ¹ø ÁÂ¼®");
+				seat.setText("37¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s37.setBackground(new Color(246, 246, 246));
 					s37.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s37.setForeground(new Color(246, 246, 246));
+				s37.setBackground(new Color( 33, 150, 83));
+				s38.setForeground(new Color(246, 246, 246));
+				s38.setBackground(new Color( 33, 150, 83));
+				seat.setText("37¹ø38¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s37.setBackground(new Color(246, 246, 246));
+					s37.setForeground(new Color( 33, 150, 83));
+					s38.setBackground(new Color(246, 246, 246));
+					s38.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s38.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s38.setForeground(new Color(246, 246, 246));
 				s38.setBackground(new Color( 33, 150, 83));
-				seat.setText("38 ¹ø ÁÂ¼®");
+				seat.setText("38¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s38.setBackground(new Color(246, 246, 246));
 					s38.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s37.setForeground(new Color(246, 246, 246));
+				s37.setBackground(new Color( 33, 150, 83));
+				s38.setForeground(new Color(246, 246, 246));
+				s38.setBackground(new Color( 33, 150, 83));
+				seat.setText("37¹ø38¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s37.setBackground(new Color(246, 246, 246));
+					s37.setForeground(new Color( 33, 150, 83));
+					s38.setBackground(new Color(246, 246, 246));
+					s38.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s39.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s39.setForeground(new Color(246, 246, 246));
 				s39.setBackground(new Color( 33, 150, 83));
-				seat.setText("39 ¹ø ÁÂ¼®");
+				seat.setText("39¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s39.setBackground(new Color(246, 246, 246));
 					s39.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s39.setForeground(new Color(246, 246, 246));
+				s39.setBackground(new Color( 33, 150, 83));
+				s40.setForeground(new Color(246, 246, 246));
+				s40.setBackground(new Color( 33, 150, 83));
+				seat.setText("39¹ø40¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s39.setBackground(new Color(246, 246, 246));
+					s39.setForeground(new Color( 33, 150, 83));
+					s40.setBackground(new Color(246, 246, 246));
+					s40.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		s40.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
+			if(count == 1) {
 				s40.setForeground(new Color(246, 246, 246));
 				s40.setBackground(new Color( 33, 150, 83));
-				seat.setText("40 ¹ø ÁÂ¼®");
+				seat.setText("40¹ø ÁÂ¼®");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s40.setBackground(new Color(246, 246, 246));
 					s40.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+			}else if(count == 2) {
+				s39.setForeground(new Color(246, 246, 246));
+				s39.setBackground(new Color( 33, 150, 83));
+				s40.setForeground(new Color(246, 246, 246));
+				s40.setBackground(new Color( 33, 150, 83));
+				seat.setText("39¹ø40¹ø ÁÂ¼®");
+				++clickcnt;
+				if(clickcnt % 2 == 0) {
+					s39.setBackground(new Color(246, 246, 246));
+					s39.setForeground(new Color( 33, 150, 83));
+					s40.setBackground(new Color(246, 246, 246));
+					s40.setForeground(new Color( 33, 150, 83));
+					seat.setText("");
+				}
+			}
 			}
 		});
 		
@@ -1080,6 +1712,7 @@ public class Seat extends JPanel {
 				next.setBackground(new Color(246, 246, 246 ));
 				
 				// ÁÂ¼® º¯°æ »óÈ²À» À§ÇØ ¹«ºñ ÆÄÀÏ¿¡ ÀúÀåÇÒ ÁÂ¼® Á¤º¸ ¿©±â¼­ ÀÔ·Â
+			if(count == 1) {	
 				if(s1.getText().contains("1")) 
 					fileSave(seat.getText());
 				else if(s2.getText().contains("2"))
@@ -1160,9 +1793,91 @@ public class Seat extends JPanel {
 					fileSave(seat.getText());
 				else if(s40.getText().contains("40")) 
 					fileSave(seat.getText());
-				
-				// ¸ÅÁ¡ È­¸é À¸·Î ÀÌµ¿ ********************************************************
-				new memberReserveInfo(mf);        // <= ¼öÁ¤ÇÏ±â
+			}else if (count == 2) {
+				if(s1.getText().contains("1")) 
+					fileSave(seat.getText());
+				else if(s2.getText().contains("2"))
+					fileSave(seat.getText());
+				else if(s3.getText().contains("3"))
+					fileSave(seat.getText());
+				else if(s4.getText().contains("4"))
+					fileSave(seat.getText());
+				else if(s5.getText().contains("5"))
+					fileSave(seat.getText());
+				else if(s6.getText().contains("6"))
+					fileSave(seat.getText());
+				else if(s7.getText().contains("7"))
+					fileSave(seat.getText());
+				else if(s8.getText().contains("8"))
+					fileSave(seat.getText());
+				else if(s9.getText().contains("9"))
+					fileSave(seat.getText());
+				else if(s10.getText().contains("10"))
+					fileSave(seat.getText());
+				else if(s11.getText().contains("11"))
+					fileSave(seat.getText());
+				else if(s12.getText().contains("12"))
+					fileSave(seat.getText());
+				else if(s13.getText().contains("13"))
+					fileSave(seat.getText());
+				else if(s14.getText().contains("14"))
+					fileSave(seat.getText());
+				else if(s15.getText().contains("15"))
+					fileSave(seat.getText());
+				else if(s16.getText().contains("16"))
+					fileSave(seat.getText());
+				else if(s17.getText().contains("17"))
+					fileSave(seat.getText());
+				else if(s18.getText().contains("18"))
+					fileSave(seat.getText());
+				else if(s19.getText().contains("19"))
+					fileSave(seat.getText());
+				else if(s20.getText().contains("20"))
+					fileSave(seat.getText());
+				else if(s21.getText().contains("21"))
+					fileSave(seat.getText());
+				else if(s22.getText().contains("22"))
+					fileSave(seat.getText());
+				else if(s23.getText().contains("23"))
+					fileSave(seat.getText());
+				else if(s24.getText().contains("24"))
+					fileSave(seat.getText());
+				else if(s25.getText().contains("25"))
+					fileSave(seat.getText());
+				else if(s26.getText().contains("26"))
+					fileSave(seat.getText());
+				else if(s27.getText().contains("27"))
+					fileSave(seat.getText());
+				else if(s28.getText().contains("28"))
+					fileSave(seat.getText());
+				else if(s29.getText().contains("29"))
+					fileSave(seat.getText());
+				else if(s30.getText().contains("30"))
+					fileSave(seat.getText());
+				else if(s31.getText().contains("31"))
+					fileSave(seat.getText());
+				else if(s32.getText().contains("32"))
+					fileSave(seat.getText());
+				else if(s33.getText().contains("33"))
+					fileSave(seat.getText());
+				else if(s34.getText().contains("34"))
+					fileSave(seat.getText());
+				else if(s35.getText().contains("35"))
+					fileSave(seat.getText());
+				else if(s36.getText().contains("36"))
+					fileSave(seat.getText());
+				else if(s37.getText().contains("37"))
+					fileSave(seat.getText());
+				else if(s28.getText().contains("38"))
+					fileSave(seat.getText());
+				else if(s39.getText().contains("39")) 
+					fileSave(seat.getText());
+				else if(s40.getText().contains("40")) 
+					fileSave(seat.getText());
+			}
+				// ¸ÅÁ¡ È­¸é À¸·Î ÀÌµ¿ 
+				new memberReserveInfo(mf);       
+				//new foodPanel1(mf);
 				setVisible(false);
 			}
 		});
