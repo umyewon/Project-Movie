@@ -1,6 +1,12 @@
-// user파일에 저장된 순서
-public class UserInfo /*implements Serializable*/ {
+import java.io.Serializable;
 
+// user파일에 저장된 순서
+public class UserInfo implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String userID;
 	private String userPW;
 	private String userName;

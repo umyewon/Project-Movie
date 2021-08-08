@@ -9,7 +9,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -158,8 +161,10 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 						String[] str = line.split(",");
 						for(int i= 0; i < str.length/7; i++) {
 							mif.add(new MovieInfo(str[i*7], str[(i*7)+1], str[(i*7)+2], str[(i*7)+3], str[(i*7)+4], str[(i*7)+5] , str[(i*7)+6]));
-						}						
+						}		
 						resultinfo();
+						//System.out.println(uif.get(0));
+						//resultinfo(idT.getText());  // 아이디가 같은지 
 					}
 				} catch (FileNotFoundException e1) {
 					JOptionPane.showMessageDialog(null, "Filenot", " ", JOptionPane.ERROR_MESSAGE);
@@ -177,8 +182,8 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 	public void resultinfo() {
 		
 		// 정보 화면 출력용
-		
 		for(int i = 0; i < mif.size(); i++) {
+			
 			//if(idT.getText().equals(mif.get(i).getUserID())) {
 				// 순번
 				relabel1.setText("1");
@@ -201,15 +206,29 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 				// 예약번호
 				relabel7.setText(mif.get(i).getmNumber());
 				relabel7.setBounds(650, 130, 100, 20);
-			/*
-			} else {
+			
+			/*	
+			} 
+			else {
 				JOptionPane.showMessageDialog(null, "구매한 내역이 없습니다.", null, JOptionPane.INFORMATION_MESSAGE);
 			}
 			*/
-		}	
-			
-		
+		}		
 	}
+	
+	
+	public void movieSearch(){
+		System.out.println(idT.getText());
+		
+		for(int i = 0; i < mif.size(); i++) {
+				
+		}
+		
+		//boolean re = mif.contains();
+		
+		return;
+	}
+	
 }
 	
 	

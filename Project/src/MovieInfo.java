@@ -1,6 +1,12 @@
-// movie.txt 파일에 입력되는 순서
-public class MovieInfo {
+import java.io.Serializable;
 
+// movie.txt 파일에 입력되는 순서
+public class MovieInfo implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String userID;
 	private String mDate;	
 	private String mLocation;
