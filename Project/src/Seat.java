@@ -28,7 +28,8 @@ public class Seat extends JPanel {
  	int count;			 // 예매 인원 읽어올 변수
  	JLabel seat;
  	int clickcnt;
-
+ 	
+ 	
 	public Seat(MainFrame mf) {
 		this.mf = mf;
 		this.Seat = this;
@@ -473,8 +474,10 @@ public class Seat extends JPanel {
 					s1.setForeground(new Color( 33, 150, 83));
 					seat.setText("");
 				}
+				
 			}
 		});
+
 		s2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e){
@@ -523,6 +526,7 @@ public class Seat extends JPanel {
 			public void mouseClicked(MouseEvent e){
 				s5.setForeground(new Color(246, 246, 246));
 				s5.setBackground(new Color( 33, 150, 83));
+				seat.setText("5 번 좌석");
 				seat.setText("5 번 좌석");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
@@ -636,6 +640,7 @@ public class Seat extends JPanel {
 				s13.setForeground(new Color(246, 246, 246));
 				s13.setBackground(new Color( 33, 150, 83));
 				seat.setText("13 번 좌석");
+				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s13.setBackground(new Color(246, 246, 246));
 					s13.setForeground(new Color( 33, 150, 83));
@@ -649,6 +654,7 @@ public class Seat extends JPanel {
 				s14.setForeground(new Color(246, 246, 246));
 				s14.setBackground(new Color( 33, 150, 83));
 				seat.setText("14 번 좌석");
+				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s14.setBackground(new Color(246, 246, 246));
 					s14.setForeground(new Color( 33, 150, 83));
@@ -717,6 +723,8 @@ public class Seat extends JPanel {
 			public void mouseClicked(MouseEvent e){
 				s19.setForeground(new Color(246, 246, 246));
 				s19.setBackground(new Color( 33, 150, 83));
+				s19.setBackground(new Color( 33, 150, 83));
+				seat.setText("19 번 좌석");
 				seat.setText("19 번 좌석");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
@@ -731,6 +739,8 @@ public class Seat extends JPanel {
 			public void mouseClicked(MouseEvent e){
 				s20.setForeground(new Color(246, 246, 246));
 				s20.setBackground(new Color( 33, 150, 83));
+				s20.setBackground(new Color( 33, 150, 83));
+				seat.setText("20 번 좌석");
 				seat.setText("20 번 좌석");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
@@ -746,6 +756,7 @@ public class Seat extends JPanel {
 				s21.setForeground(new Color(246, 246, 246));
 				s21.setBackground(new Color( 33, 150, 83));
 				seat.setText("21 번 좌석");
+				seat.setText("21 번 좌석");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s21.setBackground(new Color(246, 246, 246));
@@ -759,6 +770,8 @@ public class Seat extends JPanel {
 			public void mouseClicked(MouseEvent e){
 				s21.setForeground(new Color(246, 246, 246));
 				s21.setBackground(new Color( 33, 150, 83));
+				s21.setBackground(new Color( 33, 150, 83));
+				seat.setText("22 번 좌석");
 				seat.setText("22 번 좌석");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
@@ -773,6 +786,8 @@ public class Seat extends JPanel {
 			public void mouseClicked(MouseEvent e){
 				s23.setForeground(new Color(246, 246, 246));
 				s23.setBackground(new Color( 33, 150, 83));
+				s23.setBackground(new Color( 33, 150, 83));
+				seat.setText("23 번 좌석");
 				seat.setText("23 번 좌석");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
@@ -816,6 +831,7 @@ public class Seat extends JPanel {
 				s26.setForeground(new Color(246, 246, 246));
 				s26.setBackground(new Color( 33, 150, 83));
 				seat.setText("26 번 좌석");
+				seat.setText("26 번 좌석");
 				++clickcnt;
 				if(clickcnt % 2 == 0) {
 					s26.setBackground(new Color(246, 246, 246));
@@ -828,6 +844,8 @@ public class Seat extends JPanel {
 			@Override
 			public void mouseClicked(MouseEvent e){
 				s27.setForeground(new Color(246, 246, 246));
+				s27.setBackground(new Color( 33, 150, 83));
+				seat.setText("27 번 좌석");
 				s27.setBackground(new Color( 33, 150, 83));
 				seat.setText("27 번 좌석");
 				++clickcnt;
@@ -858,7 +876,7 @@ public class Seat extends JPanel {
 				s29.setForeground(new Color(246, 246, 246));
 				s29.setBackground(new Color( 33, 150, 83));
 				seat.setText("29 번 좌석");
-					++clickcnt;
+				++clickcnt;
 				if (clickcnt % 2 == 0) {
 					s29.setBackground(new Color(246, 246, 246));
 					s29.setForeground(new Color( 33, 150, 83));
@@ -960,7 +978,7 @@ public class Seat extends JPanel {
 				if(clickcnt % 2 == 0) {
 					s36.setBackground(new Color(246, 246, 246));
 					s36.setForeground(new Color( 33, 150, 83));
-					seat.setText("");
+					seat.setText("");				
 				}
 			}
 		});
@@ -1021,6 +1039,7 @@ public class Seat extends JPanel {
 			}
 		});
 		
+		
 		// 이전, 다음 버튼 
 		JButton previous = new JButton("이  전");
 		previous.setFont(fontbtn);
@@ -1058,9 +1077,11 @@ public class Seat extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				next.setForeground(new Color(33, 150, 83));
+				next.setForeground(new Color(33, 150, 83));
 				next.setBackground(new Color(246, 246, 246 ));
 				
 				// 좌석 변경 상황을 위해 무비 파일에 저장할 좌석 정보 여기서 입력
+				
 				if(s1.getText().contains("1")) 
 					fileSave(seat.getText());
 				else if(s2.getText().contains("2"))
@@ -1141,7 +1162,8 @@ public class Seat extends JPanel {
 					fileSave(seat.getText());
 				else if(s40.getText().contains("40")) 
 					fileSave(seat.getText());
-				
+			
+		
 				// 매점 화면 으로 이동 ********************************************************
 				new memberReserveInfo(mf);        // <= 수정하기
 				setVisible(false);
@@ -1163,6 +1185,6 @@ public class Seat extends JPanel {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
+
 }
