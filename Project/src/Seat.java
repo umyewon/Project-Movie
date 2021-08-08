@@ -1876,8 +1876,8 @@ public class Seat extends JPanel {
 					fileSave(seat.getText());
 			}
 				// 매점 화면 으로 이동 
-				new memberReserveInfo(mf);       
-				//new foodPanel1(mf);
+				//new memberReserveInfo(mf);       
+				new foodPanel1(mf);
 				setVisible(false);
 			}
 		});
