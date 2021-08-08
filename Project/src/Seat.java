@@ -1165,7 +1165,7 @@ public class Seat extends JPanel {
 			
 		
 				// 매점 화면 으로 이동 ********************************************************
-				new memberReserveInfo(mf);        // <= 수정하기
+				new foodPanel1(mf);        // <= 수정하기
 				setVisible(false);
 			}
 		});
