@@ -185,30 +185,29 @@ public class memberReserveInfo extends JPanel {
 					uif.add(new UserInfo(str[i*4], str[(i*4)+1], str[(i*4)+2], str[(i*4)+3], str[(i*4)+4]));
 				}			
 				for(int i = 0; i < uif.size(); i++) {
-					for(int j = 0; j < mif.size(); j++) {
-						if(uif.get(i).getuNumber().contains(mif.get(j).getmNumber())) {
-							relabel1.setText((j+1)+"");
-							relabel1.setBounds(20, 130+(j*40), 100, 20);
-							relabel2.setText(mif.get(j).getmDate());
-							relabel2.setBounds(103, 130+(j*40), 100, 20);
-							relabel3.setText(mif.get(j).getmTitle());
-							relabel3.setBounds(193, 130+(j*40), 200, 20);
-							relabel4.setText(mif.get(j).getmTime());
-							relabel4.setBounds(355, 130+(j*40), 100, 20);
-							relabel5.setText(mif.get(j).getmSeat());
-							relabel5.setBounds(455, 130+(j*40), 100, 20);
-							relabel6.setText(mif.get(j).getmLocation());
-							relabel6.setBounds(555, 130+(j*40), 100, 20);
-							relabel7.setText(mif.get(j).getmNumber());
-							relabel7.setBounds(650, 130+(j*40), 100, 20);
-						} else {
-							JOptionPane.showMessageDialog(null, "예약된 정보가 없습니다.", "Filenot", JOptionPane.INFORMATION_MESSAGE);
-						}
+					if(uif.get(i).getuNumber().contains(mif.get(i).getmNumber())) {
+						relabel1.setText((i+1)+"");
+						relabel1.setBounds(20, 130+(i*40), 100, 20);
+						relabel2.setText(mif.get(i).getmDate());
+						relabel2.setBounds(103, 130+(i*40), 100, 20);
+						relabel3.setText(mif.get(i).getmTitle());
+						relabel3.setBounds(193, 130+(i*40), 200, 20);
+						relabel4.setText(mif.get(i).getmTime());
+						relabel4.setBounds(355, 130+(i*40), 100, 20);
+						relabel5.setText(mif.get(i).getmSeat());
+						relabel5.setBounds(455, 130+(i*40), 100, 20);
+						relabel6.setText(mif.get(i).getmLocation());
+						relabel6.setBounds(555, 130+(i*40), 100, 20);
+						relabel7.setText(mif.get(i).getmNumber());
+						relabel7.setBounds(650, 130+(i*40), 100, 20);
+					} else {
+						JOptionPane.showMessageDialog(null, "예약된 정보가 없습니다.", "File Not", JOptionPane.INFORMATION_MESSAGE);
+						break;
 					}
-				}		
+				}	
 			}
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Filenot", " ", JOptionPane.ERROR_MESSAGE);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
