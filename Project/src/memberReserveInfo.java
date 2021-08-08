@@ -207,17 +207,11 @@ public class memberReserveInfo extends JPanel /*implements Serializable*/ {
 				// 예약번호
 				relabel7.setText(mif.get(i).getmNumber());
 				relabel7.setBounds(650, 130, 100, 20);
-<<<<<<< HEAD
-			
-			/*	
-			} 
-			else {
-=======
+
 				
 			/*
 			} else {
->>>>>>> branch 'master' of https://github.com/HyoEun-L/Project-Movie.git
-				JOptionPane.showMessageDialog(null, "구매한 내역이 없습니다.", null, JOptionPane.INFORMATION_MESSAGE);
+
 			}
 			*/
 		}		
