@@ -147,14 +147,7 @@ public class JoinR extends JPanel{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		// 아이디 movie.txt에 저장 => 추후 회원 조회할때 아이디 값으로 비교
-		try(BufferedWriter bw = new BufferedWriter(new FileWriter("movie.txt", true))){
-			bw.write(idT.getText() + ",");
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 	}
 	
 	

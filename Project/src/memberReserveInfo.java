@@ -24,7 +24,7 @@ import javax.swing.JTextField;
 
 
 
-public class memberReserveInfo extends JPanel /*implements Serializable*/ {
+public class memberReserveInfo extends JPanel {
 	
 
 	private MainFrame mf;

@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -186,55 +185,40 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
 
    
    public void resultinfo() {
-      
       // 정보 화면 출력용
-      
-	  System.out.println(mif.get(0).getmNumber());
-	  System.out.println(mif.get(1).getmNumber());
-      
       int index = -1; //for문은 0부터 돌기 때문에 index를 0으로 설정하면 내가 찾는 값과 배열의 담긴 값이 같지 않아도 출력될 수 있기 때문.
       for(int i = 0; i < mif.size(); i++) {   //mif라는 객체배열 전체 크기만큼 돌아서
-         if(text.equals(mif.get(i).getmNumber())){  //이미 저장되있는 예매번호와 사용자에게 입력받은 text가 일치하는지 여부 확인 
+         if(text.getText().equals(mif.get(i).getmNumber())){  //이미 저장되있는 예매번호와 사용자에게 입력받은 text가 일치하는지 여부 확인 
             index = i;
          }
       }
       if(index > -1) { //일치 값이 있어서 인덱스가 값이 변했다면, 일치한 i번째 값을 모두 가져와 JLabel에 넣고 위치지정하여 보여준다.(예매번호는 중복되지 않으므로 배열사용 안 함)
-         
             // 순번
             relabel1.setText("1");
             relabel1.setBounds(30, 100, 100, 20);
-         
             // 날짜
             relabel2.setText(mif.get(i).getmDate());
             relabel2.setBounds(120, 100, 100, 20);
-           
             // 제목
             relabel3.setText(mif.get(i).getmTitle());
             relabel3.setBounds(210, 100, 200, 20);
-           
             // 시간
             relabel4.setText(mif.get(i).getmTime());
             relabel4.setBounds(380, 100, 100, 20);
-           
             // 좌석
             relabel5.setText(mif.get(i).getmSeat());
             relabel5.setBounds(470, 100, 100, 20);
-           
             // 지점
             relabel6.setText(mif.get(i).getmLocation());
             relabel6.setBounds(560, 100, 100, 20);
-      
             // 예약번호
             relabel7.setText(mif.get(i).getmNumber());
             relabel7.setBounds(640, 100, 100, 20);
-                    
-           
       }else { // 중복되는 값이 없을 경우
          re.setText("번호를 다시 확인하여 주십시오."); // false일 시 번호를 다시 확인해달라는 라벨 띄움               
       }   
    }
 }
-
 
 
 
