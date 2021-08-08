@@ -113,9 +113,7 @@ public class LoginC extends JPanel{
 				}
 				
 				br.close();
-				System.out.println("여기는 로그인씨-조회");
-				System.out.println(uif.size());
-				
+			
 				for(int i = 0; i < uif.size(); i++) {
 					if ((uif.get(i).getUserID()).equals(idT.getText()) && (uif.get(i).getUserPW()).equals(pwT.getText())) {
 						new memberReserveInfo(mf);
