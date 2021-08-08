@@ -57,7 +57,7 @@ public class WaitingR extends JPanel{	//예매
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//new Waiting();		// 버튼 클릭 시 클래스 전환
+				new Date(mf);		// 버튼 클릭 시 클래스 전환
 				setVisible(false);	// 기존 창 보이지 않게
 			}
 		});
