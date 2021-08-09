@@ -25,7 +25,7 @@ public class Seat extends JPanel {
 	JButton previous;    // 이전으로 버튼 (영화선택)
  	JButton next;		 // 다음으로 버튼 (매점)
  	JComboBox clist;	 // 예매인원 
- 	int count;			 // 예매 인원 읽어올 변수
+ 	static int count;			 // 예매 인원 읽어올 변수
  	JLabel seat;
  	int clickcnt;
  	
@@ -1891,7 +1891,10 @@ public class Seat extends JPanel {
 	// 콤마는 split 사용하기 위해 구분자 입력
 	public void fileSave(String str) {
 		try(BufferedWriter bw = new BufferedWriter(new FileWriter("movie.txt", true))){
-			bw.write(str + "," +"12345,"); 				
+			while(true) {
+			bw.write(str + ",12345,");
+			break;
+			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

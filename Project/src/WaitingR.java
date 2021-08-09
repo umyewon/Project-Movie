@@ -77,11 +77,13 @@ public class WaitingR extends JPanel{	//예매
 	// 비회원 정보 저장 => 공백저장
 	public void fileSave() {
 		try(BufferedWriter bw = new BufferedWriter(new FileWriter("user.txt", true))){
+			while(true) {
 			bw.write(" " + ",");
 			bw.write(" " + ",");
 			bw.write(" " + ",");
-			bw.write(" " + ",");		
-			
+			bw.write(" " + ",12345,");
+			break;
+			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
