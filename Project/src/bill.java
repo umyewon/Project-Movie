@@ -51,15 +51,18 @@ public class bill extends JPanel
 		int num7 = foodPanel3.getSpinner1();
 		int num8 = foodPanel3.getSpinner2();
 		int num9 = foodPanel3.getSpinner3();
+		int num10 = Seat.count;
+		
+		System.out.println(num10);
 		
 		this.setLayout(new BorderLayout());
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(9,1));
 		
-		JLabel payLabel1 = new JLabel("°áÁ¦±İ¾×");
+		JLabel payLabel1 = new JLabel("ê²°ì œê¸ˆì•¡");
 		payLabel1.setFont(new Font("",Font.BOLD,15));
 		JTextField payTf1 = new JTextField(10);
-		sum = num1*5000+num2*7000+num3*7000+num4*4000+num5*3000+num6*3000+num7*2000+num8*2000+num9*2000;
+		sum = num1*5000+num2*7000+num3*7000+num4*4000+num5*3000+num6*3000+num7*2000+num8*2000+num9*2000+num10*13000;
 		sum2 = sum;
 		payTf1.setText(sum + "");
 		payTf1.setEditable(false);
@@ -67,7 +70,7 @@ public class bill extends JPanel
 		payTf1.setFont(new Font("",Font.BOLD,15));
 		payTf1.setHorizontalAlignment(JTextField.CENTER);
 		
-		JLabel saleLabel = new JLabel("ÇÒ  ÀÎ");
+		JLabel saleLabel = new JLabel("í•   ì¸");
 		saleLabel.setFont(new Font("",Font.BOLD,15));
 		saleLabel.setHorizontalAlignment(JLabel.CENTER);
 		
@@ -78,7 +81,7 @@ public class bill extends JPanel
 		payTf2.setHorizontalAlignment(JTextField.CENTER);
 		payTf2.setText(sum + "");
 		
-		String[] sale = {" ÇÒÀÎ ¾øÀ½ "," ¸â¹ö½± ÇÒÀÎ (10%) "," Åë½Å»ç ÇÒÀÎ (20%) "," È¸¿ø ÇÒÀÎ (30%) "};
+		String[] sale = {" í• ì¸ ì—†ìŒ "," ë©¤ë²„ì‰½ í• ì¸ (10%) "," í†µì‹ ì‚¬ í• ì¸ (20%) "," íšŒì› í• ì¸ (30%) "};
 		JComboBox saleList = new JComboBox(sale);
 		saleList.setBackground(Color.white);
 		saleList.setFont(new Font("",Font.BOLD,15));
@@ -90,37 +93,37 @@ public class bill extends JPanel
 				JComboBox cb = (JComboBox) e.getSource();
 				String name = (String)cb.getSelectedItem();
 				
-				if(name.equals(" ÇÒÀÎ ¾øÀ½ "))
+				if(name.equals(" í• ì¸ ì—†ìŒ "))
 					sum2 = (int)(sum);
-				if(name.equals(" ¸â¹ö½± ÇÒÀÎ (10%) "))
+				if(name.equals(" ë©¤ë²„ì‰½ í• ì¸ (10%) "))
 					sum2 = (int)(sum * 0.9);
-				if(name.equals(" Åë½Å»ç ÇÒÀÎ (20%) "))
+				if(name.equals(" í†µì‹ ì‚¬ í• ì¸ (20%) "))
 					sum2 = (int)(sum * 0.8);
-				if(name.equals(" È¸¿ø ÇÒÀÎ (30%) "))
+				if(name.equals(" íšŒì› í• ì¸ (30%) "))
 					sum2 = (int)(sum * 0.7);
 				
 				payTf2.setText(sum2 + "");
 			}
 		});	
 		
-		JLabel payLabel2 = new JLabel("ÃÖÁ¾±İ¾×");
+		JLabel payLabel2 = new JLabel("ìµœì¢…ê¸ˆì•¡");
 		payLabel2.setFont(new Font("",Font.BOLD,15));
 		
-		JLabel payMethodLabel = new JLabel("°áÁ¦¹æ¹ı");
+		JLabel payMethodLabel = new JLabel("ê²°ì œë°©ë²•");
 		payMethodLabel.setFont(new Font("",Font.BOLD,15));
-		JRadioButton phone = new JRadioButton("ÈŞ´ëÆù");
+		JRadioButton phone = new JRadioButton("íœ´ëŒ€í°");
 		phone.setFont(new Font("",Font.BOLD,15));
 		phone.setBackground(Color.white);
-		JRadioButton card = new JRadioButton("½Å¿ëÄ«µå");
+		JRadioButton card = new JRadioButton("ì‹ ìš©ì¹´ë“œ");
 		card.setBackground(Color.white);
 		card.setFont(new Font("",Font.BOLD,15));
 		ButtonGroup btnGroup = new ButtonGroup();
 		btnGroup.add(phone);
 		btnGroup.add(card);
 		
-		JLabel cardLabel = new JLabel("Ä«µå Á¾·ù");
+		JLabel cardLabel = new JLabel("ì¹´ë“œ ì¢…ë¥˜");
 		cardLabel.setFont(new Font("",Font.BOLD,15));
-		String[] cardStr = {" ±¹¹Î Ä«µå "," ·Ôµ¥ Ä«µå "," ½ÅÇÑ Ä«µå "," »ï¼º Ä«µå "};
+		String[] cardStr = {" êµ­ë¯¼ ì¹´ë“œ "," ë¡¯ë° ì¹´ë“œ "," ì‹ í•œ ì¹´ë“œ "," ì‚¼ì„± ì¹´ë“œ "};
 		JComboBox cardList = new JComboBox(cardStr);
 		cardList.setBackground(Color.white);
 		cardList.setFont(new Font("",Font.BOLD,15));
@@ -139,7 +142,7 @@ public class bill extends JPanel
 		cardPanel.add(new JLabel("                                          "));
 		cardPanel.add(cardList);
 		
-		JLabel cardNumLabel = new JLabel("Ä«µå ¹øÈ£");
+		JLabel cardNumLabel = new JLabel("ì¹´ë“œ ë²ˆí˜¸");
 		cardNumLabel.setFont(new Font("",Font.BOLD,15));
 		JTextField cardNum1 = new JTextField(3);
 		JTextField cardNum2 = new JTextField(3);
@@ -161,7 +164,7 @@ public class bill extends JPanel
 		cardNumPanel.add(new JLabel(" - "));
 		cardNumPanel.add(cardNum4);
 		
-		JLabel cardPwLabel1 = new JLabel("ºñ¹Ğ ¹øÈ£");
+		JLabel cardPwLabel1 = new JLabel("ë¹„ë°€ ë²ˆí˜¸");
 		cardPwLabel1.setFont(new Font("",Font.BOLD,15));
 		JTextField cardPW = new JTextField(2);
 		cardPW.setHorizontalAlignment(JTextField.CENTER);
@@ -174,7 +177,7 @@ public class bill extends JPanel
 		cardPwPanel.add(cardPW);
 		cardPwPanel.add(cardPwLabel2);
 		
-		JLabel nameLabel = new JLabel("¼ºÇÔ");
+		JLabel nameLabel = new JLabel("ì„±í•¨");
 		nameLabel.setFont(new Font("",Font.BOLD,15));
 		JTextField nameTf = new JTextField(10);
 		nameTf.setFont(new Font("",Font.BOLD,15));
@@ -185,7 +188,7 @@ public class bill extends JPanel
 		namePanel.add(new JLabel("                                                "));
 		namePanel.add(nameTf);
 		
-		JLabel agencyLabel = new JLabel("Åë½Å»ç");
+		JLabel agencyLabel = new JLabel("í†µì‹ ì‚¬");
 		agencyLabel.setFont(new Font("",Font.BOLD,15));
 		String[] agencyStr = {"  SKT  ","  KT  ","  LG  "};
 		JComboBox agencyList = new JComboBox(agencyStr);
@@ -206,12 +209,12 @@ public class bill extends JPanel
 		agencyPanel.add(new JLabel("                                                          "));
 		agencyPanel.add(agencyList);
 		
-		JLabel phoneLabel = new JLabel("ÈŞ´ëÆù ¹øÈ£");
+		JLabel phoneLabel = new JLabel("íœ´ëŒ€í° ë²ˆí˜¸");
 		phoneLabel.setFont(new Font("",Font.BOLD,15));
 		JTextField phoneTf = new JTextField(12);
 		phoneTf.setFont(new Font("",Font.BOLD,15));
 		phoneTf.setHorizontalAlignment(JLabel.CENTER);
-	//	phoneTf.setText("- ¾øÀÌ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+	//	phoneTf.setText("- ì—†ì´ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		JPanel phoneNumPanel = new JPanel();
 		phoneNumPanel.add(phoneLabel);
 		phoneNumPanel.add(new JLabel("                      "));
@@ -255,11 +258,11 @@ public class bill extends JPanel
 			}
 		});
 		
-		JButton button_ok = new JButton("°áÁ¦ÇÏ±â");
+		JButton button_ok = new JButton("ê²°ì œí•˜ê¸°");
 		button_ok.setFont(new Font("",Font.PLAIN,25));
 		button_ok.setBackground(new Color(33, 150, 83));
 		button_ok.setForeground(Color.white);
-		JButton button_no = new JButton("ÀÌÀüÀ¸·Î");
+		JButton button_no = new JButton("ì´ì „ìœ¼ë¡œ");
 		button_no.setFont(new Font("",Font.PLAIN,25));
 		button_no.setBackground(Color.white);
 		button_no.setForeground(new Color(33, 150, 83));
@@ -347,17 +350,17 @@ public class bill extends JPanel
 		public void actionPerformed(ActionEvent e)
 		{
 			
-			int result = JOptionPane.showConfirmDialog(null, sum2+"¿ø °è»êÇÏ½Ã°Ú½À´Ï±î?","°è»ê",JOptionPane.YES_NO_OPTION);
+			int result = JOptionPane.showConfirmDialog(null, sum2+"ì› ê³„ì‚°í•˜ì‹œê² ìŠµë‹ˆê¹Œ?","ê³„ì‚°",JOptionPane.YES_NO_OPTION);
 			
 			if(result == 0)
 			{
-				JOptionPane.showMessageDialog(null,  "°è»êÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.", "°è»ê ¿Ï·á",JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null,  "ê³„ì‚°ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.", "ê³„ì‚° ì™„ë£Œ",JOptionPane.INFORMATION_MESSAGE);
 				new Main(fm);
 				setVisible(false);
 			}
 			else if(result == 1)
 			{
-				JOptionPane.showMessageDialog(null,  "°è»êÀÌ Ãë¼ÒµÇ¾ú½À´Ï´Ù.", "°è»ê Ãë¼Ò",JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null,  "ê³„ì‚°ì´ ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.", "ê³„ì‚° ì·¨ì†Œ",JOptionPane.ERROR_MESSAGE);
 			}
 		}
 	}
