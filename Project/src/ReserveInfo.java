@@ -70,7 +70,7 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
       backbt.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
-            new MainFrame();
+        	new Main(mf);
             setVisible(false);
          }
       });
@@ -163,14 +163,12 @@ public class ReserveInfo extends JPanel /*implements Serializable*/ {
                e1.printStackTrace();
             }
          }
-      });
-      
+      });   
 
       // 메인프레임에 추가
       mf.add(this);
    }
-
-   
+ 
    public void resultinfo() {
       // 정보 화면 출력용
       int index = -1; //for문은 0부터 돌기 때문에 index를 0으로 설정하면 내가 찾는 값과 배열의 담긴 값이 같지 않아도 출력될 수 있기 때문.
