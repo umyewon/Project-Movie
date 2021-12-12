@@ -7,11 +7,4 @@ KH정보 교육원 미니 프로젝트
 사용자의 편의를 위해 지도와 영화 예매 사이트, 여러번 움직일 필요 없이 한 프로그램 내에서 위치를 검색하면 그에 상응하는 위치의 영화관이 연결되어 원하는 영화를 예매 할 수 있는 프로그램을 기획하였습니다. <br><br>
 
 <span style="color:yellow">노란 글씨입니다.</span>
-<details>
-<summary>여기를 눌러주세요</summary>
-<div markdown="1">       
-
-😎숨겨진 내용😎
-
-</div>
-</details>
+<span style="color:red">노란 글씨입니다.</span>
